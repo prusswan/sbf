@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'capybara-webkit'
 end
 
 group :development do

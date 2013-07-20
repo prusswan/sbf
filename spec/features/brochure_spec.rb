@@ -7,11 +7,21 @@ describe "BrochureSpecs" do
   describe "GET /brochure_specs" do
     it "load SBF main page" do
       visit sbf_link
-      # page.find(:xpath, details_dropdown).trigger(:mouseover)
+      page.find(:xpath, details_dropdown).trigger(:mouseover)
 
       within('div#cssdrivemenu1') do
         link = find_link('Geylang')
         link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
+
+        link.click
+      end
+
+      page.current_url.should end_with('&twn=GL')
+
+      within_frame 'fda' do
+        # puts page.body
+        flat_type = page.all(:xpath, "//select[@name='Flat']/option")
+        flat_type.count.should == 5
       end
     end
   end
