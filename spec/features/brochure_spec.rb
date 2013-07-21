@@ -4,6 +4,9 @@ describe "BrochureSpecs" do
   sbf_link = 'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/3ccada7e5293fd9748256e990029b104/13MAYSBF_page_5789/$file/about0_static.htm'
   details_dropdown = "//div[@id='MenuBoxTop']//a[@class='t7']"
 
+  block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :ethnic_quota, :estate]
+  unit_fields = [:price, :area, :flat_type]
+
   def find_block_info(item)
     text = item.split[0]
     page.find(:xpath, "//td[@class='textLabelNew' and contains(.,'#{text}')]/following-sibling::td[1]").text
@@ -12,6 +15,8 @@ describe "BrochureSpecs" do
   it "load SBF main page" do
     visit sbf_link
     sleep 1
+
+    estate = 'Geylang'
 
     within('div#cssdrivemenu1') do
       while not page.current_url.end_with?('&twn=GL') do
@@ -24,7 +29,7 @@ describe "BrochureSpecs" do
           end
         end
 
-        link = find_link('Geylang')
+        link = find_link(estate)
         link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
 
         link.click
@@ -36,7 +41,9 @@ describe "BrochureSpecs" do
       flat_types = page.all(:xpath, "//select[@name='Flat']/option")
       flat_types.count.should == 5
 
-      select flat_types[1].text, from: 'select7'
+      flat_type = flat_types[1].text
+
+      select flat_type, from: 'select7'
 
       click_button 'Search'
       sleep 1
@@ -45,7 +52,7 @@ describe "BrochureSpecs" do
         block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
 
         block_links = block_nos.map { |b| [b.text(:visible), b[:href]] }
-        puts block_nos.count
+        puts "Blocks: #{block_nos.count}"
 
         block_links.each do |link|
           page.execute_script(link.last)
@@ -55,19 +62,25 @@ describe "BrochureSpecs" do
 
           page.find(:xpath, "//td[@class='textContentNew' and contains(.,'#{link.first}')]")
 
-          ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
-            'Lease Commencement Date', 'Available Ethnic Quota'].each do |item|
-            puts "#{item}: #{find_block_info(item)}"
-          end
+
+          block_info = ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
+            'Lease Commencement Date', 'Available Ethnic Quota'].map do |item|
+            # puts "#{item}: #{find_block_info(item)}"
+            find_block_info(item)
+          end << estate
+
+          block_hash = Hash[block_fields.zip(block_info)]
+          block = Block.where(no: block_hash[:no], street: block_hash[:street]).first_or_create(block_hash)
 
           unit_nos = page.all(:xpath, "//td[contains(.,'Mouseover unit number')]/ancestor::table[1]/following-sibling::table//font")
-
-          # puts page.body
           puts "Units: #{unit_nos.count}"
+
           unit_nos.map(&:text).each do |unit|
             unit_info = page.all(:xpath, "//font[contains(.,'#{unit}')]/following-sibling::div[1]//td")
-            puts unit
-            puts unit_info.map(&:text)
+                            .map(&:text) << flat_type
+
+            unit_hash = Hash[unit_fields.zip(unit_info)]
+            unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
           end
         end
       end
