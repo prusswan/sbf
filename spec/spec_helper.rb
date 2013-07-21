@@ -8,6 +8,10 @@ require 'capybara/poltergeist'
 
 Capybara.default_driver = :poltergeist
 
+Capybara.configure do |config|
+  config.ignore_hidden_elements = false
+end
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
