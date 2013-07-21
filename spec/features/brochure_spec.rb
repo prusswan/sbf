@@ -57,7 +57,7 @@ describe "BrochureSpecs" do
           select flat_type, from: 'select7'
 
           click_button 'Search'
-          sleep 1
+          sleep 3
 
           within_frame 'search' do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
@@ -77,7 +77,8 @@ describe "BrochureSpecs" do
 
               expected_state = %Q{
                 //strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr
-                //b[contains(.,'#{link.first}')]//font[contains(.,'#{link[1]}')]
+                //b[contains(.,'#{link.first}')]
+                //font[contains(.,\"#{link[1]}\")]
               }
 
               while all(:xpath, expected_state).count == 0
