@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "BrochureSpecs" do
   sbf_link = 'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/3ccada7e5293fd9748256e990029b104/13MAYSBF_page_5789/$file/about0_static.htm'
-  details_dropdown = "//div[@id='MenuBoxTop']//a[@class='t7']"
+  details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
   block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :ethnic_quota, :estate]
@@ -23,11 +23,12 @@ describe "BrochureSpecs" do
     sleep 1
   end
 
-  pending "load details page" do
-    flat_supply.keys.each do |estate|
+  it "load details page" do
+    Estate.all.map(&:name).each do |estate|
       puts "Estate: #{estate}"
-      next if Block.where(estate: estate).map(&:units).flatten.count == flat_supply[estate]
 
+      unit_count = Block.where(estate: estate).map(&:units).flatten.count
+      next if unit_count == Estate.find_by(name: estate).total
 
       while all('#titletwn', text: estate).count == 0 do
         within('div#cssdrivemenu1') do
@@ -59,15 +60,29 @@ describe "BrochureSpecs" do
           sleep 1
 
           within_frame 'search' do
-            block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
+            # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
+            block_divs = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a/div")
 
-            block_links = block_nos.map { |b| [b.text(:visible), b[:href]] }
-            puts "Blocks: #{block_nos.count}"
+            block_links = block_divs.map do |b|
+              id = b[:id]
+              no = page.find(:xpath, "//div[@id='#{id}']/ancestor::a[1]")
+              street = page.find(:xpath, "//div[@id='#{id}']//font").text
+              [no.text(:visible), street, no[:href]]
+            end
+
+            puts "Blocks: #{block_links.count}"
 
             block_links.each do |link|
-              page.execute_script(link.last)
+              puts link[1], link.last
 
-              page.find(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//b[contains(.,'#{link.first}')]")
+              expected_state = %Q{
+                //strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr
+                //b[contains(.,'#{link.first}')]//font[contains(.,'#{link[1]}')]
+              }
+
+              while all(:xpath, expected_state).count == 0
+                page.execute_script(link.last)
+              end
 
               block_info = ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
                 'Lease Commencement Date', 'Available Ethnic Quota'].map do |item|
@@ -82,11 +97,12 @@ describe "BrochureSpecs" do
               puts "Units: #{unit_nos.count}"
 
               unit_nos.map(&:text).each do |unit|
-                unit_info = page.all(:xpath, "//font[contains(.,'#{unit}')]/following-sibling::div[1]//td")
+                unit_info = page.all(:xpath, "//font[contains(.,'#{unit}')]/ancestor::td[1]/div[1]//td")
                                 .map(&:text) << flat_type
 
                 unit_hash = Hash[unit_fields.zip(unit_info)]
                 unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
+                p unit_info
               end
             end
           end
@@ -96,15 +112,13 @@ describe "BrochureSpecs" do
   end
 
   it 'loads intro page' do
+    pending 'already parsed flat supply numbers'
+
     estates = page.all(:xpath, "//div[@id='cssdrivemenu2']//a").map(&:text)
 
     # puts estates.count
     # puts estates.map(&:text)
     estates.each do |estate|
-      # [contains(.,'#{estate}')]
-      # count = page.all(:xpath, "//strong/font[contains(translate(normalize-space(text()), '\n', ''), '#{estate}')]")
-      # puts count.map(&:text)
-
       while all(:xpath, "//font[@color='#6FD6D9' and contains(normalize-space(text()), '#{estate}')]").count == 0 do
         within('div#cssdrivemenu2') do
           while true
