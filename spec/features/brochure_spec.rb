@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "BrochureSpecs" do
   sbf_link = 'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/3ccada7e5293fd9748256e990029b104/13MAYSBF_page_5789/$file/about0_static.htm'
   details_dropdown = "//div[@id='MenuBoxTop']//a[@class='t7']"
+  price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
   block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :ethnic_quota, :estate]
   unit_fields = [:price, :area, :flat_type]
@@ -17,10 +18,12 @@ describe "BrochureSpecs" do
     page.find(:xpath, "//td[@class='textLabelNew' and contains(.,'#{text}')]/following-sibling::td[1]").text
   end
 
-  it "load SBF main page" do
+  before do
     visit sbf_link
     sleep 1
+  end
 
+  pending "load details page" do
     flat_supply.keys.each do |estate|
       puts "Estate: #{estate}"
       next if Block.where(estate: estate).map(&:units).flatten.count == flat_supply[estate]
@@ -89,6 +92,39 @@ describe "BrochureSpecs" do
           end
         end
       end
+    end
+  end
+
+  it 'loads intro page' do
+    estates = page.all(:xpath, "//div[@id='cssdrivemenu2']//a").map(&:text)
+
+    # puts estates.count
+    # puts estates.map(&:text)
+    estates.each do |estate|
+      # [contains(.,'#{estate}')]
+      # count = page.all(:xpath, "//strong/font[contains(translate(normalize-space(text()), '\n', ''), '#{estate}')]")
+      # puts count.map(&:text)
+
+      while all(:xpath, "//font[@color='#6FD6D9' and contains(normalize-space(text()), '#{estate}')]").count == 0 do
+        within('div#cssdrivemenu2') do
+          while true
+            dropdown = page.all(:xpath, price_dropdown)
+
+            if dropdown.count > 0
+              dropdown.first.trigger(:mouseover)
+              break
+            end
+          end
+
+          link = find_link(estate)
+          link.click
+        end
+      end
+
+      supply = page.all(:xpath, "//tr[@bgcolor='#FFFFFF']/td[2]").map(&:text).map(&:to_i).inject(:+)
+      puts "#{estate}: #{supply}"
+
+      Estate.where(name: estate).first_or_create(total: supply)
     end
   end
 end

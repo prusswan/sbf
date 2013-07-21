@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130721173925) do
+ActiveRecord::Schema.define(version: 20130721205526) do
 
   create_table "blocks", force: true do |t|
     t.string   "no",            null: false
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20130721173925) do
   end
 
   add_index "blocks", ["no", "street"], name: "index_blocks_on_no_and_street", unique: true, using: :btree
+
+  create_table "estates", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "total",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "estates", ["name"], name: "index_estates_on_name", unique: true, using: :btree
 
   create_table "units", force: true do |t|
     t.string   "no",         null: false
