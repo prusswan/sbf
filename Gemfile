@@ -51,4 +51,7 @@ end
 group :development do
   gem 'guard'
   gem 'guard-rspec'
+
+  gem 'seed_dump'
+  gem 'protected_attributes'
 end
