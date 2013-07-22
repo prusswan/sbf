@@ -3,7 +3,6 @@
 
 RailsAdmin.config do |config|
 
-
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
@@ -25,7 +24,7 @@ RailsAdmin.config do |config|
   # config.compact_show_view = false
 
   # Number of default rows per-page:
-  # config.default_items_per_page = 20
+  config.default_items_per_page = 50
 
   # Exclude specific models (keep the others):
   # config.excluded_models = ['Block', 'Estate', 'Unit']
@@ -36,6 +35,11 @@ RailsAdmin.config do |config|
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
 
+  config.actions do
+    index
+    show
+    dashboard
+  end
 
   ################  Model configuration  ################
 
