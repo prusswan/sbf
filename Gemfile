@@ -39,6 +39,7 @@ end
 # gem 'capistrano', group: :development
 
 gem 'rails_admin'
+gem 'cancan'
 
 group :development, :test do
   gem 'debugger'
