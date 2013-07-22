@@ -10,8 +10,8 @@ class Unit < ActiveRecord::Base
 
     configure :id, :integer
     configure :no, :string
-    configure :price, :string
-    configure :area, :string
+    configure :price, :integer
+    configure :area, :integer
     configure :flat_type, :string
     configure :block_id, :integer         # Hidden
     configure :created_at, :datetime
@@ -29,10 +29,10 @@ class Unit < ActiveRecord::Base
     # Section specific configuration:
 
     list do
-      filters [:no, :price, :area]  # Array of field names which filters should be shown by default in the table header
+      filters [:flat_type, :price, :area]  # Array of field names which filters should be shown by default in the table header
       # items_per_page 100    # Override default_items_per_page
-      # sort_by :id           # Sort column (default is primary key)
-      # sort_reverse true     # Sort direction (default is true for primary key, last created first)
+      sort_by "flat_type desc, price" # Sort column (default is primary key)
+      sort_reverse false              # Sort direction (default is true for primary key, last created first)
 
       field :flat_type
       field :block do

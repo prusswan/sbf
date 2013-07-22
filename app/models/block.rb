@@ -1,5 +1,5 @@
 class Block < ActiveRecord::Base
-  has_many :units
+  has_many :units, -> { order(:no) }
 
   belongs_to :estate
 
