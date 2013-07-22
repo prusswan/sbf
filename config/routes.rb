@@ -1,5 +1,7 @@
 Sbf2013::Application.routes.draw do
-  resources :units, only: :index
+  mount RailsAdmin::Engine => '/', :as => 'rails_admin'
+
+  # resources :units, only: :index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

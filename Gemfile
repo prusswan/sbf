@@ -38,6 +38,8 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+gem 'rails_admin'
+
 group :development, :test do
   gem 'debugger'
   gem 'rspec-rails', '~> 2.0'
