@@ -5,13 +5,8 @@ describe "BrochureSpecs" do
   details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
-  block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :ethnic_quota, :estate]
+  block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :ethnic_quota, :estate_id]
   unit_fields = [:price, :area, :flat_type]
-
-  flat_supply = {
-    'Ang Mo Kio' => 57,
-    'Geylang'    => 102
-  }
 
   def find_block_info(item)
     text = item.split[0]
@@ -24,13 +19,12 @@ describe "BrochureSpecs" do
   end
 
   it "load details page" do
-    Estate.all.map(&:name).each do |estate|
-      puts "Estate: #{estate}"
+    Estate.all.each do |estate|
+      puts "Estate: #{estate.name}"
 
-      unit_count = Block.where(estate: estate).map(&:units).flatten.count
-      next if unit_count == Estate.find_by(name: estate).total
+      next if estate.units.count == estate.total
 
-      while all('#titletwn', text: estate).count == 0 do
+      while all('#titletwn', text: estate.name).count == 0 do
         within('div#cssdrivemenu1') do
           while true
             dropdown = page.all(:xpath, details_dropdown)
@@ -89,7 +83,7 @@ describe "BrochureSpecs" do
                 'Lease Commencement Date', 'Available Ethnic Quota'].map do |item|
                 # puts "#{item}: #{find_block_info(item)}"
                 find_block_info(item)
-              end << estate
+              end << estate.id
 
               block_hash = Hash[block_fields.zip(block_info)]
               block = Block.where(no: block_hash[:no], street: block_hash[:street]).first_or_create(block_hash)

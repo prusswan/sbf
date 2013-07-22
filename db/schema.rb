@@ -11,20 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130721205526) do
+ActiveRecord::Schema.define(version: 20130722010900) do
 
   create_table "blocks", force: true do |t|
     t.string   "no",            null: false
     t.string   "street",        null: false
-    t.string   "estate",        null: false
     t.string   "probable_date"
     t.string   "delivery_date", null: false
     t.string   "lease_start",   null: false
     t.string   "ethnic_quota",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "estate_id",     null: false
   end
 
+  add_index "blocks", ["estate_id"], name: "index_blocks_on_estate_id", using: :btree
   add_index "blocks", ["no", "street"], name: "index_blocks_on_no_and_street", unique: true, using: :btree
 
   create_table "estates", force: true do |t|
