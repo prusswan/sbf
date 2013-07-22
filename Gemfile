@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-gem 'mysql2'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -46,6 +44,8 @@ group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'capybara-webkit'
+
+  gem 'mysql2'
 end
 
 group :development do
@@ -54,4 +54,9 @@ group :development do
 
   gem 'seed_dump'
   gem 'protected_attributes'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end
