@@ -46,6 +46,11 @@ group :development, :test do
   gem 'capybara-webkit'
 
   gem 'mysql2'
+
+  # for pushing db seed to heroku
+  gem 'heroku'
+  gem 'taps'
+  gem 'sqlite3'
 end
 
 group :development do
