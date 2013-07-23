@@ -24,13 +24,21 @@ class Block < ActiveRecord::Base
       date_a <=> date_b
     end
 
+    def psql_date_regex
+      '\'\d{1,2}\s+\w{3}\s+\d{2,4}\''
+    end
+
     def sql_by_delivery_date
       case ActiveRecord::Base.connection.instance_values["config"][:adapter].to_sym
       when :mysql2
+        # mysql does not support (col1, col2) asc|desc
         'str_to_date(blocks.delivery_date, \'%d %M %Y\'), str_to_date(blocks.lease_start, \'%d %M %Y\')'
       when :postgresql
-        # 'to_date(blocks.delivery_date, \'DD Mon YYYY\'), to_date(blocks.lease_start, \'DD Mon YYYY\')'
-        'blocks.delivery_date'
+        # trick to allow non-dates to be sorted ahead
+        %Q{(
+          to_date(substring(blocks.delivery_date || \'01 Jan 1900\' from #{psql_date_regex}), \'DD Mon YYYY\'),
+          to_date(substring(blocks.lease_start from #{psql_date_regex}), \'DD Mon YYYY\')
+        )}
       end
     end
 
@@ -39,8 +47,10 @@ class Block < ActiveRecord::Base
       when :mysql2
         'str_to_date(blocks.lease_start, \'%d %M %Y\')'
       when :postgresql
-        # 'to_date(blocks.lease_start, \'DD Mon YYYY\')'
-        'blocks.lease_start'
+        %Q{(
+          to_date(substring(blocks.lease_start from #{psql_date_regex}), \'DD Mon YYYY\'),
+          substring(blocks.lease_start from \'\\w+\')
+        )}
       end
     end
   end
