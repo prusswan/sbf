@@ -86,12 +86,12 @@ class Unit < ActiveRecord::Base
       end
       field :delivery_date do
         pretty_value { bindings[:object].block.delivery_date }
-        sortable 'blocks.delivery_date'
+        sortable Block.sql_by_delivery_date
         column_width 50
       end
       field :lease_start do
         pretty_value { bindings[:object].block.lease_start }
-        sortable 'blocks.lease_start'
+        sortable Block.sql_by_lease_start
         column_width 50
       end
     end

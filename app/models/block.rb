@@ -3,6 +3,46 @@ class Block < ActiveRecord::Base
 
   belongs_to :estate
 
+  class << self
+    def sort_by_delivery_date(collection=self.all)
+      collection.sort { |a,b| compare_delivery_date(a,b) }
+    end
+
+    def compare_delivery_date(a,b)
+      begin
+        date_a = a.delivery_date.to_date
+      rescue
+        date_a = Date.new
+      end
+
+      begin
+        date_b = b.delivery_date.to_date
+      rescue
+        date_b = Date.new
+      end
+
+      date_a <=> date_b
+    end
+
+    def sql_by_delivery_date
+      case ActiveRecord::Base.connection.instance_values["config"][:adapter].to_sym
+      when :mysql2
+        'str_to_date(blocks.delivery_date, \'%d %M %Y\'), str_to_date(blocks.lease_start, \'%d %M %Y\')'
+      when :postgresql
+        'to_date(blocks.delivery_date, \'DD Mon YYYY\'), to_date(blocks.lease_start, \'DD Mon YYYY\')'
+      end
+    end
+
+    def sql_by_lease_start
+      case ActiveRecord::Base.connection.instance_values["config"][:adapter].to_sym
+      when :mysql2
+        'str_to_date(blocks.lease_start, \'%d %M %Y\')'
+      when :postgresql
+        'to_date(blocks.lease_start, \'DD Mon YYYY\')'
+      end
+    end
+  end
+
   rails_admin do
     # Found associations:
 
@@ -47,9 +87,11 @@ class Block < ActiveRecord::Base
       end
       field :delivery_date do
         column_width 100
+        sortable Block.sql_by_delivery_date
       end
       field :lease_start do
         column_width 100
+        sortable Block.sql_by_lease_start
       end
       field :ethnic_quota
     end
