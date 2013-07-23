@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722010900) do
+ActiveRecord::Schema.define(version: 20130722105351) do
 
   create_table "blocks", force: true do |t|
     t.string   "no",            null: false
@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 20130722010900) do
 
   create_table "units", force: true do |t|
     t.string   "no",         null: false
-    t.string   "price",      null: false
-    t.string   "area",       null: false
     t.string   "flat_type",  null: false
     t.integer  "block_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "price",      null: false
+    t.integer  "area",       null: false
   end
 
   add_index "units", ["block_id"], name: "index_units_on_block_id", using: :btree

@@ -93,7 +93,7 @@ describe "BrochureSpecs" do
 
               unit_nos.map(&:text).each do |unit|
                 unit_info = page.all(:xpath, "//font[contains(.,'#{unit}')]/ancestor::td[1]/div[1]//td")
-                                .map(&:text) << flat_type
+                                .map(&:text).map{|v| v.gsub(/\D/,'').to_i} << flat_type
 
                 unit_hash = Hash[unit_fields.zip(unit_info)]
                 unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
