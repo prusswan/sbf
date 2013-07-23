@@ -47,9 +47,13 @@ class Unit < ActiveRecord::Base
       sort_by "flat_type desc, price" # Sort column (default is primary key)
       sort_reverse false              # Sort direction (default is true for primary key, last created first)
 
-      field :estate do
-        sortable :name
-        searchable :name
+      field :estate, :enum do
+        pretty_value { bindings[:object].estate.name }
+        enum do
+          Estate.all.map(&:name).uniq.to_a
+        end
+        sortable 'estates.name'
+        searchable 'estates.name'
         queryable :true
       end
       field :flat_type
