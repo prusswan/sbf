@@ -55,29 +55,44 @@ class Unit < ActiveRecord::Base
         sortable 'estates.name'
         searchable 'estates.name'
         queryable :true
+
+        column_width 50
       end
-      field :flat_type
+      field :flat_type do
+        column_width 50
+      end
       field :block do
         pretty_value { "#{bindings[:object].block.no} #{bindings[:object].block.street}" }
         sortable 'estates.name'
         searchable [:no, :street]
         queryable :true
+
+        column_width 150
       end
-      field :no
-      field :price
-      field :area
+      field :no do
+        column_width 50
+      end
+      field :price do
+        column_width 50
+      end
+      field :area do
+       column_width 10
+      end
 
       field :probable_date do
         pretty_value { bindings[:object].block.probable_date }
         sortable 'blocks.probable_date'
+        column_width 50
       end
       field :delivery_date do
         pretty_value { bindings[:object].block.delivery_date }
         sortable 'blocks.delivery_date'
+        column_width 50
       end
       field :lease_start do
         pretty_value { bindings[:object].block.lease_start }
         sortable 'blocks.lease_start'
+        column_width 50
       end
     end
 

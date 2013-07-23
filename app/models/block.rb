@@ -42,9 +42,15 @@ class Block < ActiveRecord::Base
       field :estate
       field :no
       field :street
-      field :probable_date
-      field :delivery_date
-      field :lease_start
+      field :probable_date do
+        column_width 100
+      end
+      field :delivery_date do
+        column_width 100
+      end
+      field :lease_start do
+        column_width 100
+      end
       field :ethnic_quota
     end
 
