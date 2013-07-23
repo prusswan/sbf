@@ -29,7 +29,8 @@ class Block < ActiveRecord::Base
       when :mysql2
         'str_to_date(blocks.delivery_date, \'%d %M %Y\'), str_to_date(blocks.lease_start, \'%d %M %Y\')'
       when :postgresql
-        'to_date(blocks.delivery_date, \'DD Mon YYYY\'), to_date(blocks.lease_start, \'DD Mon YYYY\')'
+        # 'to_date(blocks.delivery_date, \'DD Mon YYYY\'), to_date(blocks.lease_start, \'DD Mon YYYY\')'
+        'blocks.delivery_date'
       end
     end
 
@@ -38,7 +39,8 @@ class Block < ActiveRecord::Base
       when :mysql2
         'str_to_date(blocks.lease_start, \'%d %M %Y\')'
       when :postgresql
-        'to_date(blocks.lease_start, \'DD Mon YYYY\')'
+        # 'to_date(blocks.lease_start, \'DD Mon YYYY\')'
+        'blocks.lease_start'
       end
     end
   end
