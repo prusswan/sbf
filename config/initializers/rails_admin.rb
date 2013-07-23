@@ -22,7 +22,7 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User'
 
   # Display empty fields in show views:
-  # config.compact_show_view = false
+  config.compact_show_view = false
 
   # Number of default rows per-page:
   config.default_items_per_page = 50

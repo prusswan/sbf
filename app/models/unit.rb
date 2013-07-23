@@ -1,21 +1,34 @@
 class Unit < ActiveRecord::Base
   belongs_to :block
+  belongs_to :flat_block, foreign_key: :block_id, class_name: 'Block'
+
+  # not intuitive, but this works better with rails_admin than delegate
+  has_one :estate, through: :flat_block
+
+  delegate :probable_date, :delivery_date, :lease_start, to: :flat_block
+
+  default_scope { joins(:estate) }
 
   rails_admin do
     # Found associations:
 
+    configure :estate, :has_one_association
     configure :block, :belongs_to_association
 
     # Found columns:
 
-    configure :id, :integer
+    # configure :id, :integer
     configure :no, :string
     configure :price, :integer
     configure :area, :integer
     configure :flat_type, :string
-    configure :block_id, :integer         # Hidden
+    # configure :block_id, :integer         # Hidden
     configure :created_at, :datetime
     configure :updated_at, :datetime
+
+    configure :probable_date, :string
+    configure :delivery_date, :string
+    configure :lease_start, :string
 
     # Cross-section configuration:
 
@@ -34,30 +47,29 @@ class Unit < ActiveRecord::Base
       sort_by "flat_type desc, price" # Sort column (default is primary key)
       sort_reverse false              # Sort direction (default is true for primary key, last created first)
 
+      field :estate do
+        sortable :name
+      end
       field :flat_type
       field :block do
-        pretty_value do
-          "#{bindings[:object].block.no} #{bindings[:object].block.street}"
-        end
+        pretty_value { "#{bindings[:object].block.no} #{bindings[:object].block.street}" }
+        sortable 'estates.name'
       end
       field :no
       field :price
       field :area
 
       field :probable_date do
-        pretty_value do
-          bindings[:object].block.probable_date
-        end
+        pretty_value { bindings[:object].block.probable_date }
+        sortable 'blocks.probable_date'
       end
       field :delivery_date do
-        pretty_value do
-          bindings[:object].block.delivery_date
-        end
+        pretty_value { bindings[:object].block.delivery_date }
+        sortable 'blocks.delivery_date'
       end
       field :lease_start do
-        pretty_value do
-          bindings[:object].block.lease_start
-        end
+        pretty_value { bindings[:object].block.lease_start }
+        sortable 'blocks.lease_start'
       end
     end
 
