@@ -42,18 +42,22 @@ class Unit < ActiveRecord::Base
     # Section specific configuration:
 
     list do
-      filters [:flat_type, :price, :area]  # Array of field names which filters should be shown by default in the table header
+      filters [:estate, :flat_type, :price, :area]  # Array of field names which filters should be shown by default in the table header
       # items_per_page 100    # Override default_items_per_page
       sort_by "flat_type desc, price" # Sort column (default is primary key)
       sort_reverse false              # Sort direction (default is true for primary key, last created first)
 
       field :estate do
         sortable :name
+        searchable :name
+        queryable :true
       end
       field :flat_type
       field :block do
         pretty_value { "#{bindings[:object].block.no} #{bindings[:object].block.street}" }
         sortable 'estates.name'
+        searchable [:no, :street]
+        queryable :true
       end
       field :no
       field :price
