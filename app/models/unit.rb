@@ -63,7 +63,10 @@ class Unit < ActiveRecord::Base
         column_width 50
       end
       field :block do
-        pretty_value { "#{bindings[:object].block.no} #{bindings[:object].block.street}" }
+        pretty_value do
+          bindings[:view].link_to "#{bindings[:object].block.no} #{bindings[:object].block.street}",
+            bindings[:view].rails_admin.show_path(:block, bindings[:object].block)
+        end
         sortable Block.sql_by_address
         searchable [:no, :street]
         queryable :true
