@@ -5,7 +5,7 @@ class Unit < ActiveRecord::Base
   # not intuitive, but this works better with rails_admin than delegate
   has_one :estate, through: :flat_block
 
-  delegate :probable_date, :delivery_date, :lease_start, to: :flat_block
+  delegate :probable_date, :delivery_date, :lease_start, :ethnic_quota, to: :flat_block
 
   default_scope { joins(:estate) }
 
@@ -29,6 +29,7 @@ class Unit < ActiveRecord::Base
     configure :probable_date, :string
     configure :delivery_date, :string
     configure :lease_start, :string
+    configure :ethnic_quota, :string
 
     # Cross-section configuration:
 
@@ -63,11 +64,11 @@ class Unit < ActiveRecord::Base
       end
       field :block do
         pretty_value { "#{bindings[:object].block.no} #{bindings[:object].block.street}" }
-        sortable 'estates.name'
+        sortable Block.sql_by_address
         searchable [:no, :street]
         queryable :true
 
-        column_width 150
+        column_width 100
       end
       field :no do
         column_width 50
@@ -92,6 +93,11 @@ class Unit < ActiveRecord::Base
       field :lease_start do
         pretty_value { bindings[:object].block.lease_start }
         sortable Block.sql_by_lease_start
+        column_width 50
+      end
+      field :ethnic_quota do
+        pretty_value { bindings[:object].block.short_ethnic_quota }
+        sortable 'blocks.ethnic_quota'
         column_width 50
       end
     end

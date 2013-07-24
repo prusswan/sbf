@@ -3,6 +3,11 @@ class Block < ActiveRecord::Base
 
   belongs_to :estate
 
+  def short_ethnic_quota
+    r = ethnic_quota.match /(\d+)\D+(\d+)\D+(\d+)/
+    "M:#{r[1]},C:#{r[2]},I/O:#{r[3]}"
+  end
+
   class << self
     def sort_by_delivery_date(collection=self.all)
       collection.sort { |a,b| compare_delivery_date(a,b) }
@@ -51,6 +56,15 @@ class Block < ActiveRecord::Base
           to_date(substring(blocks.lease_start from #{psql_date_regex}), \'DD Mon YYYY\'),
           substring(blocks.lease_start from \'\\w+\')
         )}
+      end
+    end
+
+    def sql_by_address
+      case ActiveRecord::Base.connection.instance_values["config"][:adapter].to_sym
+      when :mysql2
+        'concat(blocks.street, blocks.no)'
+      when :postgresql
+        '(blocks.street || blocks.no)'
       end
     end
   end
