@@ -49,7 +49,9 @@ class Unit < ActiveRecord::Base
       sort_reverse false              # Sort direction (default is true for primary key, last created first)
 
       field :estate, :enum do
-        pretty_value { bindings[:object].estate.name }
+        pretty_value do
+          bindings[:view].link_to bindings[:object].estate.name, bindings[:view].rails_admin.show_path(:estate, bindings[:object].estate)
+        end
         enum do
           Estate.all.map(&:name).uniq.to_a
         end
