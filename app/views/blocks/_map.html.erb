@@ -1,15 +1,17 @@
-<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
+<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false"
 type="text/javascript"></script>
 <div><%= address %></div>
 <div id="map_canvas" style="width: 100%; height: 1000px;"></div>
 
 <script type="text/javascript">
+  var map;
+  var infowindow = new google.maps.InfoWindow();
+
   function initialize() {
     var yourAddress = "<%= address %>, Singapore";
     var geocoder = new google.maps.Geocoder();
 
     var mapOptions;
-    var map;
 
     geocoder.geocode({
       address: yourAddress
@@ -34,6 +36,38 @@ type="text/javascript"></script>
 
       var transitLayer = new google.maps.TransitLayer();
       transitLayer.setMap(map);
+
+      var request = {
+        location: center,
+        radius: '1000',
+        types: ['bus_station']
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+    });
+  }
+
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(results);
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        createMarker(results[i]);
+      }
+    }
+  }
+
+  function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
     });
   }
 
