@@ -8,6 +8,10 @@ class Block < ActiveRecord::Base
     "M:#{r[1]},C:#{r[2]},I/O:#{r[3]}"
   end
 
+  def address
+    "#{no} #{street}"
+  end
+
   class << self
     def sort_by_delivery_date(collection=self.all)
       collection.sort { |a,b| compare_delivery_date(a,b) }
@@ -120,6 +124,22 @@ class Block < ActiveRecord::Base
         sortable Block.sql_by_lease_start
       end
       field :ethnic_quota
+    end
+
+    show do
+      field :estate
+      field :address do
+        pretty_value do
+          ac = ActionController::Base.new()
+          ac.render_to_string(partial: 'blocks/map', layout: false, locals: {address: bindings[:object].address}).html_safe
+        end
+      end
+
+      field :probable_date
+      field :delivery_date
+      field :lease_start
+      field :ethnic_quota
+      field :units
     end
 
     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
