@@ -212,6 +212,7 @@ GEM
       rdoc (~> 3.10)
     seed_dump (0.5.3)
     sequel (3.20.0)
+    settingslogic (2.0.9)
     sinatra (1.0)
       rack (>= 1.0)
     slop (3.4.5)
@@ -271,6 +272,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   seed_dump
+  settingslogic
   sqlite3
   taps
   turbolinks

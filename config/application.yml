@@ -1,0 +1,11 @@
+defaults: &defaults
+  onemap_api_key: xkg8VRu6Ol+gMH+SUamkRIEB7fKzhwMvfMo/2U8UJcFhdvR4yN1GutmUIA3A6r3LDhot215OVVkZvNRzjl28TNUZgYFSswOi
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  onemap_api_key: aiMOm0OILz66rEUHeiMvqNB3fuf5ReFUUgzd4gbicNewTxp+Fg+GQkX4v8WiHqbfHqpIUKaOLwNtwcbFMFORAqpft5h+NEFVwYIxdAHNYVliZ5WRZJ/zYA==|mv73ZvjFcSo=

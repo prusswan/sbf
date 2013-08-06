@@ -1,7 +1,11 @@
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false"
 type="text/javascript"></script>
+
+<script type='text/JavaScript' src='http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>'></script>
+
 <div><%= address %></div>
 <div id="map_canvas" style="width: 100%; height: 1000px;"></div>
+<div id="onemap" style="width: 100%; height: 1000px;"></div>
 
 <script type="text/javascript">
   var map;
@@ -50,7 +54,7 @@ type="text/javascript"></script>
 
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      console.log(results);
+      console.log(results, 'places');
       for (var i = 0; i < results.length; i++) {
         var place = results[i];
         createMarker(results[i]);
@@ -72,4 +76,10 @@ type="text/javascript"></script>
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
+
+  var centerPoint="28968.103,33560.969"
+  var levelNumber=8;
+  var OneMap = new GetOneMap('onemap','SM',{level:levelNumber,center:centerPoint});
 </script>
+
+

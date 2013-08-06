@@ -40,6 +40,7 @@ end
 
 gem 'rails_admin'
 gem 'cancan'
+gem 'settingslogic'
 
 group :development, :test do
   gem 'debugger'
