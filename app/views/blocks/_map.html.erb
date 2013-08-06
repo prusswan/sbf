@@ -1,15 +1,17 @@
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false"
 type="text/javascript"></script>
 
-<script type='text/JavaScript' src='http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>'></script>
+<!-- script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.8"></script -->
+<script type='text/JavaScript' src='http://www.onemap.sg/API/JS?v=2.8&type=full&accessKEY=<%= Settings.onemap_api_key %>'></script>
 
 <div><%= address %></div>
 <div id="map_canvas" style="width: 100%; height: 1000px;"></div>
-<div id="onemap" style="width: 100%; height: 1000px;"></div>
+<div id="div_onemap" style="width: 100%; height: 1000px;"></div>
 
 <script type="text/javascript">
   var map;
   var infowindow = new google.maps.InfoWindow();
+  var myOneMap;
 
   function initialize() {
     var yourAddress = "<%= address %>, Singapore";
@@ -75,11 +77,49 @@ type="text/javascript"></script>
     });
   }
 
+  function overlayData(mashupResults)
+  {
+    function hexToRgb(hex) {
+      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16)
+      } : null;
+    }
+    var results = mashupResults.results;
+    console.log(results, 'bus_stops')
+
+    if (results == "No results") {
+      alert("Theme not found. Please check theme name.");
+      return
+    }
+  }
+
   google.maps.event.addDomListener(window, 'load', initialize);
+
+  function initOneMap() {
+    alert("onemapready");
+
+    // alert(NewOneMap.map.getLevel());
+    var mashup = new MashupData(overlayData);
+    mashup.themeName = 'Bus_Stop';
+    mashup.GetMashupData(overlayData);
+  }
+
+  //$(document).ready(initOneMap);
+  dojo.addOnLoad(initOneMap);
 
   var centerPoint="28968.103,33560.969"
   var levelNumber=8;
-  var OneMap = new GetOneMap('onemap','SM',{level:levelNumber,center:centerPoint});
+  myOneMap = new GetOneMap('div_onemap','SM',{level:levelNumber,center:centerPoint});
+  //
+  // }
+  // alert(OneMap.map.getLevel());
+  //console.log(OneMap.map());
+  // mashup.extent = OneMap.extent.xmin + "," + OneMap.extent.ymin + "," + OneMap.extent.xmax + "," + OneMap.extent.ymax;
+
+
 </script>
 
 
