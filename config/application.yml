@@ -6,6 +6,7 @@ development:
 
 test:
   <<: *defaults
+  onemap_api_key: o4AXRje/hx0BgO4owE0iK/4R/MXnMuXtyFF2loCYEB+OJfHp0CSeHRg6c5Hv3dxbtzUfvzqM0tox+cOdBxW+GSBGTgXrC9mj
 
 production:
   onemap_api_key: aiMOm0OILz66rEUHeiMvqNB3fuf5ReFUUgzd4gbicNewTxp+Fg+GQkX4v8WiHqbfHqpIUKaOLwNtwcbFMFORAqpft5h+NEFVwYIxdAHNYVliZ5WRZJ/zYA==|mv73ZvjFcSo=
