@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>BusStops</name>
+        <description/>
+        <Style id="busStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="mrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/mrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="lrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/lrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="PnRIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/pnr.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopPremiumIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="taxiStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/taxistop.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="parknride">
+            <LineStyle>
+                <color>d7792900</color>
+                <width>4.0</width>
+            </LineStyle>
+        </Style>
+        <Style id="colorBlock">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/block.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="SB16">
+            <name><![CDATA[<div id="myPopupName">Blk 339 Sembawang Close</div>]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>Car Park Number: SB16</td></tr>
+<tr><td>Estimated Walking Duration: 5 Minutes</td></tr>
+<tr><td>Click <a href="javascript:doViewCarParkDetail('SB16');">here</a> to find more!</td></tr>
+</table>
+</div>
+]]></description>
+            <styleUrl>#parknride</styleUrl>
+            <LineString>
+                <coordinates>103.81802,1.44823 103.81802,1.4482 103.81866,1.44834 103.81883,1.44788 103.81993,1.44814 103.81974,1.44891</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="">
+            <name/>
+            <description/>
+            <styleUrl>#taxiStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.819014618568,1.44814832770939</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="H13">
+            <name><![CDATA[
+<div id="myPopupName">
+<table>
+<tr><td nowrap="nowrap" style="white-space: nowrap">H13&nbsp;-&nbsp;Stand</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap">Sembawang Way outside Sembawang MRT station</td></tr>
+</table>
+</div>
+]]>
+</name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>
+<table>
+<tr><td><b>Number of Lots:</b></td><td>2</td></tr>
+<tr><td><b>With Shelter:</b></td><td>Yes</td></tr>
+<tr><td><b>Barrier Free Access:</b></td><td>Yes</td></tr>
+</table></td></tr></table>
+</div>
+]]>
+</description>
+            <styleUrl>#taxiStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.820233436663,1.44938297069083</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58009">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58009 - Sembawang Vista</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Sembawang Int</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','1','1','58009','SMRT',true,'2','71');">167</a>, <a href="javascript:doViewBusIndex('859','1','1','58009','SMRT',true,'2','24');">859</a>, <a href="javascript:doViewBusIndex('882','1','24','58009','SMRT',false,'1','24');">882</a>, <a href="javascript:doViewBusIndex('980','1','1','58009','SMRT',true,'2','61');">980</a>, <a href="javascript:doViewBusIndex('981','1','1','58009','SMRT',true,'2','21');">981</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58009');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81941391689068,1.44748179252514</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58041">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58041 - Sembawang Rd - B27</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Yishun Ave 2</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('169','2','31','58041','SMRT',true,'2','31');">169</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58041');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Woodlands Centre Road to Yishun Avenue 2','580');">580</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.8268558037182,1.44939346470038</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58049">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58049 - Sembawang Rd - B28</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Yishun Ave 2</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('169','1','22','58049','SMRT',false,'1','22');">169</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58049');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82703542333945,1.44919525191106</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58051">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58051 - Sembawang Rd - B29</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Sembawang CC</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('169','2','32','58051','SMRT',true,'2','32');">169</a>, <a href="javascript:doViewBusIndex('882','1','8','58051','SMRT',false,'1','8');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58051');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Woodlands Centre Road to Yishun Avenue 2','580');">580</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82843083296738,1.45087972197488</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58059">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58059 - Sembawang Rd - B30</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Sembawang CC</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('169','1','21','58059','SMRT',false,'1','21');">169</a>, <a href="javascript:doViewBusIndex('882','1','17','58059','SMRT',false,'1','17');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58059');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82866296034206,1.45079007708143</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58101">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58101 - Canberra Rd - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 311</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('856','1','9','58101','SMRT',false,'1','9');">856</a>, <a href="javascript:doViewBusIndex('858','1','68','58101','SMRT',false,'1','68');">858</a>, <a href="javascript:doViewBusIndex('859','2','9','58101','SMRT',true,'2','9');">859</a>, <a href="javascript:doViewBusIndex('NR2','1','52','58101','SMRT',false,'1','52');">NR2</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58101');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82282277802054,1.44667277800811</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58109">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58109 - Canberra Rd - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 311</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('856','2','30','58109','SMRT',true,'2','30');">856</a>, <a href="javascript:doViewBusIndex('858','1','16','58109','SMRT',false,'1','16');">858</a>, <a href="javascript:doViewBusIndex('859','1','16','58109','SMRT',false,'1','16');">859</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58109');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82309298513003,1.44667607916689</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58111">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58111 - Canberra Rd - B05</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 351 CP</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('856','1','11','58111','SMRT',false,'1','11');">856</a>, <a href="javascript:doViewBusIndex('859','1','4','58111','SMRT',false,'1','4');">859</a>, <a href="javascript:doViewBusIndex('882','1','4','58111','SMRT',false,'1','4');">882</a>, <a href="javascript:doViewBusIndex('980','1','3','58111','SMRT',false,'1','3');">980</a>, <a href="javascript:doViewBusIndex('981','1','4','58111','SMRT',false,'1','4');">981</a>, <a href="javascript:doViewBusIndex('NR2','1','54','58111','SMRT',false,'1','54');">NR2</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58111');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82075231895968,1.45096272310028</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58119">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58119 - Canberra Rd - B06A</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 502A</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('856','2','28','58119','SMRT',true,'2','28');">856</a>, <a href="javascript:doViewBusIndex('859','2','21','58119','SMRT',true,'2','21');">859</a>, <a href="javascript:doViewBusIndex('882','1','21','58119','SMRT',false,'1','21');">882</a>, <a href="javascript:doViewBusIndex('980','2','59','58119','SMRT',true,'2','59');">980</a>, <a href="javascript:doViewBusIndex('981','2','18','58119','SMRT',true,'2','18');">981</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58119');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Woodlands Centre Road to Yishun Avenue 2','580');">580</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82102323159111,1.45099925490468</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58121">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58121 - Canberra Rd - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 424A CP</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('856','1','12','58121','SMRT',false,'1','12');">856</a>, <a href="javascript:doViewBusIndex('859','1','5','58121','SMRT',false,'1','5');">859</a>, <a href="javascript:doViewBusIndex('981','1','5','58121','SMRT',false,'1','5');">981</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58121');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81929476185202,1.45329115486737</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58129">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58129 - Canberra Rd - B06</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 508 CP</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('856','2','27','58129','SMRT',true,'2','27');">856</a>, <a href="javascript:doViewBusIndex('859','2','20','58129','SMRT',true,'2','20');">859</a>, <a href="javascript:doViewBusIndex('981','2','17','58129','SMRT',true,'2','17');">981</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58129');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Woodlands Centre Road to Yishun Avenue 2','580');">580</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.8198821920911,1.45284216119403</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58151">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58151 - Canberra Rd - B03</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Sembawang Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','1','2','58151','SMRT',false,'1','2');">167</a>, <a href="javascript:doViewBusIndex('856','1','10','58151','SMRT',false,'1','10');">856</a>, <a href="javascript:doViewBusIndex('858','1','69','58151','SMRT',false,'1','69');">858</a>, <a href="javascript:doViewBusIndex('980','1','2','58151','SMRT',false,'1','2');">980</a>, <a href="javascript:doViewBusIndex('NR2','1','53','58151','SMRT',false,'1','53');">NR2</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58151');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82201343608213,1.44835904274406</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58159">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58159 - Canberra Rd - B04</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Admiral Hill</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','2','70','58159','SMRT',true,'2','70');">167</a>, <a href="javascript:doViewBusIndex('856','2','29','58159','SMRT',true,'2','29');">856</a>, <a href="javascript:doViewBusIndex('858','1','15','58159','SMRT',false,'1','15');">858</a>, <a href="javascript:doViewBusIndex('980','2','60','58159','SMRT',true,'2','60');">980</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58159');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82235611868522,1.44821708737482</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58211">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58211 - Sembawang Way - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Sembawang Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('858','1','70','58211','SMRT',false,'1','70');">858</a>, <a href="javascript:doViewBusIndex('859','2','22','58211','SMRT',true,'2','22');">859</a>, <a href="javascript:doViewBusIndex('882','1','22','58211','SMRT',false,'1','22');">882</a>, <a href="javascript:doViewBusIndex('981','2','19','58211','SMRT',true,'2','19');">981</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58211');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.81979401898032,1.44926202582359</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58219">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58219 - Sembawang Way - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Sembawang Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('858','1','14','58219','SMRT',false,'1','14');">858</a>, <a href="javascript:doViewBusIndex('859','1','3','58219','SMRT',false,'1','3');">859</a>, <a href="javascript:doViewBusIndex('882','1','3','58219','SMRT',false,'1','3');">882</a>, <a href="javascript:doViewBusIndex('981','1','3','58219','SMRT',false,'1','3');">981</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58219');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.8199297231716,1.44953463697186</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58221">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58221 - Sembawang Way</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 339 CP</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('858','1','71','58221','SMRT',false,'1','71');">858</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58221');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81706577986397,1.44859264769928</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58229">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58229 - Sembawang Way</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 358A CP</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('858','1','13','58229','SMRT',false,'1','13');">858</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58229');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.8168059210019,1.44875084068886</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58241">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58241 - Sembawang Vista - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 315</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','1','15','58241','SMRT',false,'1','15');">859</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58241');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82018490260376,1.44722064601498</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58249">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58249 - Sembawang Vista - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 309</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','2','10','58249','SMRT',true,'2','10');">859</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58249');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82118555599861,1.44711722202289</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58251">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58251 - Sembawang Dr - B06</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Sun Plaza</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','2','23','58251','SMRT',true,'2','23');">859</a>, <a href="javascript:doViewBusIndex('882','1','23','58251','SMRT',false,'1','23');">882</a>, <a href="javascript:doViewBusIndex('962','1','29','58251','SMRT',false,'1','29');">962</a>, <a href="javascript:doViewBusIndex('980','1','6','58251','SMRT',false,'1','6');">980</a>, <a href="javascript:doViewBusIndex('981','2','20','58251','SMRT',true,'2','20');">981</a>, <a href="javascript:doViewBusIndex('NR2','1','57','58251','SMRT',false,'1','57');">NR2</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58251');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81909041711005,1.4477802997152</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58259">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58259 - Sembawang Dr - B05</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Sun Plaza</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','1','2','58259','SMRT',false,'1','2');">859</a>, <a href="javascript:doViewBusIndex('882','1','2','58259','SMRT',false,'1','2');">882</a>, <a href="javascript:doViewBusIndex('962','1','18','58259','SMRT',false,'1','18');">962</a>, <a href="javascript:doViewBusIndex('980','2','56','58259','SMRT',true,'2','56');">980</a>, <a href="javascript:doViewBusIndex('981','1','2','58259','SMRT',false,'1','2');">981</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58259');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.8189065136093,1.4477583232887</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58271">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58271 - Sembawang Cres - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 335 </td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','1','11','58271','SMRT',false,'1','11');">859</a>, <a href="javascript:doViewBusIndex('962','1','14','58271','SMRT',false,'1','14');">962</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58271');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81470654183288,1.44702783502401</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58279">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58279 - Sembawang Cres - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 336A CP</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','2','14','58279','SMRT',true,'2','14');">859</a>, <a href="javascript:doViewBusIndex('962','1','33','58279','SMRT',false,'1','33');">962</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58279');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81460487842601,1.44671025812826</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58291">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58291 - Sembawang Dr - B04</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 317</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','2','11','58291','SMRT',true,'2','11');">859</a>, <a href="javascript:doViewBusIndex('962','1','30','58291','SMRT',false,'1','30');">962</a>, <a href="javascript:doViewBusIndex('980','1','7','58291','SMRT',false,'1','7');">980</a>, <a href="javascript:doViewBusIndex('NR2','1','58','58291','SMRT',false,'1','58');">NR2</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58291');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.8199449173096,1.44579319988216</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58299">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58299 - Sembawang Dr - B03</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 328</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','1','14','58299','SMRT',false,'1','14');">859</a>, <a href="javascript:doViewBusIndex('962','1','17','58299','SMRT',false,'1','17');">962</a>, <a href="javascript:doViewBusIndex('980','2','55','58299','SMRT',true,'2','55');">980</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58299');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81968463382916,1.44582915331137</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58311">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58311 - Sembawang Dr - B08</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 354 CP</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('962','1','28','58311','SMRT',false,'1','28');">962</a>, <a href="javascript:doViewBusIndex('980','1','5','58311','SMRT',false,'1','5');">980</a>, <a href="javascript:doViewBusIndex('NR2','1','56','58311','SMRT',false,'1','56');">NR2</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58311');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.81810459422103,1.4501979542693</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58319">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58319 - Sembawang Dr - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 357C</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('962','1','19','58319','SMRT',false,'1','19');">962</a>, <a href="javascript:doViewBusIndex('980','2','57','58319','SMRT',true,'2','57');">980</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58319');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.81802192152004,1.44976933938251</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58321">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58321 - Admiralty Dr - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bet Blks 357/359</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','1','10','58321','SMRT',false,'1','10');">859</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58321');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81614518346868,1.45020573824638</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58329">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58329 - Admiralty Dr</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 474</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','2','15','58329','SMRT',true,'2','15');">859</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58329');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81655964918443,1.45050186875947</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58331">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58331 - Canberra Link - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 589D</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','1','3','58331','SMRT',false,'1','3');">167</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58331');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Woodlands Centre Road to Yishun Avenue 2','580');">580</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82397609690102,1.44974129560526</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58339">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58339 - Canberra Link - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 589D</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','2','69','58339','SMRT',true,'2','69');">167</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58339');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82430573345592,1.44936138505812</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58341">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58341 - Sembawang Dr - B10</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 405</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','1','9','58341','SMRT',false,'1','9');">859</a>, <a href="javascript:doViewBusIndex('962','1','27','58341','SMRT',false,'1','27');">962</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58341');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.81687772159036,1.45267992935187</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58349">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58349 - Sembawang Dr - B09</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 478</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('859','2','16','58349','SMRT',true,'2','16');">859</a>, <a href="javascript:doViewBusIndex('962','1','20','58349','SMRT',false,'1','20');">962</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58349');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.81642343207659,1.45273139537549</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58421">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58421 - Admiralty Dr</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 353 </td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('980','1','4','58421','SMRT',false,'1','4');">980</a>, <a href="javascript:doViewBusIndex('NR2','1','55','58421','SMRT',false,'1','55');">NR2</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58421');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81902919989243,1.4513061244853</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58429">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58429 - Admiralty Dr</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bet Blks 415/416 </td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('980','2','58','58429','SMRT',true,'2','58');">980</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58429');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.81892529028816,1.45151629026328</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58481">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58481 - Wellington Circle</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Wellington Pr Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('882','1','5','58481','SMRT',false,'1','5');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58481');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82267933798676,1.45305905176825</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58489">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58489 - Wellington Circle</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Wellington Pr Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('882','1','20','58489','SMRT',false,'1','20');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58489');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82251092163827,1.45285946613506</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58491">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58491 - Montreal Dr</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 507A</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('882','1','6','58491','SMRT',false,'1','6');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58491');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82431343665893,1.45272174340224</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58499">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58499 - Montreal Dr</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 506A</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('882','1','19','58499','SMRT',false,'1','19');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58499');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82428769521943,1.45205869701978</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58501">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58501 - Montreal Link</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Montreal Dr</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('882','1','7','58501','SMRT',false,'1','7');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58501');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82708492151545,1.4507187825944</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="58509">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">58509 - Montreal Link</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Sembawang Rd</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('882','1','18','58509','SMRT',false,'1','18');">882</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('58509');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82696425665894,1.45059927113154</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="SB16">
+            <name><![CDATA[<div id="myPopupName">Blk 339 Sembawang Close</div>]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>Car Park Number: SB16</td></tr>
+<tr><td>Estimated Walking Duration: 5 Minutes</td></tr>
+<tr><td>Click <a href="javascript:doViewCarParkDetail('SB16');">here</a> to find more!</td></tr>
+</table>
+</div>
+]]></description>
+            <styleUrl>#PnRIcon</styleUrl>
+            <Point>
+                <coordinates>103.817611,1.448242</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="Sembawang">
+            <name><![CDATA[
+<div id="myPopupName">
+<table>
+<tr><td nowrap="nowrap" style="white-space: nowrap">NS11 Sembawang MRT</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap">11, Canberra Road</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td><table>
+<tr><td nowrap="nowrap" style="white-space: nowrap; text-align: left;"><a href="javascript:doViewMRT('NS1');">NS1</a> - Jurong East to Marina Bay</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap; text-align: left;"><a href="javascript:doViewMRT('NS2');">NS2</a> - Marina Bay to Jurong East</td></tr></table></td></tr>
+<tr><td style="text-align: right;"><a href="javascript:doViewSubwayExits('NS11');">Directions</a></td></tr><tr><td style="text-align: right;"><span id="popupTrainTimeTable"><a href="javascript:getTrainStationInfoPanel('43', 'Sembawang');">Train Timetable</a></span></td></tr>
+</table>
+</div>
+]]></description>
+            <styleUrl>#mrtIcon</styleUrl>
+            <Point>
+                <coordinates>103.820040634593,1.44900939848233</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

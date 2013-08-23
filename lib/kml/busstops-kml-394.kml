@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>BusStops</name>
+        <description/>
+        <Style id="busStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="mrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/mrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="lrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/lrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="PnRIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/pnr.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopPremiumIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="taxiStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/taxistop.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="parknride">
+            <LineStyle>
+                <color>d7792900</color>
+                <width>4.0</width>
+            </LineStyle>
+        </Style>
+        <Style id="colorBlock">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/block.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="96049">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96049 - Upp Changi Rd East - B10</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Tropicana Condo</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','1','20','96049','SBST',false,'1','20');">2</a>, <a href="javascript:doViewBusIndex('5','1','16','96049','SBST',false,'1','16');">5</a>, <a href="javascript:doViewBusIndex('24','1','56','96049','SBST',false,'1','56');">24</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96049');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.96127892061004,1.34041450268626</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96351">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96351 - Changi Sth Ave 4</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Geoservices</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('20','1','22','96351','SBST',false,'1','22');">20</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96351');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.97039204168856,1.33529647913206</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96361">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96361 - Changi Business Pk Ctrl 2</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Akzonobel</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('20','1','23','96361','SBST',false,'1','23');">20</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96361');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.96643704166183,1.33663743750927</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '593' 'Loh Gim Chong Transport' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.96387,1.33755</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '593' 'Loh Gim Chong Transport' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.96429,1.3358</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '740' 'Loh Gim Chong Transport' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.96597,1.33603</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '593' 'Loh Gim Chong Transport' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.96606,1.33702</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '593' 'Loh Gim Chong Transport' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.9661,1.33596</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '740' 'Loh Gim Chong Transport' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.96619,1.33695</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

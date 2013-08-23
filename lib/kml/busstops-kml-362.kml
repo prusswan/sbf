@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>BusStops</name>
+        <description/>
+        <Style id="busStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="mrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/mrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="lrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/lrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="PnRIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/pnr.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopPremiumIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="taxiStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/taxistop.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="parknride">
+            <LineStyle>
+                <color>d7792900</color>
+                <width>4.0</width>
+            </LineStyle>
+        </Style>
+        <Style id="colorBlock">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/block.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="">
+            <name/>
+            <description/>
+            <styleUrl>#taxiStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95731486085,1.33391020980021</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="I05">
+            <name><![CDATA[
+<div id="myPopupName">
+<table>
+<tr><td nowrap="nowrap" style="white-space: nowrap">I05&nbsp;-&nbsp;Stand</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap">New Upper Changi Road outside Tanah Merah MRT station (Ent A) <br/>(towards Bedok) </td></tr>
+</table>
+</div>
+]]>
+</name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>
+<table>
+<tr><td><b>Number of Lots:</b></td><td>2</td></tr>
+<tr><td><b>With Shelter:</b></td><td>Yes</td></tr>
+<tr><td><b>Barrier Free Access:</b></td><td>Yes</td></tr>
+</table></td></tr></table>
+</div>
+]]>
+</description>
+            <styleUrl>#taxiStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.946271977177,1.32680767718394</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="I06">
+            <name><![CDATA[
+<div id="myPopupName">
+<table>
+<tr><td nowrap="nowrap" style="white-space: nowrap">I06&nbsp;-&nbsp;Stand</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap">New Upper Changi Road outside Tanah Merah MRT station (Ent B) <br/>(towards Tampines) </td></tr>
+</table>
+</div>
+]]>
+</name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>
+<table>
+<tr><td><b>Number of Lots:</b></td><td>2</td></tr>
+<tr><td><b>With Shelter:</b></td><td>Yes</td></tr>
+<tr><td><b>Barrier Free Access:</b></td><td>Yes</td></tr>
+</table></td></tr></table>
+</div>
+]]>
+</description>
+            <styleUrl>#taxiStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.94596319775,1.32729181077614</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="84439">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">84439 - Bedok Nth Ave 4 - B09</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 3011</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('17','1','18','84439','SBST',false,'1','18');">17</a>, <a href="javascript:doViewBusIndex('48','2','53','84439','SBST',true,'2','53');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('84439');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95024017522437,1.33474732352614</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85049">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85049 - Bedok Rd - B08</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Man Fatt Lam Tp</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('10','1','10','85049','SBST',false,'1','10');">10</a>, <a href="javascript:doViewBusIndex('10e','1','1','85049','SBST',false,'1','1');">10e</a>, <a href="javascript:doViewBusIndex('14','1','10','85049','SBST',false,'1','10');">14</a>, <a href="javascript:doViewBusIndex('45','2','45','85049','SBST',true,'2','45');">45</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85049');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.95124872703616,1.32671998700111</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85051">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85051 - Bedok Rd - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Jln Chempaka Kuning</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','2','34','85051','SBST',true,'2','34');">2</a>, <a href="javascript:doViewBusIndex('9','1','7','85051','SBST',false,'1','7');">9</a>, <a href="javascript:doViewBusIndex('10','2','66','85051','SBST',true,'2','66');">10</a>, <a href="javascript:doViewBusIndex('48','2','49','85051','SBST',true,'2','49');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85051');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.94880115987219,1.32956968334939</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85059">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85059 - Bedok Rd - B10</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Jln Chempaka Kuning</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','1','27','85059','SBST',false,'1','27');">2</a>, <a href="javascript:doViewBusIndex('9','1','76','85059','SBST',false,'1','76');">9</a>, <a href="javascript:doViewBusIndex('10','1','9','85059','SBST',false,'1','9');">10</a>, <a href="javascript:doViewBusIndex('48','1','6','85059','SBST',false,'1','6');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85059');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.94906611097686,1.32950222197902</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85061">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85061 - Bedok Rd - B09</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Bedok Mkt Pl</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','2','35','85061','SBST',true,'2','35');">2</a>, <a href="javascript:doViewBusIndex('9','1','8','85061','SBST',false,'1','8');">9</a>, <a href="javascript:doViewBusIndex('10','2','67','85061','SBST',true,'2','67');">10</a>, <a href="javascript:doViewBusIndex('48','2','50','85061','SBST',true,'2','50');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85061');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.94735350449812,1.33150499798206</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85069">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85069 - Bedok Rd - B12</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bedok Mkt Pl</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','1','26','85069','SBST',false,'1','26');">2</a>, <a href="javascript:doViewBusIndex('9','1','75','85069','SBST',false,'1','75');">9</a>, <a href="javascript:doViewBusIndex('10','1','8','85069','SBST',false,'1','8');">10</a>, <a href="javascript:doViewBusIndex('48','1','5','85069','SBST',false,'1','5');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85069');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.9474077910704,1.33172434076631</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85071">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85071 - Upp Changi Rd - B01A</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Changi Fire Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','2','37','85071','SBST',true,'2','37');">2</a>, <a href="javascript:doViewBusIndex('9','1','10','85071','SBST',false,'1','10');">9</a>, <a href="javascript:doViewBusIndex('10','2','69','85071','SBST',true,'2','69');">10</a>, <a href="javascript:doViewBusIndex('48','2','52','85071','SBST',true,'2','52');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85071');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.9498516702887,1.33407653133395</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85079">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85079 - Upp Changi Rd - B04</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Flextronic</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','1','24','85079','SBST',false,'1','24');">2</a>, <a href="javascript:doViewBusIndex('9','1','73','85079','SBST',false,'1','73');">9</a>, <a href="javascript:doViewBusIndex('10','1','6','85079','SBST',false,'1','6');">10</a>, <a href="javascript:doViewBusIndex('48','1','3','85079','SBST',false,'1','3');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85079');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.9501523198666,1.33394889968504</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85081">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85081 - Upp Changi Rd - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Jln Pari Burong</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','2','36','85081','SBST',true,'2','36');">2</a>, <a href="javascript:doViewBusIndex('9','1','9','85081','SBST',false,'1','9');">9</a>, <a href="javascript:doViewBusIndex('10','2','68','85081','SBST',true,'2','68');">10</a>, <a href="javascript:doViewBusIndex('48','2','51','85081','SBST',true,'2','51');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85081');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.94719977411023,1.33292331447242</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85089">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85089 - Upp Changi Rd - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Jln Chempaka Kuning</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','1','25','85089','SBST',false,'1','25');">2</a>, <a href="javascript:doViewBusIndex('9','1','74','85089','SBST',false,'1','74');">9</a>, <a href="javascript:doViewBusIndex('10','1','7','85089','SBST',false,'1','7');">10</a>, <a href="javascript:doViewBusIndex('48','1','4','85089','SBST',false,'1','4');">48</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85089');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Simei / Upper Changi Road / Upper East Coast Road to Suntec City / Shenton Way','531');">531</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.94880327361744,1.33338002405472</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85091">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85091 - New Upp Changi Rd - B13</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Tanah Merah Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','2','33','85091','SBST',true,'2','33');">2</a>, <a href="javascript:doViewBusIndex('9','1','6','85091','SBST',false,'1','6');">9</a>, <a href="javascript:doViewBusIndex('12','2','41','85091','SBST',true,'2','41');">12</a>, <a href="javascript:doViewBusIndex('14','1','9','85091','SBST',false,'1','9');">14</a>, <a href="javascript:doViewBusIndex('24','1','37','85091','SBST',false,'1','37');">24</a>, <a href="javascript:doViewBusIndex('31','2','38','85091','SBST',true,'2','38');">31</a>, <a href="javascript:doViewBusIndex('35','1','6','85091','SBST',false,'1','6');">35</a>, <a href="javascript:doViewBusIndex('38','2','9','85091','SBST',true,'2','9');">38</a>, <a href="javascript:doViewBusIndex('45','2','44','85091','SBST',true,'2','44');">45</a>, <a href="javascript:doViewBusIndex('48','2','48','85091','SBST',true,'2','48');">48</a>, <a href="javascript:doViewBusIndex('NR7','1','66','85091','SMRT',false,'1','66');">NR7</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85091');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.94624769688932,1.32733332224244</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85099">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85099 - New Upp Changi Rd - B14</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Tanah Merah Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('2','1','28','85099','SBST',false,'1','28');">2</a>, <a href="javascript:doViewBusIndex('9','1','77','85099','SBST',false,'1','77');">9</a>, <a href="javascript:doViewBusIndex('12','1','20','85099','SBST',false,'1','20');">12</a>, <a href="javascript:doViewBusIndex('14','2','66','85099','SBST',true,'2','66');">14</a>, <a href="javascript:doViewBusIndex('24','1','61','85099','SBST',false,'1','61');">24</a>, <a href="javascript:doViewBusIndex('31','1','9','85099','SBST',false,'1','9');">31</a>, <a href="javascript:doViewBusIndex('35','1','19','85099','SBST',false,'1','19');">35</a>, <a href="javascript:doViewBusIndex('38','1','19','85099','SBST',false,'1','19');">38</a>, <a href="javascript:doViewBusIndex('45','1','6','85099','SBST',false,'1','6');">45</a>, <a href="javascript:doViewBusIndex('48','1','7','85099','SBST',false,'1','7');">48</a>, <a href="javascript:doViewBusIndex('NR7','1','123','85099','SMRT',false,'1','123');">NR7</a></td></tr>
+<tr><td class="ptp_only_hide_all"><a href="javascript:showArrivalResult('85099');">Click here</a> to see arrival time below.</td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85099');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopWArrivalIcon</styleUrl>
+            <Point>
+                <coordinates>103.94643008709222,1.32700618058139</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85101">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85101 - Upp Changi Rd East - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Bedok Rd</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('12','2','42','85101','SBST',true,'2','42');">12</a>, <a href="javascript:doViewBusIndex('24','1','38','85101','SBST',false,'1','38');">24</a>, <a href="javascript:doViewBusIndex('31','2','39','85101','SBST',true,'2','39');">31</a>, <a href="javascript:doViewBusIndex('38','2','10','85101','SBST',true,'2','10');">38</a>, <a href="javascript:doViewBusIndex('NR7','1','67','85101','SMRT',false,'1','67');">NR7</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85101');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95071705887575,1.32931499760121</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85109">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">85109 - Upp Changi Rd East - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Bedok Rd</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('12','1','19','85109','SBST',false,'1','19');">12</a>, <a href="javascript:doViewBusIndex('24','1','60','85109','SBST',false,'1','60');">24</a>, <a href="javascript:doViewBusIndex('31','1','8','85109','SBST',false,'1','8');">31</a>, <a href="javascript:doViewBusIndex('38','1','18','85109','SBST',false,'1','18');">38</a>, <a href="javascript:doViewBusIndex('NR7','1','122','85109','SMRT',false,'1','122');">NR7</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('85109');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95134864429271,1.32945523179761</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96011">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96011 - Upp Changi Rd East - B03</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Simei Ave</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('12','2','43','96011','SBST',true,'2','43');">12</a>, <a href="javascript:doViewBusIndex('24','1','39','96011','SBST',false,'1','39');">24</a>, <a href="javascript:doViewBusIndex('31','2','40','96011','SBST',true,'2','40');">31</a>, <a href="javascript:doViewBusIndex('38','2','11','96011','SBST',true,'2','11');">38</a>, <a href="javascript:doViewBusIndex('NR7','1','68','96011','SMRT',false,'1','68');">NR7</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96011');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95352118315932,1.33167611228954</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96019">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96019 - Upp Changi Rd East - B04</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Simei Ave</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('12','1','18','96019','SBST',false,'1','18');">12</a>, <a href="javascript:doViewBusIndex('24','1','59','96019','SBST',false,'1','59');">24</a>, <a href="javascript:doViewBusIndex('31','1','7','96019','SBST',false,'1','7');">31</a>, <a href="javascript:doViewBusIndex('38','1','17','96019','SBST',false,'1','17');">38</a>, <a href="javascript:doViewBusIndex('NR7','1','121','96019','SMRT',false,'1','121');">NR7</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96019');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95370361097966,1.33138833299802</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96021">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96021 - Upp Changi Rd East - B05</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Expo Halls 1/2/3</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('12','2','44','96021','SBST',true,'2','44');">12</a>, <a href="javascript:doViewBusIndex('24','1','40','96021','SBST',false,'1','40');">24</a>, <a href="javascript:doViewBusIndex('38','2','12','96021','SBST',true,'2','12');">38</a>, <a href="javascript:doViewBusIndex('NR7','1','69','96021','SMRT',false,'1','69');">NR7</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96021');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Flora Road to Anson Road','753');">753</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.95663722202137,1.33397805603359</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96029">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96029 - Upp Changi Rd East - B06</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Expo Halls 1/2/3 <span class="wab" title="Wheelchair Inaccessible" /></td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('12','1','17','96029','SBST',false,'1','17');">12</a>, <a href="javascript:doViewBusIndex('24','1','58','96029','SBST',false,'1','58');">24</a>, <a href="javascript:doViewBusIndex('38','1','16','96029','SBST',false,'1','16');">38</a>, <a href="javascript:doViewBusIndex('NR7','1','120','96029','SMRT',false,'1','120');">NR7</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96029');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Flora Road to Anson Road','753');">753</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.95620843074381,1.33324445552416</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96111">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96111 - Simei Ave - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Upp Changi Rd</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('31','2','41','96111','SBST',true,'2','41');">31</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96111');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95337833802823,1.33365307929022</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96119">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96119 - Simei Ave - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">ITE College East</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('31','1','6','96119','SBST',false,'1','6');">31</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96119');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.9537488312858,1.33373145315305</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96221">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96221 - Xilin Ave - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp S'pore Expo</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('35','1','16','96221','SBST',false,'1','16');">35</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96221');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95796397863708,1.33090140156137</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96229">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96229 - Xilin Ave - B08</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">S'pore Expo</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('35','1','9','96229','SBST',false,'1','9');">35</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96229');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.95799531596526,1.3312261583979</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96231">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96231 - Xilin Ave - B05</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">DB Schenker</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('35','1','15','96231','SBST',false,'1','15');">35</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96231');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.96086883190902,1.3300314164688</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96311">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96311 - Changi Sth Ave 1</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Yusen Logistics</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('20','1','18','96311','SBST',false,'1','18');">20</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96311');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.96096326094055,1.33311013046541</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="96319">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">96319 - Changi Sth Ave 1</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Yusen Logistics</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('20','1','26','96319','SBST',false,'1','26');">20</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('96319');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.96070747807285,1.33291926099689</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '724' 'Smart Destiny Pte Ltd' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.94712,1.32778</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="Tanah Merah">
+            <name><![CDATA[
+<div id="myPopupName">
+<table>
+<tr><td nowrap="nowrap" style="white-space: nowrap">EW4 Tanah Merah MRT</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap">920, New Upper Changi Road</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td><table>
+<tr><td nowrap="nowrap" style="white-space: nowrap; text-align: left;"><a href="javascript:doViewMRT('EW1');">EW1</a> - Changi Airport to Joo Koon</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap; text-align: left;"><a href="javascript:doViewMRT('EW2');">EW2</a> - Joo Koon to Pasir Ris/Changi Airport</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap; text-align: left;"><a href="javascript:doViewMRT('EW3');">EW3</a > - Pasir Ris to Joo Koon</td></tr></table></td></tr>
+<tr><td style="text-align: right;"><a href="javascript:doViewSubwayExits('EW4');">Directions</a></td></tr><tr><td style="text-align: right;"><span id="popupTrainTimeTable"><a href="javascript:getTrainStationInfoPanel('39', 'Tanah Merah');">Train Timetable</a></span></td></tr>
+</table>
+</div>
+]]></description>
+            <styleUrl>#mrtIcon</styleUrl>
+            <Point>
+                <coordinates>103.946388489446,1.32720246155582</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>BusStops</name>
+        <description/>
+        <Style id="busStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="mrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/mrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="lrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/lrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="PnRIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/pnr.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopPremiumIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="taxiStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/taxistop.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="parknride">
+            <LineStyle>
+                <color>d7792900</color>
+                <width>4.0</width>
+            </LineStyle>
+        </Style>
+        <Style id="colorBlock">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/block.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="FR3M">
+            <name><![CDATA[<div id="myPopupName">Blk 8A Empress Road</div>]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>Car Park Number: FR3M</td></tr>
+<tr><td>Estimated Walking Duration: 3 Minutes</td></tr>
+<tr><td>Click <a href="javascript:doViewCarParkDetail('FR3M');">here</a> to find more!</td></tr>
+</table>
+</div>
+]]></description>
+            <styleUrl>#parknride</styleUrl>
+            <LineString>
+                <coordinates>103.80637,1.31686 103.80652,1.317 103.80679,1.3167 103.80738,1.3173</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="H05">
+            <name><![CDATA[
+<div id="myPopupName">
+<table>
+<tr><td nowrap="nowrap" style="white-space: nowrap">H05&nbsp;-&nbsp;Stand</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap">Farrer Road outside Farrer Road CCL Station</td></tr>
+</table>
+</div>
+]]>
+</name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>
+<table>
+<tr><td><b>Number of Lots:</b></td><td>4</td></tr>
+<tr><td><b>With Shelter:</b></td><td>No</td></tr>
+<tr><td><b>Barrier Free Access:</b></td><td>No</td></tr>
+</table></td></tr></table>
+</div>
+]]>
+</description>
+            <styleUrl>#taxiStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.807223557845,1.31731582190959</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11091">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11091 - Farrer Rd - B11</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Tulip Gdn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('48','2','5','11091','SBST',true,'2','5');">48</a>, <a href="javascript:doViewBusIndex('93','1','17','11091','SBST',false,'1','17');">93</a>, <a href="javascript:doViewBusIndex('153','1','13','11091','SBST',false,'1','13');">153</a>, <a href="javascript:doViewBusIndex('165','2','15','11091','SBST',true,'2','15');">165</a>, <a href="javascript:doViewBusIndex('174','2','26','11091','SBST',true,'2','26');">174</a>, <a href="javascript:doViewBusIndex('186','1','23','11091','SBST',false,'1','23');">186</a>, <a href="javascript:doViewBusIndex('855','2','21','11091','SMRT',true,'2','21');">855</a>, <a href="javascript:doViewBusIndex('961','2','41','11091','SMRT',true,'2','41');">961</a>, <a href="javascript:doViewBusIndex('961C','2','42','11091','SMRT',true,'2','42');">961C</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11091');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.80367378215983,1.31219444050072</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11099">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11099 - Farrer Rd - B10</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Tulip Gdn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('5N','1','42','11099','SBST',false,'1','42');">5N</a>, <a href="javascript:doViewBusIndex('48','1','50','11099','SBST',false,'1','50');">48</a>, <a href="javascript:doViewBusIndex('93','2','40','11099','SBST',true,'2','40');">93</a>, <a href="javascript:doViewBusIndex('153','2','33','11099','SBST',true,'2','33');">153</a>, <a href="javascript:doViewBusIndex('165','1','44','11099','SBST',false,'1','44');">165</a>, <a href="javascript:doViewBusIndex('174','1','42','11099','SBST',false,'1','42');">174</a>, <a href="javascript:doViewBusIndex('186','2','23','11099','SBST',true,'2','23');">186</a>, <a href="javascript:doViewBusIndex('855','1','39','11099','SMRT',false,'1','39');">855</a>, <a href="javascript:doViewBusIndex('961','1','48','11099','SMRT',false,'1','48');">961</a>, <a href="javascript:doViewBusIndex('961C','1','48','11099','SMRT',false,'1','48');">961C</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11099');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Farrer Road/ Holland Road to Cecil Street / Fullerton Road','564');">564</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.80437666697586,1.31305333300118</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11101">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11101 - Farrer Rd - B09</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Farrer Rd Mkt</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('48','2','6','11101','SBST',true,'2','6');">48</a>, <a href="javascript:doViewBusIndex('93','1','18','11101','SBST',false,'1','18');">93</a>, <a href="javascript:doViewBusIndex('153','1','14','11101','SBST',false,'1','14');">153</a>, <a href="javascript:doViewBusIndex('165','2','16','11101','SBST',true,'2','16');">165</a>, <a href="javascript:doViewBusIndex('174','2','27','11101','SBST',true,'2','27');">174</a>, <a href="javascript:doViewBusIndex('186','1','24','11101','SBST',false,'1','24');">186</a>, <a href="javascript:doViewBusIndex('855','2','22','11101','SMRT',true,'2','22');">855</a>, <a href="javascript:doViewBusIndex('961','2','42','11101','SMRT',true,'2','42');">961</a>, <a href="javascript:doViewBusIndex('961C','2','43','11101','SMRT',true,'2','43');">961C</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11101');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.80596012189226,1.31614971080385</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11109">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11109 - Farrer Rd - B08</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Spanish Village</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('5N','1','41','11109','SBST',false,'1','41');">5N</a>, <a href="javascript:doViewBusIndex('48','1','49','11109','SBST',false,'1','49');">48</a>, <a href="javascript:doViewBusIndex('93','2','39','11109','SBST',true,'2','39');">93</a>, <a href="javascript:doViewBusIndex('153','2','32','11109','SBST',true,'2','32');">153</a>, <a href="javascript:doViewBusIndex('165','1','43','11109','SBST',false,'1','43');">165</a>, <a href="javascript:doViewBusIndex('174','1','41','11109','SBST',false,'1','41');">174</a>, <a href="javascript:doViewBusIndex('186','2','22','11109','SBST',true,'2','22');">186</a>, <a href="javascript:doViewBusIndex('855','1','38','11109','SMRT',false,'1','38');">855</a>, <a href="javascript:doViewBusIndex('961','1','47','11109','SMRT',false,'1','47');">961</a>, <a href="javascript:doViewBusIndex('961C','1','47','11109','SMRT',false,'1','47');">961C</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11109');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Farrer Road/ Holland Road to Cecil Street / Fullerton Road','564');">564</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.80574305602846,1.31552472199926</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11111">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11111 - Farrer Rd - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Farrer Rd Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('48','2','7','11111','SBST',true,'2','7');">48</a>, <a href="javascript:doViewBusIndex('93','1','19','11111','SBST',false,'1','19');">93</a>, <a href="javascript:doViewBusIndex('153','1','15','11111','SBST',false,'1','15');">153</a>, <a href="javascript:doViewBusIndex('165','2','17','11111','SBST',true,'2','17');">165</a>, <a href="javascript:doViewBusIndex('174','2','28','11111','SBST',true,'2','28');">174</a>, <a href="javascript:doViewBusIndex('186','1','25','11111','SBST',false,'1','25');">186</a>, <a href="javascript:doViewBusIndex('855','2','23','11111','SMRT',true,'2','23');">855</a>, <a href="javascript:doViewBusIndex('961','2','43','11111','SMRT',true,'2','43');">961</a>, <a href="javascript:doViewBusIndex('961C','2','44','11111','SMRT',true,'2','44');">961C</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11111');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.80771866952543,1.31780157259006</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11119">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11119 - Farrer Rd - B06</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Farrer Rd Stn</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('5N','1','40','11119','SBST',false,'1','40');">5N</a>, <a href="javascript:doViewBusIndex('48','1','48','11119','SBST',false,'1','48');">48</a>, <a href="javascript:doViewBusIndex('93','2','38','11119','SBST',true,'2','38');">93</a>, <a href="javascript:doViewBusIndex('153','2','31','11119','SBST',true,'2','31');">153</a>, <a href="javascript:doViewBusIndex('165','1','42','11119','SBST',false,'1','42');">165</a>, <a href="javascript:doViewBusIndex('174','1','40','11119','SBST',false,'1','40');">174</a>, <a href="javascript:doViewBusIndex('186','2','21','11119','SBST',true,'2','21');">186</a>, <a href="javascript:doViewBusIndex('855','1','37','11119','SMRT',false,'1','37');">855</a>, <a href="javascript:doViewBusIndex('961','1','46','11119','SMRT',false,'1','46');">961</a>, <a href="javascript:doViewBusIndex('961C','1','46','11119','SMRT',false,'1','46');">961C</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11119');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Farrer Road/ Holland Road to Cecil Street / Fullerton Road','564');">564</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.80785606728587,1.31747833490912</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11219">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11219 - Holland Rd - B06</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Great Eastern Mans</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('7','2','14','11219','SBST',true,'2','14');">7</a>, <a href="javascript:doViewBusIndex('75','1','35','11219','SMRT',false,'1','35');">75</a>, <a href="javascript:doViewBusIndex('77','1','31','11219','SMRT',false,'1','31');">77</a>, <a href="javascript:doViewBusIndex('105','2','29','11219','SBST',true,'2','29');">105</a>, <a href="javascript:doViewBusIndex('106','1','24','11219','SMRT',false,'1','24');">106</a>, <a href="javascript:doViewBusIndex('123','1','14','11219','SBST',false,'1','14');">123</a>, <a href="javascript:doViewBusIndex('174','1','44','11219','SBST',false,'1','44');">174</a>, <a href="javascript:doViewBusIndex('NR8','1','86','11219','SMRT',false,'1','86');">NR8</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11219');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Farrer Road/ Holland Road to Cecil Street / Fullerton Road','564');">564</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.80724260054822,1.30988030201744</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11221">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11221 - Holland Rd - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Lien Twrs</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('7','1','44','11221','SBST',false,'1','44');">7</a>, <a href="javascript:doViewBusIndex('75','2','27','11221','SMRT',true,'2','27');">75</a>, <a href="javascript:doViewBusIndex('77','2','21','11221','SMRT',true,'2','21');">77</a>, <a href="javascript:doViewBusIndex('105','1','30','11221','SBST',false,'1','30');">105</a>, <a href="javascript:doViewBusIndex('106','2','28','11221','SMRT',true,'2','28');">106</a>, <a href="javascript:doViewBusIndex('123','1','64','11221','SBST',false,'1','64');">123</a>, <a href="javascript:doViewBusIndex('174','2','25','11221','SBST',true,'2','25');">174</a>, <a href="javascript:doViewBusIndex('NR8','1','29','11221','SMRT',false,'1','29');">NR8</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11221');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.80544413357042,1.31002225322358</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11229">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11229 - Holland Rd - B08</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Les Jardins de Holland</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('7','2','13','11229','SBST',true,'2','13');">7</a>, <a href="javascript:doViewBusIndex('75','1','34','11229','SMRT',false,'1','34');">75</a>, <a href="javascript:doViewBusIndex('77','1','30','11229','SMRT',false,'1','30');">77</a>, <a href="javascript:doViewBusIndex('105','2','28','11229','SBST',true,'2','28');">105</a>, <a href="javascript:doViewBusIndex('106','1','23','11229','SMRT',false,'1','23');">106</a>, <a href="javascript:doViewBusIndex('123','1','13','11229','SBST',false,'1','13');">123</a>, <a href="javascript:doViewBusIndex('174','1','43','11229','SBST',false,'1','43');">174</a>, <a href="javascript:doViewBusIndex('NR8','1','85','11229','SMRT',false,'1','85');">NR8</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11229');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Farrer Road/ Holland Road to Cecil Street / Fullerton Road','564');">564</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.80522542227166,1.31060065879064</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11231">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11231 - Holland Rd - B09</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Estoril Mans</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('5N','1','43','11231','SBST',false,'1','43');">5N</a>, <a href="javascript:doViewBusIndex('7','1','45','11231','SBST',false,'1','45');">7</a>, <a href="javascript:doViewBusIndex('48','1','51','11231','SBST',false,'1','51');">48</a>, <a href="javascript:doViewBusIndex('75','2','28','11231','SMRT',true,'2','28');">75</a>, <a href="javascript:doViewBusIndex('77','2','22','11231','SMRT',true,'2','22');">77</a>, <a href="javascript:doViewBusIndex('106','2','29','11231','SMRT',true,'2','29');">106</a>, <a href="javascript:doViewBusIndex('165','1','45','11231','SBST',false,'1','45');">165</a>, <a href="javascript:doViewBusIndex('NR8','1','30','11231','SMRT',false,'1','30');">NR8</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11231');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.80119919777994,1.31115316310297</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11239">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">11239 - Holland Rd - B10</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Fairlodge </td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('7','2','12','11239','SBST',true,'2','12');">7</a>, <a href="javascript:doViewBusIndex('48','2','4','11239','SBST',true,'2','4');">48</a>, <a href="javascript:doViewBusIndex('75','1','33','11239','SMRT',false,'1','33');">75</a>, <a href="javascript:doViewBusIndex('77','1','29','11239','SMRT',false,'1','29');">77</a>, <a href="javascript:doViewBusIndex('106','1','22','11239','SMRT',false,'1','22');">106</a>, <a href="javascript:doViewBusIndex('165','2','14','11239','SBST',true,'2','14');">165</a>, <a href="javascript:doViewBusIndex('NR8','1','84','11239','SMRT',false,'1','84');">NR8</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('11239');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.80165517330278,1.31152857401616</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="FR3M">
+            <name><![CDATA[<div id="myPopupName">Blk 8A Empress Road</div>]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td>Car Park Number: FR3M</td></tr>
+<tr><td>Estimated Walking Duration: 3 Minutes</td></tr>
+<tr><td>Click <a href="javascript:doViewCarParkDetail('FR3M');">here</a> to find more!</td></tr>
+</table>
+</div>
+]]></description>
+            <styleUrl>#PnRIcon</styleUrl>
+            <Point>
+                <coordinates>103.80618,1.31671</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="Farrer Road">
+            <name><![CDATA[
+<div id="myPopupName">
+<table>
+<tr><td nowrap="nowrap" style="white-space: nowrap">CC20 Farrer Road MRT</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap">71, Farrer Road</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc">
+<table>
+<tr><td><table>
+<tr><td nowrap="nowrap" style="white-space: nowrap; text-align: left;"><a href="javascript:doViewMRT('CC1');">CC1</a> - Dhoby Ghaut to Harbourfront</td></tr>
+<tr><td nowrap="nowrap" style="white-space: nowrap; text-align: left;"><a href="javascript:doViewMRT('CC2');">CC2</a> - Harbourfront to Dhoby Ghaut</td></tr></table></td></tr>
+<tr><td style="text-align: right;"><a href="javascript:doViewSubwayExits('CC20');">Directions</a></td></tr><tr><td style="text-align: right;"><span id="popupTrainTimeTable"><a href="javascript:getTrainStationInfoPanel('122', 'Farrer Road');">Train Timetable</a></span></td></tr>
+</table>
+</div>
+]]></description>
+            <styleUrl>#mrtIcon</styleUrl>
+            <Point>
+                <coordinates>103.807427548941,1.31758823272553</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

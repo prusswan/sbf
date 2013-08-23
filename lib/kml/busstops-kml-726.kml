@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>BusStops</name>
+        <description/>
+        <Style id="busStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="mrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/mrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="lrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/lrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="PnRIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/pnr.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopPremiumIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="taxiStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/taxistop.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="parknride">
+            <LineStyle>
+                <color>d7792900</color>
+                <width>4.0</width>
+            </LineStyle>
+        </Style>
+        <Style id="colorBlock">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/block.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="57111">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">57111 - Sembawang Rd - B15</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 101 <span class="wab" title="Wheelchair Inaccessible" /></td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','2','64','57111','SMRT',true,'2','64');">167</a>, <a href="javascript:doViewBusIndex('856','1','4','57111','SMRT',false,'1','4');">856</a>, <a href="javascript:doViewBusIndex('858','1','63','57111','SMRT',false,'1','63');">858</a>, <a href="javascript:doViewBusIndex('859','2','4','57111','SMRT',true,'2','4');">859</a>, <a href="javascript:doViewBusIndex('969','2','18','57111','SMRT',true,'2','18');">969</a>, <a href="javascript:doViewBusIndex('980','2','49','57111','SMRT',true,'2','49');">980</a></td></tr>
+<tr><td class="ptp_only_hide_all"><a href="javascript:showArrivalResult('57111');">Click here</a> to see arrival time below.</td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('57111');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopWArrivalIcon</styleUrl>
+            <Point>
+                <coordinates>103.82654938929034,1.43123622644607</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="57119">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">57119 - Sembawang Rd - B16</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 101</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','1','8','57119','SMRT',false,'1','8');">167</a>, <a href="javascript:doViewBusIndex('800','1','10','57119','SMRT',false,'1','10');">800</a>, <a href="javascript:doViewBusIndex('811','1','56','57119','SMRT',false,'1','56');">811</a>, <a href="javascript:doViewBusIndex('856','2','35','57119','SMRT',true,'2','35');">856</a>, <a href="javascript:doViewBusIndex('858','1','21','57119','SMRT',false,'1','21');">858</a>, <a href="javascript:doViewBusIndex('859','1','21','57119','SMRT',false,'1','21');">859</a>, <a href="javascript:doViewBusIndex('969','1','11','57119','SMRT',false,'1','11');">969</a>, <a href="javascript:doViewBusIndex('980','1','13','57119','SMRT',false,'1','13');">980</a></td></tr>
+<tr><td class="ptp_only_hide_all"><a href="javascript:showArrivalResult('57119');">Click here</a> to see arrival time below.</td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('57119');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixWArrivalIcon</styleUrl>
+            <Point>
+                <coordinates>103.82688773076856,1.43130257113028</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="57121">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">57121 - Sembawang Rd - B17</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 115B</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','2','65','57121','SMRT',true,'2','65');">167</a>, <a href="javascript:doViewBusIndex('856','1','5','57121','SMRT',false,'1','5');">856</a>, <a href="javascript:doViewBusIndex('858','1','64','57121','SMRT',false,'1','64');">858</a>, <a href="javascript:doViewBusIndex('859','2','5','57121','SMRT',true,'2','5');">859</a>, <a href="javascript:doViewBusIndex('969','2','19','57121','SMRT',true,'2','19');">969</a>, <a href="javascript:doViewBusIndex('980','2','50','57121','SMRT',true,'2','50');">980</a></td></tr>
+<tr><td class="ptp_only_hide_all"><a href="javascript:showArrivalResult('57121');">Click here</a> to see arrival time below.</td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('57121');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixWArrivalIcon</styleUrl>
+            <Point>
+                <coordinates>103.82631132424072,1.43345083292583</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="57129">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">57129 - Sembawang Rd - B18</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 114</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('167','1','7','57129','SMRT',false,'1','7');">167</a>, <a href="javascript:doViewBusIndex('800','1','9','57129','SMRT',false,'1','9');">800</a>, <a href="javascript:doViewBusIndex('811','1','55','57129','SMRT',false,'1','55');">811</a>, <a href="javascript:doViewBusIndex('856','2','34','57129','SMRT',true,'2','34');">856</a>, <a href="javascript:doViewBusIndex('858','1','20','57129','SMRT',false,'1','20');">858</a>, <a href="javascript:doViewBusIndex('859','1','20','57129','SMRT',false,'1','20');">859</a>, <a href="javascript:doViewBusIndex('969','1','10','57129','SMRT',false,'1','10');">969</a>, <a href="javascript:doViewBusIndex('980','1','12','57129','SMRT',false,'1','12');">980</a></td></tr>
+<tr><td class="ptp_only_hide_all"><a href="javascript:showArrivalResult('57129');">Click here</a> to see arrival time below.</td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('57129');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixWArrivalIcon</styleUrl>
+            <Point>
+                <coordinates>103.82641445936885,1.43418656873084</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59111">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59111 - Yishun Ave 5 - B04</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 701</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('171','1','3','59111','SMRT',false,'1','3');">171</a>, <a href="javascript:doViewBusIndex('856','1','3','59111','SMRT',false,'1','3');">856</a>, <a href="javascript:doViewBusIndex('858','1','62','59111','SMRT',false,'1','62');">858</a>, <a href="javascript:doViewBusIndex('859','2','3','59111','SMRT',true,'2','3');">859</a>, <a href="javascript:doViewBusIndex('969','2','17','59111','SMRT',true,'2','17');">969</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59111');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82888452126694,1.43016395103424</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59119">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59119 - Yishun Ave 5 - B05</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 701A</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('171','2','70','59119','SMRT',true,'2','70');">171</a>, <a href="javascript:doViewBusIndex('811','1','57','59119','SMRT',false,'1','57');">811</a>, <a href="javascript:doViewBusIndex('856','2','36','59119','SMRT',true,'2','36');">856</a>, <a href="javascript:doViewBusIndex('858','1','22','59119','SMRT',false,'1','22');">858</a>, <a href="javascript:doViewBusIndex('859','1','22','59119','SMRT',false,'1','22');">859</a>, <a href="javascript:doViewBusIndex('969','1','12','59119','SMRT',false,'1','12');">969</a></td></tr>
+<tr><td class="ptp_only_hide_all"><a href="javascript:showArrivalResult('59119');">Click here</a> to see arrival time below.</td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59119');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sembawang Drive / Yishun to Changi Business Park','740');">740</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixWArrivalIcon</styleUrl>
+            <Point>
+                <coordinates>103.82794865433573,1.43037444021889</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59121">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59121 - Yishun Ring Rd - B20</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 121</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('1N','1','67','59121','SBST',false,'1','67');">1N</a>, <a href="javascript:doViewBusIndex('812','1','16','59121','SMRT',false,'1','16');">812</a>, <a href="javascript:doViewBusIndex('NR1','1','86','59121','SMRT',false,'1','86');">NR1</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59121');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Yishun Ring Road to Cecil Street / Fullerton Road','558');">558</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82999668990018,1.43453851053761</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59129">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59129 - Yishun Ring Rd - B19</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 121</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('800','1','15','59129','SMRT',false,'1','15');">800</a>, <a href="javascript:doViewBusIndex('812','1','29','59129','SMRT',false,'1','29');">812</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59129');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.830267560125,1.43490004260739</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59131">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59131 - Yishun Ring Rd - B22</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 137</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('1N','1','68','59131','SBST',false,'1','68');">1N</a>, <a href="javascript:doViewBusIndex('812','1','17','59131','SMRT',false,'1','17');">812</a>, <a href="javascript:doViewBusIndex('NR1','1','87','59131','SMRT',false,'1','87');">NR1</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59131');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Yishun Ring Road to Cecil Street / Fullerton Road','558');">558</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82969184791156,1.43192545956112</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59139">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59139 - Yishun Ring Rd - B21</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Chong Pang CC</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('800','1','14','59139','SMRT',false,'1','14');">800</a>, <a href="javascript:doViewBusIndex('812','1','28','59139','SMRT',false,'1','28');">812</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59139');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.82955664267413,1.43140749331253</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59271">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59271 - Yishun Ave 7 - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 118</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('800','1','8','59271','SMRT',false,'1','8');">800</a>, <a href="javascript:doViewBusIndex('811','1','54','59271','SMRT',false,'1','54');">811</a>, <a href="javascript:doViewBusIndex('965','1','46','59271','SMRT',false,'1','46');">965</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59271');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Yishun Avenue 7 to Airport Road','581');">581</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.82855161345292,1.4362831713903</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59279">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59279 - Yishun Ave 7 - B08</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Ahmad Ibrahim Sec Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('965','1','10','59279','SMRT',false,'1','10');">965</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59279');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Yishun Avenue 7 to Airport Road','581');">581</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.8288049642525,1.43670438744279</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59301">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">59301 - Yishun Ring Rd - B24</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 731</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('1N','1','69','59301','SBST',false,'1','69');">1N</a>, <a href="javascript:doViewBusIndex('812','1','18','59301','SMRT',false,'1','18');">812</a>, <a href="javascript:doViewBusIndex('NR1','1','88','59301','SMRT',false,'1','88');">NR1</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('59301');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Yishun Ring Road to Cecil Street / Fullerton Road','558');">558</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.8305483297094,1.42857438462559</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

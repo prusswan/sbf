@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>BusStops</name>
+        <description/>
+        <Style id="busStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopMixWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_premium_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopWArrivalIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/bus_arr.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="mrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/mrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="lrtIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/lrt.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="PnRIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/pnr.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="busStopPremiumIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/premium.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="taxiStopIcon">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/taxistop.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="parknride">
+            <LineStyle>
+                <color>d7792900</color>
+                <width>4.0</width>
+            </LineStyle>
+        </Style>
+        <Style id="colorBlock">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>/img/block.gif</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="53161">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53161 - Marymount Rd - B14</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 254</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('13','2','59','53161','SBST',true,'2','59');">13</a>, <a href="javascript:doViewBusIndex('74','2','42','53161','SBST',true,'2','42');">74</a>, <a href="javascript:doViewBusIndex('74e','2','42','53161','SBST',true,'2','27');">74e</a>, <a href="javascript:doViewBusIndex('88','2','12','53161','SBST',true,'2','12');">88</a>, <a href="javascript:doViewBusIndex('130','2','38','53161','SBST',true,'2','38');">130</a>, <a href="javascript:doViewBusIndex('851','2','36','53161','SMRT',true,'2','36');">851</a>, <a href="javascript:doViewBusIndex('852','2','33','53161','SMRT',true,'2','33');">852</a>, <a href="javascript:doViewBusIndex('NR1','1','56','53161','SMRT',false,'1','56');">NR1</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53161');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.84214462138529,1.36221142414319</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53169">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53169 - Marymount Rd - B13</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 254</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('13','1','7','53169','SBST',false,'1','7');">13</a>, <a href="javascript:doViewBusIndex('74','1','23','53169','SBST',false,'1','23');">74</a>, <a href="javascript:doViewBusIndex('74e','1','23','53169','SBST',false,'1','23');">74e</a>, <a href="javascript:doViewBusIndex('88','1','39','53169','SBST',false,'1','39');">88</a>, <a href="javascript:doViewBusIndex('851','1','20','53169','SMRT',false,'1','20');">851</a>, <a href="javascript:doViewBusIndex('852','1','19','53169','SMRT',false,'1','19');">852</a>, <a href="javascript:doViewBusIndex('NR1','1','109','53169','SMRT',false,'1','109');">NR1</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53169');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.84248787868405,1.36213468684692</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53201">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53201 - Sin Ming Dr - B03</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Semac</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('130','2','36','53201','SBST',true,'2','36');">130</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53201');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83850250682744,1.36128501070806</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53209">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53209 - Sin Ming Dr - B04</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Semac <span class="wab" title="Wheelchair Inaccessible" /></td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('130','1','5','53209','SBST',false,'1','5');">130</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53209');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83852670989133,1.36099828733018</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53321">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53321 - Sin Ming Ave - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">CityCab</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','1','7','53321','SBST',false,'1','7');">52</a>, <a href="javascript:doViewBusIndex('130','1','4','53321','SBST',false,'1','4');">130</a>, <a href="javascript:doViewBusIndex('162','1','15','53321','SBST',false,'1','15');">162</a>, <a href="javascript:doViewBusIndex('162M','1','15','53321','SBST',false,'1','15');">162M</a>, <a href="javascript:doViewBusIndex('410','1','6','53321','SBST',false,'1','6');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53321');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.84029472198131,1.36135000000011</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53329">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53329 - Sin Ming Ave - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp CityCab</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','2','43','53329','SBST',true,'2','43');">52</a>, <a href="javascript:doViewBusIndex('130','2','37','53329','SBST',true,'2','37');">130</a>, <a href="javascript:doViewBusIndex('162','2','39','53329','SBST',true,'2','39');">162</a>, <a href="javascript:doViewBusIndex('162M','1','83','53329','SBST',false,'1','83');">162M</a>, <a href="javascript:doViewBusIndex('410','2','18','53329','SBST',true,'2','18');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53329');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sin Ming Avenue to Shenton Way','588');">588</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.84049549859829,1.36153970079158</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53331">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53331 - Sin Ming Ave - B04</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bef Bright Hill Tp</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','1','8','53331','SBST',false,'1','8');">52</a>, <a href="javascript:doViewBusIndex('162','1','16','53331','SBST',false,'1','16');">162</a>, <a href="javascript:doViewBusIndex('162M','1','16','53331','SBST',false,'1','16');">162M</a>, <a href="javascript:doViewBusIndex('410','1','7','53331','SBST',false,'1','7');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53331');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83701277802122,1.36285472197724</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53339">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53339 - Sin Ming Ave - B03</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Bright Hill Tp</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','2','42','53339','SBST',true,'2','42');">52</a>, <a href="javascript:doViewBusIndex('162','2','38','53339','SBST',true,'2','38');">162</a>, <a href="javascript:doViewBusIndex('162M','1','82','53339','SBST',false,'1','82');">162M</a>, <a href="javascript:doViewBusIndex('410','2','17','53339','SBST',true,'2','17');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53339');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sin Ming Avenue to Shenton Way','588');">588</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.8367836110905,1.36312998205072</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53341">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53341 - Sin Ming Ave - B06</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 407</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','1','9','53341','SBST',false,'1','9');">52</a>, <a href="javascript:doViewBusIndex('162','1','17','53341','SBST',false,'1','17');">162</a>, <a href="javascript:doViewBusIndex('162M','1','17','53341','SBST',false,'1','17');">162M</a>, <a href="javascript:doViewBusIndex('410','1','8','53341','SBST',false,'1','8');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53341');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83394166697735,1.36355638900203</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53349">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53349 - Sin Ming Ave - B05</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Bishan Pk Sec Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','2','41','53349','SBST',true,'2','41');">52</a>, <a href="javascript:doViewBusIndex('162','2','37','53349','SBST',true,'2','37');">162</a>, <a href="javascript:doViewBusIndex('162M','1','81','53349','SBST',false,'1','81');">162M</a>, <a href="javascript:doViewBusIndex('410','2','16','53349','SBST',true,'2','16');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53349');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sin Ming Avenue to Shenton Way','588');">588</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.83370361100309,1.36362111099313</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53351">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53351 - Sin Ming Ave - B08</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Ai Tong Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','1','10','53351','SBST',false,'1','10');">52</a>, <a href="javascript:doViewBusIndex('162','1','18','53351','SBST',false,'1','18');">162</a>, <a href="javascript:doViewBusIndex('162M','1','18','53351','SBST',false,'1','18');">162M</a>, <a href="javascript:doViewBusIndex('410','1','9','53351','SBST',false,'1','9');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53351');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83211750001261,1.36080972198475</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53359">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">53359 - Sin Ming Ave - B07</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Ai Tong Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('52','2','40','53359','SBST',true,'2','40');">52</a>, <a href="javascript:doViewBusIndex('162','2','36','53359','SBST',true,'2','36');">162</a>, <a href="javascript:doViewBusIndex('162M','1','80','53359','SBST',false,'1','80');">162M</a>, <a href="javascript:doViewBusIndex('410','2','15','53359','SBST',true,'2','15');">410</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('53359');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Sin Ming Avenue to Shenton Way','588');">588</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.83196166697407,1.36125666702141</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54011">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54011 - Ang Mo Kio Ave 6 - B01</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 207</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('13','2','60','54011','SBST',true,'2','60');">13</a>, <a href="javascript:doViewBusIndex('74','2','43','54011','SBST',true,'2','43');">74</a>, <a href="javascript:doViewBusIndex('88','2','13','54011','SBST',true,'2','13');">88</a>, <a href="javascript:doViewBusIndex('130','2','39','54011','SBST',true,'2','39');">130</a>, <a href="javascript:doViewBusIndex('133','2','38','54011','SBST',true,'2','38');">133</a>, <a href="javascript:doViewBusIndex('136','2','39','54011','SBST',true,'2','39');">136</a>, <a href="javascript:doViewBusIndex('851','2','37','54011','SMRT',true,'2','37');">851</a>, <a href="javascript:doViewBusIndex('852','2','34','54011','SMRT',true,'2','34');">852</a>, <a href="javascript:doViewBusIndex('NR1','1','57','54011','SMRT',false,'1','57');">NR1</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54011');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.84341042482097,1.36567044820875</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54019">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54019 - Ang Mo Kio Ave 6 - B02</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Aft Blk 304</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('13','1','6','54019','SBST',false,'1','6');">13</a>, <a href="javascript:doViewBusIndex('74','1','22','54019','SBST',false,'1','22');">74</a>, <a href="javascript:doViewBusIndex('88','1','38','54019','SBST',false,'1','38');">88</a>, <a href="javascript:doViewBusIndex('130','1','3','54019','SBST',false,'1','3');">130</a>, <a href="javascript:doViewBusIndex('133','1','3','54019','SBST',false,'1','3');">133</a>, <a href="javascript:doViewBusIndex('136','1','3','54019','SBST',false,'1','3');">136</a>, <a href="javascript:doViewBusIndex('851','1','19','54019','SMRT',false,'1','19');">851</a>, <a href="javascript:doViewBusIndex('852','1','18','54019','SMRT',false,'1','18');">852</a>, <a href="javascript:doViewBusIndex('NR1','1','108','54019','SMRT',false,'1','108');">NR1</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54019');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.84418333302729,1.36618666697727</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54061">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54061 - Ang Mo Kio Ave 1 - B15</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 246</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('132','2','36','54061','SBST',true,'2','36');">132</a>, <a href="javascript:doViewBusIndex('165','2','37','54061','SBST',true,'2','37');">165</a>, <a href="javascript:doViewBusIndex('166','2','63','54061','SBST',true,'2','63');">166</a>, <a href="javascript:doViewBusIndex('169','1','48','54061','SMRT',false,'1','48');">169</a>, <a href="javascript:doViewBusIndex('262','1','15','54061','SBST',false,'1','15');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54061');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Ang Mo Kio Avenue 2 to Cecil Street / Fullerton Road','761');">761</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.83404076959498,1.36728801688172</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54069">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54069 - Ang Mo Kio Ave 1 - B16</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 246</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('132','1','20','54069','SBST',false,'1','20');">132</a>, <a href="javascript:doViewBusIndex('165','1','21','54069','SBST',false,'1','21');">165</a>, <a href="javascript:doViewBusIndex('166','1','6','54069','SBST',false,'1','6');">166</a>, <a href="javascript:doViewBusIndex('169','2','6','54069','SMRT',true,'2','6');">169</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54069');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83405562626137,1.36691997150676</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54071">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54071 - Ang Mo Kio Ave 1 - B09</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 310 <span class="wab" title="Wheelchair Inaccessible" /></td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('133','1','4','54071','SBST',false,'1','4');">133</a>, <a href="javascript:doViewBusIndex('136','1','4','54071','SBST',false,'1','4');">136</a>, <a href="javascript:doViewBusIndex('262','1','18','54071','SBST',false,'1','18');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54071');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Ang Mo Kio Avenue 2 to Cecil Street / Fullerton Road','761');">761</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.84490672378502,1.36433664907741</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54079">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54079 - Ang Mo Kio Ave 1 - B10</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 315</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('133','2','37','54079','SBST',true,'2','37');">133</a>, <a href="javascript:doViewBusIndex('136','2','38','54079','SBST',true,'2','38');">136</a>, <a href="javascript:doViewBusIndex('262','1','7','54079','SBST',false,'1','7');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54079');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.84585916699372,1.36389805596869</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54211">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54211 - Ang Mo Kio Ave 3 - B23</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Mayflower Sec Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('132','2','37','54211','SBST',true,'2','37');">132</a>, <a href="javascript:doViewBusIndex('165','2','38','54211','SBST',true,'2','38');">165</a>, <a href="javascript:doViewBusIndex('166','2','64','54211','SBST',true,'2','64');">166</a>, <a href="javascript:doViewBusIndex('169','1','49','54211','SMRT',false,'1','49');">169</a>, <a href="javascript:doViewBusIndex('262','1','10','54211','SBST',false,'1','10');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54211');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83634833298527,1.36861222198461</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54219">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54219 - Ang Mo Kio Ave 3 - B24</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Mayflower Sec Sch</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('132','1','19','54219','SBST',false,'1','19');">132</a>, <a href="javascript:doViewBusIndex('165','1','20','54219','SBST',false,'1','20');">165</a>, <a href="javascript:doViewBusIndex('166','1','5','54219','SBST',false,'1','5');">166</a>, <a href="javascript:doViewBusIndex('169','2','5','54219','SMRT',true,'2','5');">169</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54219');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83679395921905,1.36880777071199</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54248">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54248 - Ang Mo Kio Ave 3 - B18A</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 324</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('1N','1','36','54248','SBST',false,'1','36');">1N</a>, <a href="javascript:doViewBusIndex('74','1','21','54248','SBST',false,'1','21');">74</a>, <a href="javascript:doViewBusIndex('74e','1','21','54248','SBST',false,'1','21');">74e</a>, <a href="javascript:doViewBusIndex('76','1','88','54248','SBST',false,'1','88');">76</a>, <a href="javascript:doViewBusIndex('88','1','37','54248','SBST',false,'1','37');">88</a>, <a href="javascript:doViewBusIndex('130','1','2','54248','SBST',false,'1','2');">130</a>, <a href="javascript:doViewBusIndex('132','1','16','54248','SBST',false,'1','16');">132</a>, <a href="javascript:doViewBusIndex('133','1','2','54248','SBST',false,'1','2');">133</a>, <a href="javascript:doViewBusIndex('136','1','2','54248','SBST',false,'1','2');">136</a>, <a href="javascript:doViewBusIndex('165','1','17','54248','SBST',false,'1','17');">165</a>, <a href="javascript:doViewBusIndex('166','1','2','54248','SBST',false,'1','2');">166</a>, <a href="javascript:doViewBusIndex('265','1','31','54248','SBST',false,'1','31');">265</a>, <a href="javascript:doViewBusIndex('268','1','36','54248','SBST',false,'1','36');">268</a>, <a href="javascript:doViewBusIndex('269','1','2','54248','SBST',false,'1','2');">269</a>, <a href="javascript:doViewBusIndex('CT8','2','13','54248','SBST',false,'2','13');">CT8</a></td></tr>
+<tr><td class="ptp_only_hide_all"><a href="javascript:showArrivalResult('54248');">Click here</a> to see arrival time below.</td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54248');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopWArrivalIcon</styleUrl>
+            <Point>
+                <coordinates>103.84661006967286,1.36875490594243</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54611">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54611 - Ang Mo Kio Ave 1 - B11</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 220</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('262','1','17','54611','SBST',false,'1','17');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54611');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Ang Mo Kio Avenue 2 to Cecil Street / Fullerton Road','761');">761</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.84057417396242,1.36489470522366</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54619">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54619 - Ang Mo Kio Ave 1 - B12</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 220</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('262','1','8','54619','SBST',false,'1','8');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54619');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.84050288513411,1.36467168386173</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54621">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54621 - Ang Mo Kio Ave 1 - B13</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 223</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('262','1','16','54621','SBST',false,'1','16');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54621');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Ang Mo Kio Avenue 2 to Cecil Street / Fullerton Road','761');">761</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.83773071305599,1.36595331171712</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="54629">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">54629 - Ang Mo Kio Ave 1 - B14</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 223</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('262','1','9','54629','SBST',false,'1','9');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('54629');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83801666007233,1.3655880696456</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="56261">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">56261 - Ang Mo Kio Ave 1 - B17</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Blk 248</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('132','2','35','56261','SBST',true,'2','35');">132</a>, <a href="javascript:doViewBusIndex('165','2','36','56261','SBST',true,'2','36');">165</a>, <a href="javascript:doViewBusIndex('166','2','62','56261','SBST',true,'2','62');">166</a>, <a href="javascript:doViewBusIndex('169','1','47','56261','SMRT',false,'1','47');">169</a>, <a href="javascript:doViewBusIndex('262','1','14','56261','SBST',false,'1','14');">262</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('56261');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+<tr><td class="ptp_only_hide_link"><b>Premium Bus Service No: </b></td></tr>
+<tr><td class="ptp_only_hide_link"><a href="javascript:doShowPremium('Ang Mo Kio Avenue 2 to Cecil Street / Fullerton Road','761');">761</a></td></tr></table></div>
+]]></description>
+            <styleUrl>#busStopMixIcon</styleUrl>
+            <Point>
+                <coordinates>103.83172738576756,1.36786219023986</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="56269">
+            <name><![CDATA[
+<div id="myPopupName" name="busstops-kml">
+<table>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">56269 - Ang Mo Kio Ave 1 - B18</td></tr>
+<tr><td colspan="1" nowrap="nowrap" style="white-space: nowrap">Opp Blk 248</td></tr>
+</table>
+</div>
+]]></name>
+            <description><![CDATA[
+<div id="myPopupDesc" align="left">
+<table style="border-collapse: collapse;">
+<tr><td><b>Bus Service No:</b></td></tr>
+<tr><td><a href="javascript:doViewBusIndex('132','1','21','56269','SBST',false,'1','21');">132</a>, <a href="javascript:doViewBusIndex('165','1','22','56269','SBST',false,'1','22');">165</a>, <a href="javascript:doViewBusIndex('166','1','7','56269','SBST',false,'1','7');">166</a>, <a href="javascript:doViewBusIndex('169','2','7','56269','SMRT',true,'2','7');">169</a></td></tr>
+<tr><td><a href="javascript:doViewRoadIndex('56269');">View Road Index</a></td></tr>
+<tr><td><a href="javascript:doViewFareTable();">View Fare Table</a></td></tr>
+</table></div>
+]]></description>
+            <styleUrl>#busStopIcon</styleUrl>
+            <Point>
+                <coordinates>103.83233403239235,1.36741835425889</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '-P9' 'The MCST Plan No. 2011' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.83115,1.36539</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[<!-- '-P6' 'The MCST Plan No. 2917' -->]]></name>
+            <description/>
+            <styleUrl>#busStopPremiumIcon</styleUrl>
+            <Point>
+                <coordinates>103.83119,1.36513</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
