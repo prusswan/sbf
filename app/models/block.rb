@@ -1,5 +1,6 @@
 class Block < ActiveRecord::Base
   has_many :units, -> { order(:no) }
+  has_many :quotas, -> { order(:flat_type) }
 
   belongs_to :estate
 
@@ -78,6 +79,7 @@ class Block < ActiveRecord::Base
 
     configure :estate, :belongs_to_association
     configure :units, :has_many_association
+    configure :quotas, :has_many_association
 
     # Found columns:
 
@@ -139,6 +141,7 @@ class Block < ActiveRecord::Base
       field :delivery_date
       field :lease_start
       field :ethnic_quota
+      field :quotas
       field :units
     end
 

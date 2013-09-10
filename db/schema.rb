@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910145656) do
+ActiveRecord::Schema.define(version: 20130910151554) do
 
   create_table "blocks", force: true do |t|
     t.string   "no",            null: false

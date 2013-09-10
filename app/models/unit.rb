@@ -15,6 +15,7 @@ class Unit < ActiveRecord::Base
 
     configure :estate, :has_one_association
     configure :block, :belongs_to_association
+    configure :quota, :belongs_to_association
 
     # Found columns:
 
@@ -101,9 +102,15 @@ class Unit < ActiveRecord::Base
         sortable Block.sql_by_lease_start
         column_width 50
       end
-      field :ethnic_quota do
-        pretty_value { bindings[:object].block.short_ethnic_quota }
-        sortable 'blocks.ethnic_quota'
+
+      # field :ethnic_quota do
+      #   pretty_value { bindings[:object].block.short_ethnic_quota }
+      #   sortable 'blocks.ethnic_quota'
+      #   column_width 25
+      # end
+
+      field :quota do
+        pretty_value { bindings[:object].quota.summary }
         column_width 50
       end
     end

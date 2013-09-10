@@ -39,6 +39,25 @@ class Estate < ActiveRecord::Base
       field :blocks
     end
 
+    show do
+      field :id
+      field :name
+      field :total do
+        pretty_value do
+          e = bindings[:object]
+          r = Quota.where(block_id: e.blocks).select('flat_type, sum(malay) as m, sum(chinese) as c, sum(others) as o').group(:flat_type)
+          h = Hash.new
+          r.each do |q|
+            h[q.flat_type] = [q.m,q.c,q.o]
+          end
+
+          "#{bindings[:object].total} #{h}"
+        end
+      end
+      field :blocks
+      field :units
+    end
+
     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
     # using `field` instead of `configure` will exclude all other fields and force the ordering
