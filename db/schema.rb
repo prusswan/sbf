@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722105351) do
+ActiveRecord::Schema.define(version: 20130910145656) do
 
   create_table "blocks", force: true do |t|
     t.string   "no",            null: false
@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(version: 20130722105351) do
 
   add_index "estates", ["name"], name: "index_estates_on_name", unique: true, using: :btree
 
+  create_table "quota", force: true do |t|
+    t.string   "flat_type",  null: false
+    t.integer  "malay",      null: false
+    t.integer  "chinese",    null: false
+    t.integer  "others",     null: false
+    t.integer  "block_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quota", ["block_id"], name: "index_quota_on_block_id", using: :btree
+  add_index "quota", ["flat_type", "block_id"], name: "index_quota_on_flat_type_and_block_id", unique: true, using: :btree
+
   create_table "units", force: true do |t|
     t.string   "no",         null: false
     t.string   "flat_type",  null: false
@@ -45,10 +58,12 @@ ActiveRecord::Schema.define(version: 20130722105351) do
     t.datetime "updated_at"
     t.integer  "price",      null: false
     t.integer  "area",       null: false
+    t.integer  "quota_id",   null: false
   end
 
   add_index "units", ["block_id"], name: "index_units_on_block_id", using: :btree
   add_index "units", ["flat_type"], name: "index_units_on_flat_type", using: :btree
   add_index "units", ["no", "block_id"], name: "index_units_on_no_and_block_id", unique: true, using: :btree
+  add_index "units", ["quota_id"], name: "index_units_on_quota_id", using: :btree
 
 end

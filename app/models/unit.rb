@@ -1,6 +1,7 @@
 class Unit < ActiveRecord::Base
   belongs_to :block
   belongs_to :flat_block, foreign_key: :block_id, class_name: 'Block'
+  belongs_to :quota
 
   # not intuitive, but this works better with rails_admin than delegate
   has_one :estate, through: :flat_block
