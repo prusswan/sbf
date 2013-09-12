@@ -6,8 +6,8 @@ class Ability
     can :dashboard
 
     can :read, :all
-    can :edit, Quota
-    can :update, Quota
+    # can :edit, Quota
+    # can :update, Quota
 
     # Define abilities for the passed in user here. For example:
     #

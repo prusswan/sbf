@@ -4,11 +4,6 @@ class Block < ActiveRecord::Base
 
   belongs_to :estate
 
-  def short_ethnic_quota
-    r = ethnic_quota.match /(\d+)\D+(\d+)\D+(\d+)/
-    "M:#{r[1]},C:#{r[2]},I/O:#{r[3]}"
-  end
-
   def address
     "#{no} #{street}"
   end
@@ -89,7 +84,6 @@ class Block < ActiveRecord::Base
     configure :probable_date, :string
     configure :delivery_date, :string
     configure :lease_start, :string
-    configure :ethnic_quota, :string
     configure :created_at, :datetime
     configure :updated_at, :datetime
     configure :estate_id, :integer         # Hidden
@@ -125,7 +119,7 @@ class Block < ActiveRecord::Base
         column_width 100
         sortable Block.sql_by_lease_start
       end
-      field :ethnic_quota
+      field :quotas
     end
 
     show do
@@ -140,7 +134,6 @@ class Block < ActiveRecord::Base
       field :probable_date
       field :delivery_date
       field :lease_start
-      field :ethnic_quota
       field :quotas
       field :units
     end

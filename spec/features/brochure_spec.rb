@@ -5,12 +5,19 @@ describe "BrochureSpecs" do
   details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
-  block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :ethnic_quota, :estate_id]
+  block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :estate_id]
   unit_fields = [:price, :area, :flat_type]
 
   def find_block_info(item)
     text = item.split[0]
     page.find(:xpath, "//td[@class='textLabelNew' and contains(.,'#{text}')]/following-sibling::td[1]").text
+  end
+
+  quota_fields = ['malay','chinese','others','flat_type','block_id']
+
+  def parse_quota(quota_str)
+    r = quota_str.match /(\d+)\D+(\d+)\D+(\d+)/
+    r[1..3].map(&:to_i)
   end
 
   before do
@@ -23,6 +30,9 @@ describe "BrochureSpecs" do
       puts "Estate: #{estate.name}"
 
       next if estate.units.count == estate.total
+      # next unless ['Bukit Panjang', 'Choa Chu Kang', 'Hougang', 'Jurong East',
+      #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
+      #   .include?(estate.name)
 
       while all('#titletwn', text: estate.name).count == 0 do
         within('div#cssdrivemenu1') do
@@ -35,7 +45,7 @@ describe "BrochureSpecs" do
             end
           end
 
-          link = find_link(estate)
+          link = find_link(estate.name)
           # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
 
           link.click
@@ -80,23 +90,32 @@ describe "BrochureSpecs" do
               end
 
               block_info = ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
-                'Lease Commencement Date', 'Available Ethnic Quota'].map do |item|
+                'Lease Commencement Date'].map do |item|
                 # puts "#{item}: #{find_block_info(item)}"
                 find_block_info(item)
               end << estate.id
 
+              quota_str = find_block_info('Available Ethnic Quota')
+
               block_hash = Hash[block_fields.zip(block_info)]
               block = Block.where(no: block_hash[:no], street: block_hash[:street]).first_or_create(block_hash)
+
+              quota_info = parse_quota(quota_str) << flat_type << block.id
+              quota_hash = Hash[quota_fields.zip(quota_info)]
+              quota = Quota.where(flat_type: flat_type, block_id: block.id).first_or_create(quota_hash)
+              # quota.update_attributes(quota_hash) # to update existing quotas with wrong values
+              # p quota.inspect
 
               unit_nos = page.all(:xpath, "//td[contains(.,'Mouseover unit number')]/ancestor::table[1]/following-sibling::table//font")
               puts "Units: #{unit_nos.count}"
 
               unit_nos.map(&:text).each do |unit|
                 unit_info = page.all(:xpath, "//font[contains(.,'#{unit}')]/ancestor::td[1]/div[1]//td")
-                                .map(&:text).map{|v| v.gsub(/\D/,'').to_i} << flat_type
+                                .map(&:text).map{|v| v.gsub(/\D/,'').to_i} << flat_type << quota.id
 
                 unit_hash = Hash[unit_fields.zip(unit_info)]
                 unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
+                unit.update_attribute(:quota_id, quota.id)
                 p unit_info
               end
             end

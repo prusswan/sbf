@@ -51,6 +51,8 @@ group :development, :test do
 
   gem 'mysql2'
 
+  gem 'protected_attributes'
+
   # for pushing db seed to heroku
   gem 'heroku'
   gem 'taps'
@@ -62,7 +64,6 @@ group :development do
   gem 'guard-rspec'
 
   gem 'seed_dump'
-  gem 'protected_attributes'
 end
 
 group :production do

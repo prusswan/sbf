@@ -6,7 +6,7 @@ class Unit < ActiveRecord::Base
   # not intuitive, but this works better with rails_admin than delegate
   has_one :estate, through: :flat_block
 
-  delegate :probable_date, :delivery_date, :lease_start, :ethnic_quota, to: :flat_block
+  delegate :probable_date, :delivery_date, :lease_start, to: :flat_block
 
   default_scope { joins(:estate) }
 
@@ -31,7 +31,6 @@ class Unit < ActiveRecord::Base
     configure :probable_date, :string
     configure :delivery_date, :string
     configure :lease_start, :string
-    configure :ethnic_quota, :string
 
     # Cross-section configuration:
 

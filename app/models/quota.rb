@@ -3,11 +3,13 @@ class Quota < ActiveRecord::Base
   has_many :units
 
   has_one :estate, through: :block
-  # default_scope { joins(:estate).readonly(false) }
 
-  attr_accessible :malay, :chinese, :others
+  # Warning: default_scope + join breaks update of records: https://github.com/rails/rails/issues/11199
+  default_scope { joins(:estate).readonly(false) }
 
-  include ActiveModel::ForbiddenAttributesProtection
+  # attr_accessible :malay, :chinese, :others
+
+  # include ActiveModel::ForbiddenAttributesProtection
 
   def summary
     "M:#{malay},C:#{chinese},I/O:#{others}"
@@ -21,7 +23,7 @@ class Quota < ActiveRecord::Base
     object_label_method :full_summary
 
     list do
-      # filters [:estate, :flat_type]
+      filters [:estate, :flat_type]
       # sort_by :estate
 
       field :estate, :enum do
@@ -31,9 +33,9 @@ class Quota < ActiveRecord::Base
         enum do
           Estate.all.map(&:name).uniq.to_a
         end
-        # sortable "estates.name, flat_type, #{Block.sql_by_address}"
-        # searchable 'estates.name'
-        # queryable :true
+        sortable "estates.name, flat_type, #{Block.sql_by_address}"
+        searchable 'estates.name'
+        queryable :true
 
         column_width 50
       end
@@ -69,10 +71,10 @@ class Quota < ActiveRecord::Base
       end
     end
 
-    edit do
-      field :malay
-      field :chinese
-      field :others
-    end
+    # edit do
+    #   field :malay
+    #   field :chinese
+    #   field :others
+    # end
   end
 end

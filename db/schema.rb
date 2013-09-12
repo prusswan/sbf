@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910151554) do
+ActiveRecord::Schema.define(version: 20130912181314) do
 
   create_table "blocks", force: true do |t|
     t.string   "no",            null: false
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20130910151554) do
     t.string   "probable_date"
     t.string   "delivery_date", null: false
     t.string   "lease_start",   null: false
-    t.string   "ethnic_quota",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "estate_id",     null: false

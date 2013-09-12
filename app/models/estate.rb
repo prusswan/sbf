@@ -34,7 +34,11 @@ class Estate < ActiveRecord::Base
       sort_by :name           # Sort column (default is primary key)
       # sort_reverse true     # Sort direction (default is true for primary key, last created first)
 
-      field :name
+      field :name do
+        pretty_value do
+          bindings[:view].link_to bindings[:object].name, bindings[:view].rails_admin.show_path(:estate, bindings[:object])
+        end
+      end
       field :total
       field :blocks
     end
