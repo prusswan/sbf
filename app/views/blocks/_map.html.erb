@@ -12,12 +12,15 @@ type="text/javascript"></script>
   var infowindow = new google.maps.InfoWindow();
   var OneMap;
   var mashup;
+  var address = "<%= address %>";
 
   var themeGraphicsLayer;
   var gra;
 
+  var omResults;
+
   function initialize() {
-    var yourAddress = "<%= address %>, Singapore";
+    var yourAddress = address + ", Singapore";
     var geocoder = new google.maps.Geocoder();
 
     var mapOptions;
@@ -286,15 +289,42 @@ type="text/javascript"></script>
       mashup.GetMashupData(overlayData)
   }
 
-  function createMap() {
+
+  function addressSearch() {
     var centerPoint="28968.103,33560.969"
+
+    var basicSearch = new BasicSearch;
+    basicSearch.searchVal = address;
+    basicSearch.returnGeom = 1;
+    basicSearch.GetSearchResults(function(resultData) {
+      var results = resultData.results;
+      console.log(results,'om_results')
+      omResults = results;
+      if (results=='No results'){
+        return false
+      }
+      else {
+        var row = results[0];
+        centerPoint=row.X+','+row.Y;
+      }
+      createMap(centerPoint);
+      if (!(typeof row === 'undefined')) {
+        OneMap.showLocation(parseFloat(row.X),parseFloat(row.Y));
+      }
+    });
+    // dojo.addOnLoad(createMap);
+  }
+
+  function createMap(center) {
     var levelNumber=8;
 
-    OneMap = new GetOneMap('div_onemap','SM',{level:levelNumber,center:centerPoint});
+    OneMap = new GetOneMap('div_onemap','SM',{level:levelNumber,center:center});
     dojo.addOnLoad(OverlayTheme);
   }
 
-  dojo.addOnLoad(createMap);
+  dojo.addOnLoad(addressSearch);
+  //dojo.addOnLoad(createMap);
+  //OneMap.showLocation(omResults[0].X,omResults[0].Y);
 
 </script>
 

@@ -8,6 +8,13 @@ class Block < ActiveRecord::Base
     "#{no} #{street}"
   end
 
+  def long_address
+    address
+      .gsub('Rd','Road')
+      .gsub('Nth','North')
+      .gsub('Ave','Avenue')
+  end
+
   class << self
     def sort_by_delivery_date(collection=self.all)
       collection.sort { |a,b| compare_delivery_date(a,b) }
@@ -127,7 +134,7 @@ class Block < ActiveRecord::Base
       field :address do
         pretty_value do
           ac = ActionController::Base.new()
-          ac.render_to_string(partial: 'blocks/map', layout: false, locals: {address: bindings[:object].address}).html_safe
+          ac.render_to_string(partial: 'blocks/map', layout: false, locals: {address: bindings[:object].long_address}).html_safe
         end
       end
 
