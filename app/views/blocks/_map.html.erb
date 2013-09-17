@@ -1,15 +1,21 @@
-<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false"
-type="text/javascript"></script>
+<% content_for :head do %>
 
-<!-- script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.8"></script -->
-<script type='text/JavaScript' src="http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full"></script>
+  <!-- script src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false" type="text/javascript"></script -->
+
+  <!-- script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.8"></script -->
+  <!-- script type='text/JavaScript' src="http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full"></script -->
+  <!-- script src="http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/default.js" type="text/javascript"></script -->
+  <!-- %= javascript_include_tag 'onemap' % -->
+
+<% end %>
 
 <div><%= address %></div>
 <div id="map_canvas" style="width: 100%; height: 1000px;"></div>
 <div id="div_onemap" style="width: 100%; height: 1000px;"></div>
 
 <script type="text/javascript">
-  var infowindow = new google.maps.InfoWindow();
+  // var _OneMapGlobalToken = "KUWmLBEUle8AfnRqj2x1V7Pi06pXTwLdlNu94ltLSB0iqtypbv0/WWUxdoh0t0QxakK93PVbieR1OTBHQ3qxcaiWGbsfj3aj";
+  var infowindow;
   var OneMap;
   var mashup;
   var address = "<%= address %>";
@@ -20,10 +26,13 @@ type="text/javascript"></script>
   var omResults;
 
   function initialize() {
+    // alert("loaded!");
     var yourAddress = address + ", Singapore";
     var geocoder = new google.maps.Geocoder();
 
     var mapOptions;
+
+    infowindow = new google.maps.InfoWindow();
 
     geocoder.geocode({
       address: yourAddress
@@ -58,6 +67,10 @@ type="text/javascript"></script>
       service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
     });
+
+    // alert(google);
+    // alert(dojo);
+    // dojo.addOnLoad(addressSearch);
   }
 
   function callback(results, status) {
@@ -222,7 +235,81 @@ type="text/javascript"></script>
     }
   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  function loadScript() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = 'http://maps.googleapis.com/maps/api/js?v=3&libraries=places&sensor=false&callback=initialize';
+    document.body.appendChild(script);
+
+    // $.getScript("http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full", function(data) {
+    //   eval(data);
+    //   window.dojo.addOnLoad(addressSearch);
+    // });
+
+    var script2 = document.createElement("script");
+    script2.type = "text/javascript";
+    script2.src = "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full";
+    //script2.src = "<%= asset_path('onemap.js') %>";
+    document.body.appendChild(script2);
+
+    var script3 = document.createElement("script");
+    script3.type = "text/javascript";
+    // script2.src = "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full";
+    script3.src = "http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/default.js";
+    document.body.appendChild(script3);
+
+
+    script3.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') this.onload({ target: this }); };
+
+    script3.onload = function(load) {
+      /*init code here*/
+      // alert(dojo);
+       dojo.addOnLoad(addressSearch);
+    };
+
+    // jQuery.ajax({
+    //     async:false,
+    //     type:'GET',
+    //     url: "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full",
+    //     data:null,
+    //     success: om_success,
+    //     dataType:'script'
+    // });
+  }
+
+
+  window.onload = loadScript;
+  $('body').bind('pjax:end',loadScript);
+  // $('body').bind('pjax:end',dojo.addOnLoad(addressSearch));
+  $(document).bind('ready', function() {
+    // loadScript;
+
+  });
+
+
+
+  // $(document).bind('pjax:success', function() {
+  //   jQuery.ajax({
+  //       async:false,
+  //       type:'GET',
+  //       url: "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full",
+  //       data:null,
+  //       success: om_success,
+  //       dataType:'script'
+  //   });
+  // });
+  //   loadScript;
+  //   //google.maps.event.addDomListener(window, 'load', initialize);
+  //   dojo.addOnLoad(addressSearch);
+  // });
+
+  // $(document).bind('pjax:popstate', function() {
+  //    $(document).bind('pjax:end', function(event) {
+  //         $(event.target).find('script').each(function() {
+  //             $.globalEval(this.text || this.textContent || this.innerHTML || '');
+  //         })
+  //    });
+  // });
 
   function OverlayTheme(){
     // debugger;
@@ -322,7 +409,7 @@ type="text/javascript"></script>
     dojo.addOnLoad(OverlayTheme);
   }
 
-  dojo.addOnLoad(addressSearch);
+
   //dojo.addOnLoad(createMap);
   //OneMap.showLocation(omResults[0].X,omResults[0].Y);
 

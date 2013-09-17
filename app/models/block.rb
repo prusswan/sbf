@@ -13,6 +13,7 @@ class Block < ActiveRecord::Base
       .gsub('Rd','Road')
       .gsub('Nth','North')
       .gsub('Ave','Avenue')
+      .gsub('St','Street')
   end
 
   class << self
@@ -133,8 +134,8 @@ class Block < ActiveRecord::Base
       field :estate
       field :address do
         pretty_value do
-          ac = ActionController::Base.new()
-          ac.render_to_string(partial: 'blocks/map', layout: false, locals: {address: bindings[:object].long_address}).html_safe
+          # inline javascript for loading of libraries should be placed in <head>
+          bindings[:view].render :partial => 'blocks/map', :locals => {address: bindings[:object].long_address}
         end
       end
 
