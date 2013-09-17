@@ -4,6 +4,8 @@ class Block < ActiveRecord::Base
 
   belongs_to :estate
 
+  default_scope { includes(:quotas).joins(:estate) }
+
   def address
     "#{no} #{street}"
   end
