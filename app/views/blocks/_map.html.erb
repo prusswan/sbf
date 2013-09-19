@@ -6,11 +6,14 @@
   <!-- script type='text/JavaScript' src="http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full"></script -->
   <!-- script src="http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/default.js" type="text/javascript"></script -->
   <!-- %= javascript_include_tag 'onemap' % -->
+  <!-- link rel="stylesheet" type="text/css" href="http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/dojo/dijit/themes/tundra/tundra.css"/ -->
 <% end %>
 
 <div id="address"><%= address %></div>
 <div id="map_canvas" style="width: 100%; height: 1000px;"></div>
-<div id="div_onemap" style="width: 100%; height: 1000px;"></div>
+<div class="tundra">
+  <div id="div_onemap" style="width: 100%; height: 1000px;"></div>
+</div>
 
 <script type="text/javascript">
   // var _OneMapGlobalToken = "KUWmLBEUle8AfnRqj2x1V7Pi06pXTwLdlNu94ltLSB0iqtypbv0/WWUxdoh0t0QxakK93PVbieR1OTBHQ3qxcaiWGbsfj3aj";
