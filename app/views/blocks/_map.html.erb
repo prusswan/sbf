@@ -25,7 +25,95 @@
 
   var omResults;
 
-  function initialize() {
+
+  function loadScript(entry) {
+    // alert(entry + $('#div_onemap').length + typeof dojo + $('#map_canvas').length + typeof google);
+
+    if (typeof google === 'undefined') {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = 'http://maps.googleapis.com/maps/api/js?v=3&libraries=places&sensor=false&callback=initGMap';
+      document.body.appendChild(script);
+    } else {
+      initGMap();
+    }
+
+    // $.getScript("http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full", function(data) {
+    //   eval(data);
+    //   window.dojo.addOnLoad(addressSearch);
+    // });
+
+    if (typeof dojo === 'undefined') {
+      var script2 = document.createElement("script");
+      script2.type = "text/javascript";
+      script2.src = "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full";
+      // below is the local version of onemap for debugging without interference of jquery conflicts,
+      // as the original embeds jquery 1.3.2
+      script2.src = "<%= asset_path('onemap.js') %>";
+      document.body.appendChild(script2);
+
+      var script3 = document.createElement("script");
+      script3.type = "text/javascript";
+      script3.src = "http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/default.js";
+      document.body.appendChild(script3);
+
+
+      script3.onreadystatechange = function() {
+        if (this.readyState == 'complete' || this.readyState == 'loaded') this.onload({ target: this });
+      };
+
+      script3.onload = function(load) {
+        /*init code here*/
+        dojo.addOnLoad(initOneMap);
+      };
+    } else {
+      dojo.addOnLoad(initOneMap);
+    }
+
+    // jQuery.ajax({
+    //     async:false,
+    //     type:'GET',
+    //     url: "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full",
+    //     data:null,
+    //     success: om_success,
+    //     dataType:'script'
+    // });
+  }
+
+  //window.onload = loadScript('window');
+  $('body').bind('pjax:end',loadScript('pjax:end'));
+  // $('body').bind('pjax:end',dojo.addOnLoad(addressSearch));
+
+
+  // $(document).bind('pjax:success', function() {
+  //   jQuery.ajax({
+  //       async:false,
+  //       type:'GET',
+  //       url: "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full",
+  //       data:null,
+  //       success: om_success,
+  //       dataType:'script'
+  //   });
+  // });
+  //   loadScript;
+  //   //google.maps.event.addDomListener(window, 'load', initialize);
+  //   dojo.addOnLoad(addressSearch);
+  // });
+
+  // $(document).bind('pjax:popstate', function() {
+  //    $(document).bind('pjax:end', function(event) {
+  //         $(event.target).find('script').each(function() {
+  //             $.globalEval(this.text || this.textContent || this.innerHTML || '');
+  //         })
+  //    });
+  // });
+
+
+  /*
+    methods for Google Maps
+  */
+
+  function initGMap() {
     // alert("loaded!");
     var yourAddress = address + ", Singapore";
     var geocoder = new google.maps.Geocoder();
@@ -235,81 +323,10 @@
     }
   }
 
-  function loadScript() {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = 'http://maps.googleapis.com/maps/api/js?v=3&libraries=places&sensor=false&callback=initialize';
-    document.body.appendChild(script);
 
-    // $.getScript("http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full", function(data) {
-    //   eval(data);
-    //   window.dojo.addOnLoad(addressSearch);
-    // });
-
-    var script2 = document.createElement("script");
-    script2.type = "text/javascript";
-    script2.src = "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full";
-    //script2.src = "<%= asset_path('onemap.js') %>";
-    document.body.appendChild(script2);
-
-    var script3 = document.createElement("script");
-    script3.type = "text/javascript";
-    // script2.src = "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full";
-    script3.src = "http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/default.js";
-    document.body.appendChild(script3);
-
-
-    script3.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') this.onload({ target: this }); };
-
-    script3.onload = function(load) {
-      /*init code here*/
-      // alert(dojo);
-       dojo.addOnLoad(addressSearch);
-    };
-
-    // jQuery.ajax({
-    //     async:false,
-    //     type:'GET',
-    //     url: "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full",
-    //     data:null,
-    //     success: om_success,
-    //     dataType:'script'
-    // });
-  }
-
-
-  window.onload = loadScript;
-  $('body').bind('pjax:end',loadScript);
-  // $('body').bind('pjax:end',dojo.addOnLoad(addressSearch));
-  $(document).bind('ready', function() {
-    // loadScript;
-
-  });
-
-
-
-  // $(document).bind('pjax:success', function() {
-  //   jQuery.ajax({
-  //       async:false,
-  //       type:'GET',
-  //       url: "http://www.onemap.sg/API/JS?accessKEY=<%= Settings.onemap_api_key %>&v=2.8&type=full",
-  //       data:null,
-  //       success: om_success,
-  //       dataType:'script'
-  //   });
-  // });
-  //   loadScript;
-  //   //google.maps.event.addDomListener(window, 'load', initialize);
-  //   dojo.addOnLoad(addressSearch);
-  // });
-
-  // $(document).bind('pjax:popstate', function() {
-  //    $(document).bind('pjax:end', function(event) {
-  //         $(event.target).find('script').each(function() {
-  //             $.globalEval(this.text || this.textContent || this.innerHTML || '');
-  //         })
-  //    });
-  // });
+  /*
+    methods for OneMap
+  */
 
   function OverlayTheme(){
     // debugger;
@@ -376,42 +393,62 @@
       mashup.GetMashupData(overlayData)
   }
 
+  function initOneMap() {
+    //alert(typeof OneMap);
+    // dojo.query('#div_onemap_infowindow').forEach(function(node){
+    //   console.log(node,'dojo_node');
+    //   dijit.byNode(node).destroyRecursive(true);
+    // });
+
+    // hack to remove orphaned dojo widget: div_onemap_infowindow
+    var ids = ["div_onemap_infowindow"];
+    dijit.registry.forEach(function(w){
+      if(dojo.indexOf(ids,1)){ // 1 will be yourid it will get destroy
+        w.destroyRecursive();
+      }
+    });
+
+    addressSearch();
+  }
+
 
   function addressSearch() {
-    var centerPoint="28968.103,33560.969"
-
     var basicSearch = new BasicSearch;
     basicSearch.searchVal = address;
     basicSearch.returnGeom = 1;
     basicSearch.GetSearchResults(function(resultData) {
       var results = resultData.results;
-      console.log(results,'om_results')
+      console.log(results,'om_BasicSearch');
       omResults = results;
-      if (results=='No results'){
-        return false
+      var row = false;
+      if (results=='No results') {
+        // return false
       }
       else {
-        var row = results[0];
-        centerPoint=row.X+','+row.Y;
+        row = results[0];
+        // alert(row);
+        // return row;
       }
-      createMap(centerPoint);
-      if (!(typeof row === 'undefined')) {
-        OneMap.showLocation(parseFloat(row.X),parseFloat(row.Y));
-      }
+      createMap(row);
     });
     // dojo.addOnLoad(createMap);
   }
 
   function createMap(center) {
     var levelNumber=8;
+    var centerPoint="28968.103,33560.969"
 
-    OneMap = new GetOneMap('div_onemap','SM',{level:levelNumber,center:center});
+    if (center != false) {
+      centerPoint = center.X + ',' + center.Y;
+    }
+
+    OneMap = new GetOneMap('div_onemap','SM',{level:levelNumber,center:centerPoint});
     dojo.addOnLoad(OverlayTheme);
+
+    if (center != false) {
+      OneMap.showLocation(parseFloat(center.X),parseFloat(center.Y));
+    }
   }
-
-
-  //dojo.addOnLoad(createMap);
-  //OneMap.showLocation(omResults[0].X,omResults[0].Y);
 
 </script>
 
