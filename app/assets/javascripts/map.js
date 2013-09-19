@@ -1,3 +1,25 @@
+// layerData json structure: for future extension
+
+var custom_layerData = {
+  AgencyName: "LTA",
+  Category: "Transit",
+  FeatureType: "Point",
+  FieldNames: "NAME,TOTALROOMS,KEEPERNAME,POSTALCODE,DESCRIPTION,ADDRESS,HYPERLINK",
+  Icon: undefined,
+  IconPath: "http://t1.onemap.sg/icons/HOTELS/",
+  MapTipFieldName: "NAME",
+  MaxLevel: "",
+  MinLevel: "",
+  RelatedTabName: "",
+  calloutFieldName: "",
+  calloutURL: "",
+  color: "",
+  lineThickness: "",
+  outlineColor: "",
+  pointColour: undefined,
+  visibleFields: "1,0,0,1,0,1,1"
+}
+
 function loadScript(entry) {
   // alert(entry + $('#div_onemap').length + typeof dojo + $('#map_canvas').length + typeof google);
 
@@ -94,7 +116,7 @@ function initGMap() {
   geocoder.geocode({
     address: yourAddress
   }, function(locResult) {
-    console.log(locResult);
+    console.log(locResult, 'gmap_result');
 
     var center = locResult[0].geometry.location;
 
@@ -311,16 +333,17 @@ function OverlayTheme(){
 
     mashup = new MashupData();
     mashup.themeName = themeName;
+    mashup.layerData = custom_layerData; // somehow this avoids the error triggerd in GetMashupData due to invalid layerData
     mashup.extent = OneMap.map.extent.xmin + "," + OneMap.map.extent.ymin + "," + OneMap.map.extent.xmax + "," + OneMap.map.extent.ymax;
     // mashup.extent = OneMap.map.extent;
 
-    // hack to prevent GetDataForCallout from breaking due to missing layerdata for Bus_Stop!
+    // (old) hack to prevent GetDataForCallout from breaking due to missing layerdata for Bus_Stop!
     //if ((obj.layerData == undefined) || (obj.layerData == "")) {
-        var extractData = new GetLayerInfoClass()
-        extractData.themeName = 'Hotels';
-        var extractedLayerData = extractData.ExtracLayerInfo(function(results) {
-            mashup.layerData = results
-        })
+        // var extractData = new GetLayerInfoClass()
+        // extractData.themeName = 'Hotels';
+        // var extractedLayerData = extractData.ExtracLayerInfo(function(results) {
+        //     mashup.layerData = results;
+        // })
     //}
     console.log(mashup, 'mashup_layerdata');
 
