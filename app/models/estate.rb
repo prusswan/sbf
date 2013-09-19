@@ -2,6 +2,7 @@ class Estate < ActiveRecord::Base
   has_many :blocks, -> { order(:no) }
   has_many :units, -> { order(:no) }, through: :blocks
 
+  default_scope { includes(:blocks) }
 
   rails_admin do
     # Found associations:

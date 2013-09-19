@@ -8,7 +8,7 @@ class Unit < ActiveRecord::Base
 
   delegate :probable_date, :delivery_date, :lease_start, to: :flat_block
 
-  default_scope { joins(:estate) }
+  default_scope { includes(:estate) }
 
   rails_admin do
     # Found associations:
