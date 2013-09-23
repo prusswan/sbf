@@ -1925,4 +1925,4 @@ callback(outPutResults);
 var _OneMapGlobalToken='';
 document.write('<link rel="stylesheet" type="text/css" href="http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/dojo/dijit/themes/tundra/tundra.css"/>');
 document.write('<script type="text/javascript" src="http://t1.onemap.sg/om_js/arcgis_js_api/library/2.8/arcgis/js/default.js"></script>');
-var _OneMapGlobalToken='KUWmLBEUle8fI5HoN0LyiaeWwJov0QaOKS+Sc51NGOgESaBrMbC8ZHhXkfBzjxxvmO2dWn0uPrKNEN9ICHfdbF0PQk/+Wgy3';
+// var _OneMapGlobalToken='KUWmLBEUle8fI5HoN0LyiaeWwJov0QaOKS+Sc51NGOgESaBrMbC8ZHhXkfBzjxxvmO2dWn0uPrKNEN9ICHfdbF0PQk/+Wgy3';
