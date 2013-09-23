@@ -22,6 +22,7 @@ var custom_layerData = {
 
 function loadScript(entry) {
   // alert(entry + $('#div_onemap').length + typeof dojo + $('#map_canvas').length + typeof google);
+  getAddress();
 
   if (typeof google === 'undefined') {
     var script = document.createElement("script");
@@ -100,7 +101,8 @@ $('body').bind('pjax:end',loadScript('pjax:end'));
 // });
 
 function getAddress() {
-  return $('#address').data("address");
+  if (typeof address === 'undefined') address = $('#address').data("address");
+  return address;
 }
 
 /*
@@ -413,14 +415,19 @@ function queryBusCode() {
   code = $(this).attr('id');
   var busstop_link = $(this);
   var url = "http://www.onemap.sg/API/services.svc/busstop/" + code;
-  $.getJSON(url, function(data){
-    console.log(data,'bus_services');
+  $.ajax({
+    url: url,
+    dataType: "jsonp",
+    success: function(data) {
+      console.log(data,'bus_services');
 
-    var services = $.map(data['Services'], function(n,i){
-      return n.SERVICES;
-    });
+      var services = $.map(data['Services'], function(n,i){
+        return "<a>" + n.SERVICES + "</a>";
+      });
 
-    busstop_link.text(services.join(","));
+      var services_div = "<div id='" + code + "'>" + services.join("|") + "</div>"
+      busstop_link.replaceWith(services_div);
+    }
   });
 }
 
@@ -558,7 +565,7 @@ function formatResultsBus(resultObject) {
 
 function addressSearch() {
   var basicSearch = new BasicSearch;
-  basicSearch.searchVal = getAddress();
+  basicSearch.searchVal = address;
   basicSearch.returnGeom = 1;
   basicSearch.GetSearchResults(function(resultData) {
     var results = resultData.results;
