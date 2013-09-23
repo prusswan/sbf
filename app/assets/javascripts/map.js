@@ -99,6 +99,9 @@ $('body').bind('pjax:end',loadScript('pjax:end'));
 //    });
 // });
 
+function getAddress() {
+  return $('#address').data("address");
+}
 
 /*
   methods for Google Maps
@@ -106,6 +109,7 @@ $('body').bind('pjax:end',loadScript('pjax:end'));
 
 function initGMap() {
   // alert("loaded!");
+  var address = getAddress();
   var yourAddress = address + ", Singapore";
   var geocoder = new google.maps.Geocoder();
 
@@ -130,7 +134,7 @@ function initGMap() {
 
     var marker = new google.maps.Marker({
       position: center,
-      title: "<%= address %>",
+      title: address,
       map: map,
     });
 
@@ -406,7 +410,7 @@ function initOneMap() {
 
 function addressSearch() {
   var basicSearch = new BasicSearch;
-  basicSearch.searchVal = address;
+  basicSearch.searchVal = getAddress();
   basicSearch.returnGeom = 1;
   basicSearch.GetSearchResults(function(resultData) {
     var results = resultData.results;
