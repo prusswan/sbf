@@ -22,6 +22,7 @@ var custom_layerData = {
 
 function loadScript(entry) {
   // alert(entry + $('#div_onemap').length + typeof dojo + $('#map_canvas').length + typeof google);
+  getAddress();
 
   if (typeof google === 'undefined') {
     var script = document.createElement("script");
@@ -100,7 +101,8 @@ $('body').bind('pjax:end',loadScript('pjax:end'));
 // });
 
 function getAddress() {
-  return $('#address').data("address");
+  if (typeof address === 'undefined') address = $('#address').data("address");
+  return address;
 }
 
 /*
@@ -371,8 +373,10 @@ function OverlayTheme(){
           console.log(mashup, 'mashup');
           mashup.GetDataForCallout(evt.graphic,"",function(results)
           {//debugger
-              var formattedResults=mashup.formatResultsEnhanced(results);//mashup.formatResults(results);
+              var formattedResults=formatResultsBus(results);//mashup.formatResults(results);
               OneMap.map.infoWindow.setContent(formattedResults);
+              $('a.busstop_code').bind('click', queryBusCode);
+
               OneMap.map.infoWindow.show(evt.screenPoint,OneMap.map.getInfoWindowAnchor(evt.screenPoint));
           });
       })
@@ -407,10 +411,181 @@ function initOneMap() {
   addressSearch();
 }
 
+function queryBusCode() {
+  code = $(this).attr('id');
+  var busstop_link = $(this);
+  var url = "http://www.onemap.sg/API/services.svc/busstop/" + code;
+  $.ajax({
+    url: url,
+    dataType: "jsonp",
+    success: function(data) {
+      console.log(data,'bus_services');
+
+      var services = $.map(data['Services'], function(n,i){
+        return "<a class='busstop_route'>" + n.SERVICES + "</a>";
+      });
+
+      var services_div = "<div id='" + code + "'>" + services.join("|") + "</div>"
+      busstop_link.replaceWith(services_div);
+
+      $('a.busstop_route').bind('click', queryBusRoute);
+    }
+  });
+}
+
+// need to fix this for jsonp to use remote OneMap
+function queryBusRoute() {
+  code = $(this).attr('id');
+  service = $(this).text();
+  var busstop_link = $(this);
+  var url = "http://www.onemap.sg/BusServiceAPI/Service1.svc/getBR?svc=" + service + "&dir=1&stp=1";
+  $.ajax({
+    url: url,
+    dataType: "json",
+    // jsonp: false,
+    success: function(data) {
+      alert(data);
+      //alert("jsonp(" + data + ")");
+      //console.log(jsonp(data),'bus_route');
+    }
+  });
+}
+
+function formatResultsBus(resultObject) {
+    //debugger;
+    var nameVal = ""
+    nameVal = nameVal + "<br/>"
+    // to add Name on top
+    for (var key in resultObject[0]) {
+        switch (key) {
+            case 'NAME':
+                if (resultObject[0]["NAME"] != "") {
+                    nameVal += "<strong>" + resultObject[0][key] + "</strong>" + "<br/>"
+                    break;
+                }
+                else { break; }
+            case 'BUS_STOP_CODE':
+                if (resultObject[0][key] != "") {
+                    var code = resultObject[0][key];
+                    nameVal += "<br/><a id='" + code +"' class='busstop_code'>Services</a>" + "<br/>"
+                    break;
+                }
+                else { break; }
+        }
+    }
+    for (var key in resultObject[0]) {
+        switch (key) {
+            case 'NAME':
+                if (resultObject[0]["NAME"] != "") {
+                    break;
+                }
+                else { break; }
+            case "PHOTOURL":
+                if (resultObject[0]["PHOTOURL"] != "") {
+                    break;
+                }
+                else { break; }
+            case "ICON_NAME":
+                if (resultObject[0]["ICON_NAME"] != "") {
+                    break;
+                }
+                else { break; }
+            case "XY":
+                if (resultObject[0]["XY"] != "") {
+                    break;
+                }
+                else { break; }
+            case 'DESCRIPTION':
+                if (resultObject[0]["DESCRIPTION"] != "") {
+                    nameVal += resultObject[0]["DESCRIPTION"] + " "
+                    break;
+                }
+                else { break; }
+            case "HYPERLINK":
+                if (resultObject[0]["HYPERLINK"] != "") {
+                    nameVal += "<br/><a href=" + resultObject[0]["HYPERLINK"] + " target='_blank'>More Info</a>" + "<br/>"
+                    break;
+                }
+                else { break; }
+            case "ADDRESSSTREETNAME":
+                if (resultObject[0]["ADDRESSSTREETNAME"] != "") {
+                    nameVal += resultObject[0]["ADDRESSSTREETNAME"] + " "
+                    break;
+                }
+                else { break; }
+            case "ADDRESSFLOORNUMBER":
+                if (resultObject[0]["ADDRESSFLOORNUMBER"] != "") {
+                    nameVal += resultObject[0]["ADDRESSFLOORNUMBER"] + " "
+                    break;
+                }
+                else { break; }
+            case "ADDRESSBLOCKHOUSENUMBER":
+                if (resultObject[0]["ADDRESSBLOCKHOUSENUMBER"] != "") {
+                    nameVal += resultObject[0]["ADDRESSBLOCKHOUSENUMBER"] + " "
+                    break;
+                }
+                else { break; }
+            case "ADDRESSBUILDINGNAME":
+                if (resultObject[0]["ADDRESSBUILDINGNAME"] != "") {
+                    nameVal += resultObject[0]["ADDRESSBUILDINGNAME"] + " "
+                    break;
+                }
+                else { break; }
+            case "ADDRESSFLOORNUMBER":
+                if (resultObject[0]["ADDRESSFLOORNUMBER"] != "") {
+                    nameVal += resultObject[0]["ADDRESSFLOORNUMBER"] + " "
+                    break;
+                }
+                else { break; }
+            case "ADDRESSUNITNUMBER":
+                if (resultObject[0]["ADDRESSUNITNUMBER"] != "") {
+                    nameVal += resultObject[0]["ADDRESSUNITNUMBER"] + " "
+                    break;
+                }
+                else { break; }
+            case "ADDRESSPOSTALCODE":
+                if (resultObject[0]["ADDRESSPOSTALCODE"] != "") {
+                    nameVal += resultObject[0]["ADDRESSPOSTALCODE"] + " "
+                    break;
+                }
+                else { break; }
+            case "SYMBOLCOLOR":
+                if (resultObject[0]["SYMBOLCOLOR"] != "") {
+                    break;
+                }
+                else { break; }
+            case "MAPTIP":
+                if (resultObject[0]["MAPTIP"] != "") {
+                    break;
+                }
+                else { break; }
+            case "OBJECTID":
+                if (resultObject[0]["OBJECTID"] != "") {
+                    break;
+                }
+                else { break; }
+            default:
+                nameVal += resultObject[0][key] + "<br/>"
+        }
+    }
+    // for photo to be on bottom
+    for (var key in resultObject[0]) {
+        switch (key) {
+            case "PHOTOURL":
+                if (resultObject[0]["PHOTOURL"] != "") {
+                    nameVal += "<img src=" + resultObject[0]["PHOTOURL"] + "></img>" + "<br/>"
+                    break;
+                }
+                else { break; }
+        }
+    }
+    return nameVal
+
+}
 
 function addressSearch() {
   var basicSearch = new BasicSearch;
-  basicSearch.searchVal = getAddress();
+  basicSearch.searchVal = address;
   basicSearch.returnGeom = 1;
   basicSearch.GetSearchResults(function(resultData) {
     var results = resultData.results;
