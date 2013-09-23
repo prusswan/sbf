@@ -422,11 +422,31 @@ function queryBusCode() {
       console.log(data,'bus_services');
 
       var services = $.map(data['Services'], function(n,i){
-        return "<a>" + n.SERVICES + "</a>";
+        return "<a class='busstop_route'>" + n.SERVICES + "</a>";
       });
 
       var services_div = "<div id='" + code + "'>" + services.join("|") + "</div>"
       busstop_link.replaceWith(services_div);
+
+      $('a.busstop_route').bind('click', queryBusRoute);
+    }
+  });
+}
+
+// need to fix this for jsonp to use remote OneMap
+function queryBusRoute() {
+  code = $(this).attr('id');
+  service = $(this).text();
+  var busstop_link = $(this);
+  var url = "http://www.onemap.sg/BusServiceAPI/Service1.svc/getBR?svc=" + service + "&dir=1&stp=1";
+  $.ajax({
+    url: url,
+    dataType: "json",
+    // jsonp: false,
+    success: function(data) {
+      alert(data);
+      //alert("jsonp(" + data + ")");
+      //console.log(jsonp(data),'bus_route');
     }
   });
 }
