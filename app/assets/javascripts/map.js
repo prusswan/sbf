@@ -429,24 +429,34 @@ function queryBusCode() {
       busstop_link.replaceWith(services_div);
 
       $('a.busstop_route').bind('click', queryBusRoute);
+
+      var layerList = OneMap.map.layerIds;
+      for (var i=0; i<layerList.length; i++) {
+        var layer = layerList[i]
+        if (layer.indexOf("route_layer") == 0) OneMap.map.removeLayer(OneMap.map.getLayer(layer));
+      }
     }
   });
 }
 
-// need to fix this for jsonp to use remote OneMap
 function queryBusRoute() {
   code = $(this).attr('id');
   service = $(this).text();
   var busstop_link = $(this);
-  var url = "/buses/route/" + service;
-  $.ajax({
-    url: url,
-    // dataType: "json",
-    // jsonp: false,
-    success: function(data) {
-      console.log(data,'bus_route');
-    }
-  });
+  var strKMLURL = "http://www.publictransport.sg/kml/busroutes/";
+
+  for(var i=0;i<2;i++) {
+    var layer_id = 'route_layer_' + service + '_' + (i+1);
+    if ($.inArray(layer_id, OneMap.map.layerIds) > -1) continue;
+
+    var kmlUrl = strKMLURL + service + "-" + (i+1) + ".kml";
+    var kml = new esri.layers.KMLLayer(kmlUrl,{
+      // http://www.onemap.sg/api/help/JSCoordConvertor.aspx
+      outSR: new esri.SpatialReference({ wkid: 3414 })
+    });
+    kml.id = layer_id;
+    OneMap.map.addLayer(kml);
+  }
 }
 
 function formatResultsBus(resultObject) {
@@ -617,4 +627,6 @@ function createMap(center) {
   if (center != false) {
     OneMap.showLocation(parseFloat(center.X),parseFloat(center.Y));
   }
+
+  dojo.require("esri.layers.KMLLayer");
 }
