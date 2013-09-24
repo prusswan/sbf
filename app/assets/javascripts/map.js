@@ -439,6 +439,30 @@ function queryBusCode() {
   });
 }
 
+function repaintPolyLine(layer) {
+  //create a random color for the symbol
+  var r = Math.floor(Math.random() * 250);
+  var g = Math.floor(Math.random() * 100);
+  var b = Math.floor(Math.random() * 100);
+
+  var symbol = new esri.symbol.SimpleLineSymbol().setWidth(4).setColor(new dojo.Color([r,g,b]));
+
+  var feature_layer = layer.getLayers()[0];
+  var features = feature_layer.graphics;
+  for (var i=0, il=features.length; i<il; i++) {
+    //set symbol
+    features[i].setSymbol(symbol);
+  }
+
+  dojo.connect(feature_layer,"onMouseOver",onMouseOverPolyLine);
+}
+
+function onMouseOverPolyLine(layer) {
+  // alert('test!');
+}
+
+var testKML;
+
 function queryBusRoute() {
   code = $(this).attr('id');
   service = $(this).text();
@@ -454,6 +478,15 @@ function queryBusRoute() {
       // http://www.onemap.sg/api/help/JSCoordConvertor.aspx
       outSR: new esri.SpatialReference({ wkid: 3414 })
     });
+
+    testKML = kml;
+
+    // if (kml.loaded) {
+    //   repaintPolyLine();
+    // }
+    // else {
+    dojo.connect(kml,"onLoad",repaintPolyLine);
+
     kml.id = layer_id;
     OneMap.map.addLayer(kml);
   }
