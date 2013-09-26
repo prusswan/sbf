@@ -16,6 +16,7 @@ class Block < ActiveRecord::Base
       .gsub('Nth','North')
       .gsub('Ave','Avenue')
       .gsub('St','Street')
+      .gsub('Ctrl','Central')
   end
 
   class << self
