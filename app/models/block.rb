@@ -17,6 +17,13 @@ class Block < ActiveRecord::Base
       .gsub('Ave','Avenue')
       .gsub('St','Street')
       .gsub('Ctrl','Central')
+      .gsub('Jln','Jalan')
+      .gsub('Lor ','Lorong ')
+      .gsub('Upp ','Upper ')
+      .gsub('Hts','Heights')
+      .gsub('Gdn','Garden')
+      .gsub('Bt','Bukit')
+      .gsub("C'Wealth","Commonwealth")
   end
 
   class << self
