@@ -1,3 +1,5 @@
+require 'rails_admin'
+
 module Sbf
   class Engine < ::Rails::Engine
     # isolate_namespace EngineWithMigrations
