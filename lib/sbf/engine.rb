@@ -15,5 +15,9 @@ module Sbf
         end
       end
     end
+
+    initializer :assets do |config|
+      Rails.application.config.assets.precompile += ['map.js', 'onemap.js']
+    end
   end
 end
