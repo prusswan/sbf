@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "2013 Nov Brochure" do
-  sbf_link = 'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/3ccada7e5293fd9748256e990029b104/13MAYSBF_page_5789/$file/about0_static.htm'
+  sbf_link = 'http://www10.hdb.gov.sg/hdbvsf/eampu11p.nsf/0/13NOVSBF_page_1113/$file/about0_static.htm'
   details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
@@ -126,14 +126,14 @@ describe "2013 Nov Brochure" do
   end
 
   it 'loads intro page' do
-    pending 'already parsed flat supply numbers'
+    # pending 'already parsed flat supply numbers'
 
     estates = page.all(:xpath, "//div[@id='cssdrivemenu2']//a").map(&:text)
 
-    # puts estates.count
+    puts estates.count
     # puts estates.map(&:text)
     estates.each do |estate|
-      while all(:xpath, "//font[@color='#6FD6D9' and contains(normalize-space(text()), '#{estate}')]").count == 0 do
+      while all(:xpath, "//font[@color='#90191C' and contains(normalize-space(text()), '#{estate}')]").count == 0 do
         within('div#cssdrivemenu2') do
           while true
             dropdown = page.all(:xpath, price_dropdown)
@@ -152,7 +152,7 @@ describe "2013 Nov Brochure" do
       supply = page.all(:xpath, "//tr[@bgcolor='#FFFFFF']/td[2]").map(&:text).map(&:to_i).inject(:+)
       puts "#{estate}: #{supply}"
 
-      Estate.where(name: estate).first_or_create(total: supply)
+      Estate.where(name: estate, total: supply).first_or_create
     end
   end
 end
