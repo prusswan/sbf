@@ -30,7 +30,7 @@ describe "2013 Nov Brochure" do
       puts "Estate: #{estate.name}"
 
       next if estate.units.count == estate.total
-      next unless estate.name.starts_with? 'Bukit P'
+      # next unless estate.name.starts_with? 'H'
       # next unless ['Bukit Panjang', 'Choa Chu Kang', 'Hougang', 'Jurong East',
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
@@ -64,7 +64,7 @@ describe "2013 Nov Brochure" do
           select flat_type, from: 'select7'
 
           click_button 'Search'
-          sleep 8
+          sleep 5
 
           within_frame 'search' do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
@@ -88,9 +88,16 @@ describe "2013 Nov Brochure" do
                 //font[contains(.,\"#{link[1]}\")]
               }
 
-              while all(:xpath, expected_state).count == 0
-                page.execute_script(link.last)
-                sleep 2
+              loop do
+                begin
+                  while all(:xpath, expected_state).count == 0
+                    page.execute_script(link.last)
+                    sleep 2
+                  end
+                rescue Exception => error
+                  # p error
+                end
+                break if error.nil?
               end
 
               block_info = ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
@@ -103,8 +110,6 @@ describe "2013 Nov Brochure" do
 
               block_hash = Hash[block_fields.zip(block_info)]
               block = Block.where(no: block_hash[:no], street: block_hash[:street]).first_or_create(block_hash)
-
-              # next unless block.id >= 195
 
               quota_info = parse_quota(quota_str) << flat_type << block.id
               quota_hash = Hash[quota_fields.zip(quota_info)]
@@ -123,9 +128,11 @@ describe "2013 Nov Brochure" do
                 unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
                 p unit_info
               end
+
+              sleep (unit_nos.count/10 + 1)
             end
 
-            # sleep block_links.count/8 + 1
+            sleep (block_links.count/10 + 1)
           end
         end
       end
