@@ -6,12 +6,42 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 
+# Capybara.register_driver :webkit do |app|
+#   driver = Capybara::Webkit::Driver.new(app)
+#   driver.browser.set_skip_image_loading true
+#   driver
+# end
+
+# require 'billy/rspec'
+
 Capybara.default_driver = :webkit # :poltergeist
 Capybara.default_wait_time = 5
 
 Capybara.configure do |config|
   config.ignore_hidden_elements = false
 end
+
+# Billy.configure do |c|
+#   c.cache = true
+#   c.ignore_params = ["http://www.google-analytics.com/__utm.gif",
+#                      "https://r.twimg.com/jot",
+#                      "http://p.twitter.com/t.gif",
+#                      "http://p.twitter.com/f.gif",
+#                      "http://www.facebook.com/plugins/like.php",
+#                      "https://www.facebook.com/dialog/oauth",
+#                      "http://cdn.api.twitter.com/1/urls/count.json"]
+#   c.persist_cache = true
+#   c.cache_path = 'spec/req_cache/'
+
+#   c.whitelist = ['test.host', 'localhost', '127.0.0.1',
+#     # "http://services2.hdb.gov.sg/webapp/BP13INTV/BP13EBSBULIST4",
+#     "http://services2.hdb.gov.sg/webapp/BP13INTV/BP13EBPBULIST6.jsp"
+#   ]
+# end
+
+# # need to call this because of a race condition between persist_cache
+# # being set and the proxy being loaded for the first time
+# Billy.proxy.restore_cache
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

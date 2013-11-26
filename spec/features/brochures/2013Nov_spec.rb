@@ -30,7 +30,7 @@ describe "2013 Nov Brochure" do
       puts "Estate: #{estate.name}"
 
       next if estate.units.count == estate.total
-      # next unless ['Ang Mo Kio'].include?(estate.name)
+      next unless estate.name.starts_with? 'Bukit P'
       # next unless ['Bukit Panjang', 'Choa Chu Kang', 'Hougang', 'Jurong East',
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
@@ -58,11 +58,13 @@ describe "2013 Nov Brochure" do
         # flat_types.count.should == 5
 
         flat_types.map(&:text).each do |flat_type|
+          # next unless flat_type.starts_with? '4' or flat_type.starts_with? '5'
+
           puts "Type: #{flat_type}"
           select flat_type, from: 'select7'
 
           click_button 'Search'
-          sleep 3
+          sleep 8
 
           within_frame 'search' do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
@@ -88,6 +90,7 @@ describe "2013 Nov Brochure" do
 
               while all(:xpath, expected_state).count == 0
                 page.execute_script(link.last)
+                sleep 2
               end
 
               block_info = ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
@@ -100,6 +103,8 @@ describe "2013 Nov Brochure" do
 
               block_hash = Hash[block_fields.zip(block_info)]
               block = Block.where(no: block_hash[:no], street: block_hash[:street]).first_or_create(block_hash)
+
+              # next unless block.id >= 195
 
               quota_info = parse_quota(quota_str) << flat_type << block.id
               quota_hash = Hash[quota_fields.zip(quota_info)]
@@ -119,6 +124,8 @@ describe "2013 Nov Brochure" do
                 p unit_info
               end
             end
+
+            # sleep block_links.count/8 + 1
           end
         end
       end
