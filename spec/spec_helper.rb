@@ -19,7 +19,7 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 Capybara.default_driver = :poltergeist # :webkit
-Capybara.default_wait_time = 30
+Capybara.default_wait_time = 10
 
 Capybara.configure do |config|
   config.ignore_hidden_elements = false

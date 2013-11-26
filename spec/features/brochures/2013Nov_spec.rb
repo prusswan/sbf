@@ -30,7 +30,7 @@ describe "2013 Nov Brochure" do
       puts "Estate: #{estate.name}"
 
       next if estate.units.count == estate.total
-      # next unless estate.name.starts_with? 'H'
+      # next unless estate.name.starts_with? 'Pasir'
       # next unless ['Bukit Panjang', 'Choa Chu Kang', 'Hougang', 'Jurong East',
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
@@ -68,18 +68,22 @@ describe "2013 Nov Brochure" do
 
           within_frame 'search' do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
-            block_divs = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a/div")
+            loop do
+              block_divs = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a/div")
 
-            block_links = block_divs.map do |b|
-              id = b[:id]
-              no = page.find(:xpath, "//div[@id='#{id}']/ancestor::a[1]")
-              street = page.find(:xpath, "//div[@id='#{id}']//font").text
-              [no.text(:visible), street, no[:href]]
+              @block_links = block_divs.map do |b|
+                id = b[:id]
+                no = page.find(:xpath, "//div[@id='#{id}']/ancestor::a[1]")
+                street = page.find(:xpath, "//div[@id='#{id}']//font").text
+                [no.text(:visible), street, no[:href]]
+              end
+
+              break if @block_links.count > 0
             end
 
-            puts "Blocks: #{block_links.count}"
+            puts "Blocks: #{@block_links.count}"
 
-            block_links.each do |link|
+            @block_links.each do |link|
               puts link[1], link.last
 
               expected_state = %Q{
@@ -132,7 +136,7 @@ describe "2013 Nov Brochure" do
               sleep (unit_nos.count/10 + 1)
             end
 
-            sleep (block_links.count/10 + 1)
+            sleep (@block_links.count/10 + 1)
           end
         end
       end
