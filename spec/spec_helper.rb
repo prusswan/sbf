@@ -6,7 +6,8 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 
-Capybara.default_driver = :poltergeist
+Capybara.default_driver = :webkit # :poltergeist
+Capybara.default_wait_time = 5
 
 Capybara.configure do |config|
   config.ignore_hidden_elements = false

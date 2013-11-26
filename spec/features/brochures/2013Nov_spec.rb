@@ -30,6 +30,7 @@ describe "2013 Nov Brochure" do
       puts "Estate: #{estate.name}"
 
       next if estate.units.count == estate.total
+      # next unless ['Ang Mo Kio'].include?(estate.name)
       # next unless ['Bukit Panjang', 'Choa Chu Kang', 'Hougang', 'Jurong East',
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
@@ -113,9 +114,8 @@ describe "2013 Nov Brochure" do
                 unit_info = page.all(:xpath, "//font[contains(.,'#{unit}')]/ancestor::td[1]/div[1]//td")
                                 .map(&:text).map{|v| v.gsub(/\D/,'').to_i} << flat_type << quota.id
 
-                unit_hash = Hash[unit_fields.zip(unit_info)]
+                unit_hash = Hash[unit_fields.zip(unit_info)].merge!({quota_id: quota.id})
                 unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
-                unit.update_attribute(:quota_id, quota.id)
                 p unit_info
               end
             end
@@ -126,7 +126,7 @@ describe "2013 Nov Brochure" do
   end
 
   it 'loads intro page' do
-    # pending 'already parsed flat supply numbers'
+    pending 'already parsed flat supply numbers'
 
     estates = page.all(:xpath, "//div[@id='cssdrivemenu2']//a").map(&:text)
 
