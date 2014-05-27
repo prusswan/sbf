@@ -1,3 +1,10 @@
 = Sbf
 
+This is a rails engine meant to be used with the sbf2013nov, sbf2014may etc websites.
+
+=== Instructions:
+
+1. Add +'sbf'+ to the project's +Gemfile+, setup the database and run the db migrations (that come with the engine)
+2. Symlink the engine's spec folder to run the scraping script with the project
+
 This project rocks and uses MIT-LICENSE.
