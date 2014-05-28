@@ -1,21 +1,39 @@
 require 'spec_helper'
 
 describe "2014 May Brochure" do
+
   def sbf_link
     'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/14MAYSBF_page_2381/$file/about0_static.htm'
   end
-  details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
-  price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
-  block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :estate_id]
-  unit_fields = [:price, :area, :flat_type]
+  def search_link
+    "http://services2.hdb.gov.sg/webapp/BP13INTV/BP13PFlatSearch.jsp?Town=#{URI.escape @current_estate}&Flat_Type=SBF&DesType=A&ethnic=Y&Flat=#{flat_code}&ViewOption=A&dteBallot=201405"
+  end
+
+  def details_dropdown
+    "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
+  end
+
+  def price_dropdown
+    "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
+  end
 
   def find_block_info(item)
     text = item.split[0]
     page.find(:xpath, "//td[@class='textLabelNew' and contains(.,'#{text}')]/following-sibling::td[1]").text
   end
 
-  quota_fields = ['malay','chinese','others','flat_type','block_id']
+  def block_fields
+    [:no, :street, :probable_date, :delivery_date, :lease_start, :estate_id]
+  end
+
+  def unit_fields
+    [:price, :area, :flat_type]
+  end
+
+  def quota_fields
+    ['malay','chinese','others','flat_type','block_id']
+  end
 
   def parse_quota(quota_str)
     r = quota_str.match /(\d+)\D+(\d+)\D+(\d+)/
@@ -26,23 +44,85 @@ describe "2014 May Brochure" do
     '#BF1D2C'
   end
 
-  before do
-    # page.driver.headers = { "User-Agent" => "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)" }
-    # page.driver.add_headers("Referer" => "http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/14MAYSBF_page_2381/$file/priceCCK.htm")
-    page.driver.header "User-Agent","Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)"
-    page.driver.header "Referer", "http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/14MAYSBF_page_2381/$file/priceCCK.htm"
+  def flat_code
+    h = {
+      "2-Room" => "2-Room",
+      "3-Room" => "3-Room",
+      "4-Room" => "4-Room",
+      "5-Room" => "5-Room",
+      "Executive" => "EXECUTIVE"
+    }
+    h[@current_flat_type]
+  end
 
+  def unstuck
+    p "unstucking.."
 
     visit sbf_link
-    sleep 5
+    sleep 3
+
+    while all('#titletwn', text: @current_estate).count == 0 do
+      within('div#cssdrivemenu1') do
+        while true
+          dropdown = page.all(:xpath, details_dropdown)
+
+          if dropdown.count > 0
+            dropdown.first.trigger(:mouseover)
+            break
+          end
+        end
+
+        link = find_link(@current_estate)
+        # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
+
+        link.trigger('click')
+      end
+    end
+
+    # page.execute_script @current_estate_link
+
+    within_frame 'fda' do
+      begin
+        p @current_flat_type
+        # visit search_link
+
+        select @current_flat_type, from: 'select7'
+        click_button 'Search'
+      rescue Capybara::Poltergeist::JavascriptError
+      end
+      sleep 5
+    end
+  end
+
+  before do
+    visit sbf_link
+    sleep 3
+    p "THE PAGE"
+    p page.current_url
+
+#                   page.evaluate_script <<-SCRIPT
+# function checkBlk(value, neigh, contract) {
+#   document.forms[0].Block.value = value;
+#   document.forms[0].Neighbourhood.value = neigh;
+#   document.forms[0].Contract.value = contract;
+
+#   document.forms[0].action="BP13EBSBULIST4";
+#   document.forms[0].method="post";
+#   document.forms[0].submit();
+
+#   goblock(neigh, contract);
+# }
+#                  SCRIPT
+
   end
 
   it "load details page" do
     Estate.all.each do |estate|
       puts "Estate: #{estate.name}"
+      @current_estate = estate.name
 
       next if estate.units.count == estate.total
-      next unless estate.name.starts_with? 'Choa'
+      # next unless estate.name.starts_with? 'Pasir'
       # next unless ['Bukit Panjang', 'Choa Chu Kang', 'Hougang', 'Jurong East',
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
@@ -60,7 +140,7 @@ describe "2014 May Brochure" do
 
           link = find_link(estate.name)
           # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
-
+          @current_estate_link = link['onclick']
           link.click
         end
       end
@@ -70,13 +150,21 @@ describe "2014 May Brochure" do
         # flat_types.count.should == 5
 
         flat_types.map(&:text).each do |flat_type|
-          next unless flat_type.starts_with? '4'
+          # next unless flat_type.starts_with? '5'
+          # next if flat_type.starts_with? 'S'
 
           puts "Type: #{flat_type}"
-          select flat_type, from: 'select7'
+          @current_flat_type = flat_type
 
-          click_button 'Search'
+          begin
+            # visit search_link
+
+            select flat_type, from: 'select7'
+            click_button 'Search'
+          rescue Capybara::Poltergeist::JavascriptError
+          end
           sleep 5
+          # find_button("Search").trigger('click')
 
           within_frame 'search' do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
@@ -94,8 +182,12 @@ describe "2014 May Brochure" do
             end
 
             puts "Blocks: #{@block_links.count}"
+            @current_link_index = 0
 
-            @block_links.each do |link|
+
+            while @current_link_index < @block_links.count do
+              link = @block_links[@current_link_index]
+              # @block_links.each do |link|
               puts link[1], link.last
 
               expected_state = %Q{
@@ -104,16 +196,36 @@ describe "2014 May Brochure" do
                 //font[contains(.,\"#{link[1]}\")]
               }
 
+              iteration = 0
+              state_count = 0
+
               loop do
                 begin
-                  while all(:xpath, expected_state).count == 0
+                  state_count = all(:xpath, expected_state).count
+                  while state_count == 0 and iteration <= 5
                     page.execute_script(link.last)
-                    sleep 5
+                    sleep(1 + iteration)
+                    iteration = iteration + 1
+                    p "iteration: #{iteration}"
                   end
                 rescue Exception => error
                   # p error
+                  break
+
                 end
-                break if error.nil?
+
+                iteration = iteration + 1
+                break if error.nil? or iteration > 5
+              end
+
+              if state_count == 0
+                p "we are stuck"
+                p @current_estate
+                p @current_flat_type
+                p @current_link_index
+
+                unstuck
+                next
               end
 
               block_info = ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
@@ -144,6 +256,8 @@ describe "2014 May Brochure" do
                 unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
                 p unit_info
               end
+
+              @current_link_index = @current_link_index + 1
 
               sleep (unit_nos.count/10 + 1)
             end
