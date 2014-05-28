@@ -6,11 +6,11 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 
-# Capybara.register_driver :webkit do |app|
-#   driver = Capybara::Webkit::Driver.new(app)
-#   driver.browser.set_skip_image_loading true
-#   driver
-# end
+Capybara.register_driver :webkit do |app|
+  driver = Capybara::Webkit::Driver.new(app)
+  driver.browser.set_skip_image_loading true
+  driver
+end
 
 # require 'billy/rspec'
 
@@ -18,7 +18,8 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {js_errors:true, port:44678+ENV['TEST_ENV_NUMBER'].to_i, phantomjs_options:['--proxy-type=none'], timeout:300})
 end
 
-Capybara.default_driver = :poltergeist # :webkit
+Capybara.javascript_driver = :webkit
+Capybara.default_driver = :webkit #:poltergeist # :webkit
 Capybara.default_wait_time = 10
 
 Capybara.configure do |config|

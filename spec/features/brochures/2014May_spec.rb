@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe "2014 May Brochure" do
-  sbf_link = 'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/14MAYSBF_page_2381/$file/about0_static.htm'
+  def sbf_link
+    'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/14MAYSBF_page_2381/$file/about0_static.htm'
+  end
   details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
@@ -25,8 +27,14 @@ describe "2014 May Brochure" do
   end
 
   before do
+    # page.driver.headers = { "User-Agent" => "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)" }
+    # page.driver.add_headers("Referer" => "http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/14MAYSBF_page_2381/$file/priceCCK.htm")
+    page.driver.header "User-Agent","Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)"
+    page.driver.header "Referer", "http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/14MAYSBF_page_2381/$file/priceCCK.htm"
+
+
     visit sbf_link
-    sleep 1
+    sleep 5
   end
 
   it "load details page" do
@@ -34,7 +42,7 @@ describe "2014 May Brochure" do
       puts "Estate: #{estate.name}"
 
       next if estate.units.count == estate.total
-      # next unless estate.name.starts_with? 'Pasir'
+      next unless estate.name.starts_with? 'Choa'
       # next unless ['Bukit Panjang', 'Choa Chu Kang', 'Hougang', 'Jurong East',
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
@@ -62,7 +70,7 @@ describe "2014 May Brochure" do
         # flat_types.count.should == 5
 
         flat_types.map(&:text).each do |flat_type|
-          # next unless flat_type.starts_with? '5'
+          next unless flat_type.starts_with? '4'
 
           puts "Type: #{flat_type}"
           select flat_type, from: 'select7'
@@ -100,7 +108,7 @@ describe "2014 May Brochure" do
                 begin
                   while all(:xpath, expected_state).count == 0
                     page.execute_script(link.last)
-                    sleep 2
+                    sleep 5
                   end
                 rescue Exception => error
                   # p error
