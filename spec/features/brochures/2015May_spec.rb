@@ -29,7 +29,7 @@ describe "2015 May Brochure" do
     sleep 1
   end
 
-  it "load details page" do
+  pending "load details page" do
     Estate.all.each do |estate|
       puts "Estate: #{estate.name}"
 
@@ -149,6 +149,10 @@ describe "2015 May Brochure" do
 
   it 'loads intro page' do
     # pending 'already parsed flat supply numbers'
+    p page.driver.window_handles
+    p page.driver.browser.get_window_handles
+
+    handles = page.driver.window_handles
 
     estates = page.all(:xpath, "//div[@id='cssdrivemenu2']//a").map(&:text)
 
@@ -171,6 +175,8 @@ describe "2015 May Brochure" do
         end
       end
 
+      page.driver.window_handles
+      
       supply = page.all(:xpath, "//tr[@bgcolor='#FFFFFF']/td[2]").map(&:text).map(&:to_i).inject(:+)
       puts "#{estate}: #{supply}"
 
