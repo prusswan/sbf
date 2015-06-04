@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "2015 May Brochure" do
   sbf_link = 'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/15MAYSBF_page_1905/$file/about0.html'
+  sbf_link = 'file://localhost/Users/prusswan/Downloads/sobf.html'
   details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
@@ -27,6 +28,33 @@ describe "2015 May Brochure" do
   before do
     visit sbf_link
     sleep 1
+  end
+
+  it "new page layout" do
+    # while all('#titletwn', text: estate.name).count == 0 do
+
+    dropdown = find(:xpath, "//ul[preceding-sibling::a[text()='Flat Details']]")
+
+      within(dropdown) do
+        # while true
+        #   dropdown = page.all(:xpath, details_dropdown)
+
+        #   if dropdown.count > 0
+        #     dropdown.first.trigger(:mouseover)
+        #     break
+        #   end
+        # end
+
+        link = find_link('Bukit Merah')
+        # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
+        p link['onclick']
+        
+        link.click
+
+        p page.driver.window_handles
+        p page.driver.browser.get_window_handles
+      end
+    # end
   end
 
   pending "load details page" do
@@ -147,7 +175,7 @@ describe "2015 May Brochure" do
     end
   end
 
-  it 'loads intro page' do
+  pending 'loads intro page' do
     # pending 'already parsed flat supply numbers'
     p page.driver.window_handles
     p page.driver.browser.get_window_handles
@@ -176,7 +204,7 @@ describe "2015 May Brochure" do
       end
 
       page.driver.window_handles
-      
+
       supply = page.all(:xpath, "//tr[@bgcolor='#FFFFFF']/td[2]").map(&:text).map(&:to_i).inject(:+)
       puts "#{estate}: #{supply}"
 
