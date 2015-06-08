@@ -30,7 +30,8 @@ describe "2015 May Brochure" do
     return true if windows.length < 2
 
     within_window(->{ page.title == 'Flat Search' }) do
-      return all(:xpath, "//b[contains(normalize-space(text()), '#{estate_name}')]").count == 0
+      selected_town = first(:xpath, "//input[@name='Town']", visible: false)
+      return selected_town.nil? || selected_town.value != estate_name.upcase
     end
   end
 
