@@ -26,6 +26,14 @@ describe "2015 May Brochure" do
     '#90191C'
   end
 
+  def check_search_window(estate_name)
+    return true if windows.length < 2
+
+    within_window(->{ page.title == 'Flat Search' }) do
+      return all(:xpath, "//b[contains(normalize-space(text()), '#{estate_name}')]").count == 0
+    end
+  end
+
   before do
     page.driver.allow_url("services2.hdb.gov.sg")
     page.driver.allow_url("esales.hdb.gov.sg")
@@ -34,28 +42,6 @@ describe "2015 May Brochure" do
 
     visit sbf_link
     sleep 1
-  end
-
-  it "new page layout" do
-    dropdown_link = find_link('Flat Details')
-    dropdown_link.trigger(:mouseover)
-
-    dropdown = find(:xpath, "//ul[preceding-sibling::a[text()='Flat Details']]")
-    within(dropdown) do
-      link = find_link('Bukit Merah')
-      p link['onclick']
-
-      # link.click
-      page.execute_script(link['onclick'])
-    end
-
-    handles = windows # page.driver.window_handles
-    p handles
-    p page.title
-
-    within_window(->{ page.title == 'Flat Search' }) do
-      p page.title
-    end
   end
 
   it "parsing unit counts (new layout)" do
@@ -86,7 +72,9 @@ describe "2015 May Brochure" do
     end
   end
 
-  pending "load details page" do
+  it "parsing unit details" do
+    main_window = windows.first
+
     Estate.all.each do |estate|
       puts "Estate: #{estate.name}"
 
@@ -96,25 +84,26 @@ describe "2015 May Brochure" do
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
 
-      while all('#titletwn', text: estate.name).count == 0 do
-        within('div#cssdrivemenu1') do
-          while true
-            dropdown = page.all(:xpath, details_dropdown)
+      while check_search_window(estate.name) do
+        within_window(main_window) do
+          dropdown_link = find_link('Flat Details')
+          dropdown_link.trigger(:mouseover)
 
-            if dropdown.count > 0
-              dropdown.first.trigger(:mouseover)
-              break
-            end
+          dropdown = find(:xpath, "//ul[preceding-sibling::a[text()='Flat Details']]")
+          within(dropdown) do
+            link = find_link(estate.name)
+            p link['onclick']
+
+            # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
+            # link.click
+            page.execute_script(link['onclick'])
           end
-
-          link = find_link(estate.name)
-          # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
-
-          link.click
         end
+
+        # p windows
       end
 
-      within_frame 'fda' do
+     within_window(->{ page.title == 'Flat Search' }) do
         flat_types = page.all(:xpath, "//select[@name='Flat']/option")
         # flat_types.count.should == 5
 
@@ -127,7 +116,7 @@ describe "2015 May Brochure" do
           click_button 'Search'
           sleep 5
 
-          within_frame 'search' do
+          within('div#searchDetails') do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
             loop do
               block_divs = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a/div")
