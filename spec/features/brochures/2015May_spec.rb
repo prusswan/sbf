@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "2015 May Brochure" do
   sbf_link = 'http://esales.hdb.gov.sg/hdbvsf/eampu05p.nsf/0/15MAYSBF_page_1905/$file/about0.html'
-  sbf_link = 'file://localhost/Users/prusswan/Downloads/sobf.html'
+  # sbf_link = 'file://localhost/Users/prusswan/Downloads/sobf.html'
   details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
@@ -22,39 +22,68 @@ describe "2015 May Brochure" do
   end
 
   def title_font_color
-    '#855553' # TODO: can we search for this next time?
+    # '#855553' # TODO: can we search for this next time?
+    '#90191C'
   end
 
   before do
+    page.driver.allow_url("services2.hdb.gov.sg")
+    page.driver.allow_url("esales.hdb.gov.sg")
+    page.driver.allow_url("www.google-analytics.com")
+    page.driver.allow_url("fonts.googleapis.com")
+
     visit sbf_link
     sleep 1
   end
 
   it "new page layout" do
-    # while all('#titletwn', text: estate.name).count == 0 do
+    dropdown_link = find_link('Flat Details')
+    dropdown_link.trigger(:mouseover)
 
     dropdown = find(:xpath, "//ul[preceding-sibling::a[text()='Flat Details']]")
+    within(dropdown) do
+      link = find_link('Bukit Merah')
+      p link['onclick']
 
-      within(dropdown) do
-        # while true
-        #   dropdown = page.all(:xpath, details_dropdown)
+      # link.click
+      page.execute_script(link['onclick'])
+    end
 
-        #   if dropdown.count > 0
-        #     dropdown.first.trigger(:mouseover)
-        #     break
-        #   end
-        # end
+    handles = windows # page.driver.window_handles
+    p handles
+    p page.title
 
-        link = find_link('Bukit Merah')
-        # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
-        p link['onclick']
-        
-        link.click
+    within_window(->{ page.title == 'Flat Search' }) do
+      p page.title
+    end
+  end
 
-        p page.driver.window_handles
-        p page.driver.browser.get_window_handles
+  it "parsing unit counts (new layout)" do
+    dropdown_link = find_link('Price Range')
+    dropdown = find(:xpath, "//ul[preceding-sibling::a[text()='Price Range']]")
+
+    estates = page.all(:xpath, "//ul[preceding-sibling::a[text()='Price Range']]//a").map(&:text)
+    puts estates.count
+    # puts estates
+
+    estates.each do |estate_name|
+      page_title = estate_name.gsub('/', ' ').gsub('Sengkang','SengKang') # sanitizing... don't ask
+
+      while all(:xpath, "//h1[contains(normalize-space(text()), '- #{page_title}')]").count == 0 do
+        dropdown_link.trigger(:mouseover)
+
+        within(dropdown) do
+          link = find_link(estate_name)
+          # link.trigger(:mouseover)
+          link.trigger(:click)
+        end
       end
-    # end
+
+      supply = page.all(:xpath, "//div[@class='table-container']//td[2]").map(&:text).map(&:to_i).inject(:+)
+      puts "#{estate_name}: #{supply}"
+
+      estate = Estate.where(name: estate_name, total: supply).first_or_create
+    end
   end
 
   pending "load details page" do
@@ -175,13 +204,8 @@ describe "2015 May Brochure" do
     end
   end
 
-  pending 'loads intro page' do
+  pending 'parsing unit counts' do
     # pending 'already parsed flat supply numbers'
-    p page.driver.window_handles
-    p page.driver.browser.get_window_handles
-
-    handles = page.driver.window_handles
-
     estates = page.all(:xpath, "//div[@id='cssdrivemenu2']//a").map(&:text)
 
     puts estates.count
@@ -202,8 +226,6 @@ describe "2015 May Brochure" do
           link.click
         end
       end
-
-      page.driver.window_handles
 
       supply = page.all(:xpath, "//tr[@bgcolor='#FFFFFF']/td[2]").map(&:text).map(&:to_i).inject(:+)
       puts "#{estate}: #{supply}"
