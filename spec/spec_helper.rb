@@ -19,10 +19,15 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 Capybara.default_driver = :webkit # :poltergeist
-Capybara.default_wait_time = 10
+Capybara.default_max_wait_time = 10
 
 Capybara.configure do |config|
   config.ignore_hidden_elements = false
+end
+
+Capybara::Webkit.configure do |config|
+  config.allow_unknown_urls
+  config.allow_url("m.addthis.com")
 end
 
 # Billy.configure do |c|

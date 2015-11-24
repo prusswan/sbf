@@ -36,11 +36,6 @@ describe "2015 Nov Brochure" do
   end
 
   before do
-    page.driver.allow_url("services2.hdb.gov.sg")
-    page.driver.allow_url("esales.hdb.gov.sg")
-    page.driver.allow_url("www.google-analytics.com")
-    page.driver.allow_url("fonts.googleapis.com")
-
     visit sbf_link
     sleep 1
   end
@@ -54,7 +49,10 @@ describe "2015 Nov Brochure" do
     # puts estates
 
     estates.each do |estate_name|
-      page_title = estate_name.gsub('/', ' ').gsub('Sengkang','SengKang') # sanitizing... don't ask
+      estate = Estate.find_or_initialize_by(name: estate_name)
+      next unless estate.new_record?
+
+      page_title = estate_name.gsub('/', '/ ') # sanitizing... don't ask
 
       while all(:xpath, "//h1[contains(normalize-space(text()), '- #{page_title}')]").count == 0 do
         dropdown_link.trigger(:mouseover)
@@ -66,10 +64,12 @@ describe "2015 Nov Brochure" do
         end
       end
 
-      supply = page.all(:xpath, "//div[@class='table-container']//td[2]").map(&:text).map(&:to_i).inject(:+)
+      supply = page.all(:xpath, "//div[contains(@class, 'table-container')]//td[2]").map(&:text).map(&:to_i).inject(:+)
+      # debugger
       puts "#{estate_name}: #{supply}"
 
-      estate = Estate.where(name: estate_name, total: supply).first_or_create
+      estate = Estate.find_or_initialize_by(name: estate_name)
+      estate.update(total: supply) if supply > 0
     end
   end
 
