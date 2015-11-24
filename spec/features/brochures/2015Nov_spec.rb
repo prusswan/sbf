@@ -64,11 +64,14 @@ describe "2015 Nov Brochure" do
         end
       end
 
-      supply = page.all(:xpath, "//div[contains(@class, 'table-container')]//td[2]").map(&:text).map(&:to_i).inject(:+)
+      # supply = page.all(:xpath, "//div[contains(@class, 'table-container')]//td[2]").map(&:text).map(&:to_i).inject(:+)
+      supply = page.all(:xpath, "//div[contains(@class, 'table-container')]//td[2][preceding-sibling::td[not(contains(.,'remaining'))]]")
+                   .map{ |t| t.text.gsub(',','').to_i }.inject(:+)
+      # supply = page.all(:xpath, "//td[contains(string(.//strong),'#{estate_name}')]/following-sibling::td[2]").map(&:text).map(&:to_i).inject(:+)
       # debugger
       puts "#{estate_name}: #{supply}"
 
-      estate = Estate.find_or_initialize_by(name: estate_name)
+      # estate = Estate.find_or_initialize_by(name: estate_name)
       estate.update(total: supply) if supply > 0
     end
   end
