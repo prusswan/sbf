@@ -29,9 +29,11 @@ describe "2015 Nov Brochure" do
   def check_search_window(estate_name)
     return true if windows.length < 2
 
-    within_window(->{ page.title == 'Flat Search' }) do
-      selected_town = first(:xpath, "//input[@name='Town']", visible: false)
-      return selected_town.nil? || selected_town.value != estate_name.upcase
+    within_window(->{ page.title.include? 'FlatSummary' }) do
+      p "multiple windows: flat summary"
+      selected_town = first(:xpath, "//select[@name='Town']")
+      p "selected_town: #{selected_town.value}"
+      return selected_town.nil? || selected_town.value != estate_name
     end
   end
 
@@ -107,7 +109,7 @@ describe "2015 Nov Brochure" do
         # p windows
       end
 
-     within_window(->{ page.title == 'Flat Search' }) do
+     within_window(->{ page.title.include? 'FlatSummary' }) do
         flat_types = page.all(:xpath, "//select[@name='Flat']/option")
         # flat_types.count.should == 5
 
@@ -115,21 +117,29 @@ describe "2015 Nov Brochure" do
           # next unless flat_type.starts_with? '5'
 
           puts "Type: #{flat_type}"
-          select flat_type, from: 'select7'
+          select flat_type, from: 'Flat'
 
-          click_button 'Search'
+          within('div#flatDetails') do
+            click_button 'Search'
+          end
+
           sleep 5
 
-          within('div#searchDetails') do
+          within('div#blockDetails') do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
             loop do
-              block_divs = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a/div")
+              # block_divs = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a/div")
+              block_divs = page.all(:xpath, "//table[contains(.,'Click on block no')]//td//a")
 
               @block_links = block_divs.map do |b|
-                id = b[:id]
-                no = page.find(:xpath, "//div[@id='#{id}']/ancestor::a[1]")
-                street = page.find(:xpath, "//div[@id='#{id}']//font").text
-                [no.text(:visible), street, no[:href]]
+                p b.text
+
+                # todo: fix parsing of block info (not available here)
+                # id = b[:id]
+                # no = page.find(:xpath, "//div[@id='#{id}']/ancestor::a[1]")
+                # street = page.find(:xpath, "//div[@id='#{id}']//font").text
+                # [no.text(:visible), street, no[:href]]
+                [b.text]
               end
 
               break if @block_links.count > 0
@@ -138,13 +148,16 @@ describe "2015 Nov Brochure" do
             puts "Blocks: #{@block_links.count}"
 
             @block_links.each do |link|
-              puts link[1], link.last
+              # puts link[1], link.last
+              p link
 
               expected_state = %Q{
                 //strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr
                 //b[contains(.,'#{link.first}')]
                 //font[contains(.,\"#{link[1]}\")]
               }
+
+              # todo: click on block no to display block info
 
               loop do
                 begin
