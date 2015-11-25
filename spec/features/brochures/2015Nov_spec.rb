@@ -6,12 +6,13 @@ describe "2015 Nov Brochure" do
   details_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t7')]"
   price_dropdown = "//div[@id='MenuBoxTop']//a[contains(@class,'t8')]"
 
-  block_fields = [:no, :street, :probable_date, :delivery_date, :lease_start, :estate_id]
+  block_fields = [:probable_date, :delivery_date, :lease_start, :estate_id, :no, :street]
   unit_fields = [:price, :area, :flat_type]
 
   def find_block_info(item)
     text = item.split[0]
-    page.find(:xpath, "//td[@class='textLabelNew' and contains(.,'#{text}')]/following-sibling::td[1]").text
+    # page.find(:xpath, "//td[@class='textLabelNew' and contains(.,'#{text}')]/following-sibling::td[1]").text
+    page.find(:xpath, "//div[@id='blockDetails']//div[b[contains(.,'#{text}')]]/following-sibling::div[1]").text
   end
 
   quota_fields = ['malay','chinese','others','flat_type','block_id']
@@ -33,7 +34,7 @@ describe "2015 Nov Brochure" do
       p "multiple windows: flat summary"
       selected_town = first(:xpath, "//select[@name='Town']")
       p "selected_town: #{selected_town.value}"
-      return selected_town.nil? || selected_town.value != estate_name
+      return selected_town.nil? || selected_town.value.gsub(' / ','/') != estate_name
     end
   end
 
@@ -90,6 +91,11 @@ describe "2015 Nov Brochure" do
       #   'Jurong West', 'Punggol', 'Sembawang', 'Sengkang', 'Woodlands', 'Yishun']
       #   .include?(estate.name)
 
+      # close extra flat summary tabs
+      while windows.length > 1 do
+        windows.last.close
+      end
+
       while check_search_window(estate.name) do
         within_window(main_window) do
           dropdown_link = find_link('Flat Details')
@@ -129,17 +135,22 @@ describe "2015 Nov Brochure" do
             # block_nos = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a")
             loop do
               # block_divs = page.all(:xpath, "//strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr//a/div")
-              block_divs = page.all(:xpath, "//table[contains(.,'Click on block no')]//td//a")
+              block_fonts = page.all(:xpath, "//table[contains(.,'Click on block no')]//td//font[descendant::a]")
+              block_divs = page.all(:xpath, "//table[contains(.,'Click on block no')]//td/div[font/a]")
 
-              @block_links = block_divs.map do |b|
-                p b.text
-
-                # todo: fix parsing of block info (not available here)
+              @block_links = block_fonts.each_with_index.map do |b, i|
                 # id = b[:id]
                 # no = page.find(:xpath, "//div[@id='#{id}']/ancestor::a[1]")
                 # street = page.find(:xpath, "//div[@id='#{id}']//font").text
+
+                no = b.text
+                street = b[:title].strip
+                link = block_divs[i][:onclick]
+
                 # [no.text(:visible), street, no[:href]]
-                [b.text]
+                tuple = [no, street, link]
+                p tuple
+                tuple
               end
 
               break if @block_links.count > 0
@@ -147,22 +158,25 @@ describe "2015 Nov Brochure" do
 
             puts "Blocks: #{@block_links.count}"
 
-            @block_links.each do |link|
-              # puts link[1], link.last
-              p link
+            @block_links.each do |no, street, link|
+              # puts street, link.last
+              puts no, street, link
 
+              # expected_state = %Q{
+              #   //strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr
+              #   //b[contains(.,'#{link.first}')]
+              #   //font[contains(.,\"#{link[1]}\")]
+              # }
               expected_state = %Q{
-                //strong[contains(.,'Click on block no')]/ancestor::tr[1]/following-sibling::tr
-                //b[contains(.,'#{link.first}')]
-                //font[contains(.,\"#{link[1]}\")]
+                //div[@id='blockDetails']//div[contains(text(),'#{no}')][following-sibling::div[contains(.,\"#{street.upcase}\")]]
               }
 
-              # todo: click on block no to display block info
+              # click on block no to display block info
 
               loop do
                 begin
                   while all(:xpath, expected_state).count == 0
-                    page.execute_script(link.last)
+                    page.execute_script(link)
                     sleep 2
                   end
                 rescue Exception => error
@@ -171,33 +185,51 @@ describe "2015 Nov Brochure" do
                 break if error.nil?
               end
 
-              block_info = ['Block','Street','Probable Completion Date', 'Delivery Possession Date',
+              block_info = ['Probable Completion Date', 'Delivery Possession Date',
                 'Lease Commencement Date'].map do |item|
                 # puts "#{item}: #{find_block_info(item)}"
                 find_block_info(item)
-              end << estate.id
+              end << estate.id << no << street
 
               quota_str = find_block_info('Available Ethnic Quota')
 
               block_hash = Hash[block_fields.zip(block_info)]
-              block = Block.where(no: block_hash[:no], street: block_hash[:street]).first_or_create(block_hash)
+
+              block = Block.where(no: no, street: street).first_or_create(block_hash)
+              block.update_attribute(:link, link)
 
               quota_info = parse_quota(quota_str) << flat_type << block.id
               quota_hash = Hash[quota_fields.zip(quota_info)]
               quota = Quota.where(flat_type: flat_type, block_id: block.id).first_or_create(quota_hash)
-              # quota.update_attributes(quota_hash) # to update existing quotas with wrong values
-              # p quota.inspect
+              # quota.update_attributes(quota_hash) # to update existing quotas containing wrong values
+              p quota.inspect
 
-              unit_nos = page.all(:xpath, "//td[contains(.,'Mouseover unit number')]/ancestor::table[1]/following-sibling::table//font")
+              # unit_nos = page.all(:xpath, "//td[contains(.,'Mouseover unit number')]/ancestor::table[1]/following-sibling::table//font")
+              unit_nos = page.all(:xpath, "//table[thead//th[contains(text(),'Mouseover\u00a0unit\u00a0number')]]//font/a/font", visible: true)
               puts "Units: #{unit_nos.count}"
 
-              unit_nos.map(&:text).each do |unit|
-                unit_info = page.all(:xpath, "//font[contains(.,'#{unit}')]/ancestor::td[1]/div[1]//td")
-                                .map(&:text).map{|v| v.gsub(/\D/,'').to_i} << flat_type << quota.id
+              unit_nos.map(&:text).each do |no|
+                # get price and area
+                # selector = "//font[contains(.,'#{no}')]/ancestor::td[1]/div[1]//td"
+                selector = "//font[contains(.,'#{no}')][a]"
+                unit_str = page.find(:xpath, selector)
+
+                fields = unit_str[:title].split("<br/>")
+                area = fields[-1].to_i
+                price = fields[-3].gsub(/[$,]/,'').to_i # max price
+
+                # unit_info = page.all(:xpath, selector)
+                #                 .map(&:text).map{|v| v.gsub(/\D/,'').to_i} << flat_type << quota.id
+                unit_info = [price, area] << flat_type << quota.id
+                p [no] + unit_info
 
                 unit_hash = Hash[unit_fields.zip(unit_info)].merge!({quota_id: quota.id})
-                unit = Unit.where(no: unit, block: block).first_or_create(unit_hash)
-                p unit_info
+                if fields.length > 3
+                  unit_hash[:price_str] = fields[0..-3].join("\n")
+                  p unit_hash[:price_str]
+                end
+
+                unit = Unit.where(no: no, block: block).first_or_create(unit_hash)
               end
 
               sleep (unit_nos.count/10 + 1)
