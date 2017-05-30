@@ -115,7 +115,7 @@ describe "2016 Nov Brochure" do
         # p windows
       end
 
-     within_window(->{ page.title.include? 'FlatSummary' }) do
+      within_window(->{ page.title.include? 'FlatSummary' }) do
         flat_types = page.all(:xpath, "//select[@name='Flat']/option")
         # flat_types.count.should == 5
 

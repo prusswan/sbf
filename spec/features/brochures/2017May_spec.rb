@@ -45,52 +45,67 @@ describe "2017 May Brochure" do
     sleep 1
   end
 
-  it "parsing unit counts (new layout - works with poltergeist)" do
+  it "parsing unit counts (new layout - main page)" do
     # dropdown_link = find_link('Price Range')
     # dropdown_link = find(:xpath, "//li[contains(@class,'has-dropdown')]/a[text()='Price Range']")
     dropdown_link = find(:xpath, "//li[contains(@class,'has-dropdown')][a[text()='Price Range']]")
     # dropdown_link2 = find(:xpath, "//li[contains(@class,'parent-link')][a[text()='Price Range']]", visible: false)
     dropdown = find(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]")
 
-    estates = page.all(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]//a[contains(@href,'html')]").map(&:text)
+    # estates = page.all(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]//a[contains(@href,'html')]").map(&:text)
+    estates = page.all(:xpath, "//tr/td/b|//tr/td/strong").map(&:text).each_with_index.to_a.sort_by {|p| p.first }
+
     puts estates.count
     # puts estates
 
     # page.execute_script("document.getElementsByClassName('large-11')[0].remove()");
     # page.execute_script("document.getElementsByClassName('footer')[0].remove()");
 
-    estates.each do |estate_name|
+    total = 0
+
+    estates.each do |e|
+      estate_name, position = e
+      estate_name = estate_name.gsub('/', '/ ') # sanitizing... don't ask
+
       estate = Estate.find_or_initialize_by(name: estate_name)
       next unless estate.new_record?
 
-      page_title = estate_name #.gsub('/', '/ ') # sanitizing... don't ask
-      p "Finding estate: #{estate_name}"
+      # while all(:xpath, "//h1[contains(normalize-space(text()), '#{page_title}')]").count == 0 do
+      #   # dropdown_link.trigger(:mouseover)
+      #   # dropdown_link.trigger(:click)
+      #   dropdown_link.click # does not work on webkit
+      #   # save_and_open_screenshot
 
-      while all(:xpath, "//h1[contains(normalize-space(text()), '#{page_title}')]").count == 0 do
-        # dropdown_link.trigger(:mouseover)
-        # dropdown_link.trigger(:click)
-        dropdown_link.click # does not work on webkit
-        # save_and_open_screenshot
+      #   within(dropdown) do
+      #     # link = find_link(estate_name)
+      #     link = find(:xpath, "//a[text()='#{estate_name}' and contains(@href,'price')]")
+      #     # p link
+      #     # link.trigger(:mouseover)
+      #     # link.trigger(:click)
 
-        within(dropdown) do
-          # link = find_link(estate_name)
-          link = find(:xpath, "//a[text()='#{estate_name}' and contains(@href,'price')]")
-          # p link
-          # link.trigger(:mouseover)
-          # link.trigger(:click)
-
-          link.click
-        end
-      end
+      #     link.click
+      #   end
+      # end
 
       # supply = page.all(:xpath, "//div[contains(@class, 'table-container')]//td[2]").map(&:text).map(&:to_i).inject(:+)
-      supply = page.all(:xpath, "//div[contains(@class, 'table-container')]//td[2][preceding-sibling::td[not(contains(.,'remaining'))]]")
-                   .map{ |t| t.text.gsub(',','').gsub('*','').to_i }.inject(:+)
+      # supply = page.all(:xpath, "//div[contains(@class, 'table-container')]//td[2][preceding-sibling::td[not(contains(.,'remaining'))]]")
+      #              .map{ |t| t.text.gsub(',','').gsub('*','').to_i }.inject(:+)
       # supply = page.all(:xpath, "//td[contains(string(.//strong),'#{estate_name}')]/following-sibling::td[2]").map(&:text).map(&:to_i).inject(:+)
-      puts "#{estate_name}: #{supply}"
+
+      rows = page.all(:xpath, "//tr[count(preceding-sibling::tr[td/b|td/strong])=#{position+1}][not(td/b|td/strong)]/td[2][count(following-sibling::td)=5]")
+                 .map(&:text).map(&:to_i)
+      first_row = find(:xpath, "//tr[count(preceding-sibling::tr[td/b|td/strong])=#{position}][td/b|td/strong]/td[3]").text.to_i
+
+      rows << first_row
+      supply = rows.inject(:+)
+
+      total += supply
+
+      puts "#{estate_name}: #{supply} / #{total}"
 
       # estate = Estate.find_or_initialize_by(name: estate_name)
-      estate.update(total: supply) if supply > 0
+      # puts "!!! mismatch: #{estate.total} != #{rows}" if estate.total != supply
+      estate.update(total: supply) if supply > 0 && estate.total != supply
     end
   end
 
@@ -130,7 +145,7 @@ describe "2017 May Brochure" do
         # p windows
       end
 
-     within_window(->{ page.title.include? 'FlatSummary' }) do
+      within_window(->{ page.title.include? 'FlatSummary' }) do
         flat_types = page.all(:xpath, "//select[@name='Flat']/option")
         # flat_types.count.should == 5
 
