@@ -128,7 +128,8 @@ describe "2017 May Brochure" do
 
       while check_search_window(estate.name) do
         within_window(main_window) do
-          dropdown_link = find_link('Flat Details')
+          # dropdown_link = find_link('Flat Details')
+          dropdown_link = find(:xpath, "//li[contains(@class,'has-dropdown')][a[text()='Flat Details']]")
           dropdown_link.trigger(:mouseover)
 
           dropdown = find(:xpath, "//ul[preceding-sibling::a[text()='Flat Details']]")
@@ -168,13 +169,20 @@ describe "2017 May Brochure" do
               block_fonts = page.all(:xpath, "//table[contains(.,'Click on block no')]//td//font[descendant::a]")
               block_divs = page.all(:xpath, "//table[contains(.,'Click on block no')]//td/div[font/a]")
 
+              while all(:xpath, "//span[@role='tooltip']").count == 0 do
+                sleep 1
+              end
+              street_tooltips = page.all(:xpath, "//span[@role='tooltip']")
+              streets = Hash[street_tooltips.map {|s| [ s[:'data-selector'], s[:title] ]}]
+
               @block_links = block_fonts.each_with_index.map do |b, i|
                 # id = b[:id]
                 # no = page.find(:xpath, "//div[@id='#{id}']/ancestor::a[1]")
                 # street = page.find(:xpath, "//div[@id='#{id}']//font").text
 
                 no = b.text
-                street = b[:title].strip
+                # street = b[:title].strip
+                street = streets[ b['data-selector'] ]
                 link = block_divs[i][:onclick]
 
                 # [no.text(:visible), street, no[:href]]
