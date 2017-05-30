@@ -17,7 +17,7 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {js_errors:true, port:44678+ENV['TEST_ENV_NUMBER'].to_i, phantomjs_options:['--proxy-type=none'], timeout:300})
 end
 
-Capybara.default_driver = :webkit # :poltergeist
+Capybara.default_driver = :poltergeist # :webkit
 Capybara.default_max_wait_time = 10
 
 Capybara.configure do |config|
@@ -88,4 +88,20 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+end
+
+# https://github.com/thoughtbot/capybara-webkit/issues/840
+module Capybara
+  class Session
+
+    def save_screenshot(path = nil, options = {})
+      options[:width] = current_window.size[0] unless options[:width]
+      options[:height] = current_window.size[1] unless options[:height]
+
+      path = prepare_path(path, 'png')
+      driver.save_screenshot(path, options)
+      path
+    end
+
+  end
 end

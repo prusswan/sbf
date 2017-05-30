@@ -39,19 +39,25 @@ describe "2017 May Brochure" do
   end
 
   before do
+    current_window.resize_to(1200, 800)
+
     visit sbf_link
     sleep 1
   end
 
-  it "parsing unit counts (new layout)" do
+  it "parsing unit counts (new layout - works with poltergeist)" do
     # dropdown_link = find_link('Price Range')
-    dropdown_link = find(:xpath, "//li[contains(@class,'has-dropdown')]/a[text()='Price Range']")
+    # dropdown_link = find(:xpath, "//li[contains(@class,'has-dropdown')]/a[text()='Price Range']")
+    dropdown_link = find(:xpath, "//li[contains(@class,'has-dropdown')][a[text()='Price Range']]")
     # dropdown_link2 = find(:xpath, "//li[contains(@class,'parent-link')][a[text()='Price Range']]", visible: false)
     dropdown = find(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]")
 
     estates = page.all(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]//a[contains(@href,'html')]").map(&:text)
     puts estates.count
     # puts estates
+
+    # page.execute_script("document.getElementsByClassName('large-11')[0].remove()");
+    # page.execute_script("document.getElementsByClassName('footer')[0].remove()");
 
     estates.each do |estate_name|
       estate = Estate.find_or_initialize_by(name: estate_name)
@@ -60,15 +66,20 @@ describe "2017 May Brochure" do
       page_title = estate_name #.gsub('/', '/ ') # sanitizing... don't ask
       p "Finding estate: #{estate_name}"
 
-      while all(:xpath, "//h1[contains(normalize-space(text()), '- #{page_title}')]").count == 0 do
-        dropdown_link.trigger(:mouseover)
+      while all(:xpath, "//h1[contains(normalize-space(text()), '#{page_title}')]").count == 0 do
+        # dropdown_link.trigger(:mouseover)
+        # dropdown_link.trigger(:click)
+        dropdown_link.click # does not work on webkit
+        # save_and_open_screenshot
 
         within(dropdown) do
           # link = find_link(estate_name)
           link = find(:xpath, "//a[text()='#{estate_name}' and contains(@href,'price')]")
           # p link
           # link.trigger(:mouseover)
-          link.trigger(:click)
+          # link.trigger(:click)
+
+          link.click
         end
       end
 
