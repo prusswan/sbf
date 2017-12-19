@@ -6,5 +6,6 @@ This is a rails engine meant to be used with the sbf2013nov, sbf2014may etc webs
 
 1. Add +'sbf'+ to the project's +Gemfile+, setup the database and run the db migrations (that come with the engine)
 2. Symlink the engine's spec folder to run the scraping script with the project
+3. Export the scraped data using +rake db:seed:dump MODELS=Estate,Block,Unit,Quotas+
 
 This project rocks and uses MIT-LICENSE.
