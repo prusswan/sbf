@@ -53,7 +53,7 @@ describe "2017 Nov Brochure" do
     dropdown = find(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]")
 
     # estates = page.all(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]//a[contains(@href,'html')]").map(&:text)
-    estates = page.all(:xpath, "//tr/td/b|//tr/td/strong").map(&:text).each_with_index.to_a.sort_by {|p| p.first }
+    estates = page.all(:xpath, "//tbody/tr[1]/td[1][count(following-sibling::td)=7]").map(&:text).each_with_index.to_a.sort_by {|p| p.first }
 
     puts estates.count
     # puts estates
@@ -65,7 +65,7 @@ describe "2017 Nov Brochure" do
 
     estates.each do |e|
       estate_name, position = e
-      estate_name = estate_name.gsub('/', '/ ') # sanitizing... don't ask
+      estate_name = estate_name.gsub(' / ', '/ ') # sanitizing... don't ask
 
       estate = Estate.find_or_initialize_by(name: estate_name)
       next unless estate.new_record?
@@ -92,9 +92,10 @@ describe "2017 Nov Brochure" do
       #              .map{ |t| t.text.gsub(',','').gsub('*','').to_i }.inject(:+)
       # supply = page.all(:xpath, "//td[contains(string(.//strong),'#{estate_name}')]/following-sibling::td[2]").map(&:text).map(&:to_i).inject(:+)
 
-      rows = page.all(:xpath, "//tr[count(preceding-sibling::tr[td/b|td/strong])=#{position+1}][not(td/b|td/strong)]/td[2][count(following-sibling::td)=5]")
+      # check the position by counting sibling elements
+      rows = page.all(:xpath, "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[position() != 1]/td[2][count(following-sibling::td)=5]")
                  .map(&:text).map(&:to_i)
-      first_row = find(:xpath, "//tr[count(preceding-sibling::tr[td/b|td/strong])=#{position}][td/b|td/strong]/td[3]").text.to_i
+      first_row = find(:xpath, "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[1]/td[3][count(following-sibling::td)=5]").text.to_i
 
       rows << first_row
       supply = rows.inject(:+)
