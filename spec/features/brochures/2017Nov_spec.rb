@@ -250,10 +250,11 @@ describe "2017 Nov Brochure" do
               unit_nos.map(&:text).each do |no|
                 # get price and area
                 # selector = "//font[contains(.,'#{no}')]/ancestor::td[1]/div[1]//td"
-                selector = "//font[contains(.,'#{no}')][a]"
+                # selector = "//font[contains(.,'#{no}')][a]"
+                selector = "//span[@id='#{no}k']"
                 unit_str = page.find(:xpath, selector)
 
-                fields = unit_str[:title].split("<br/>")
+                fields = unit_str[:title].split(/<br(?:\/)?>/)
                 area = fields[-1].to_i
                 price = fields[-3].gsub(/[$,]/,'').to_i # max price
 
