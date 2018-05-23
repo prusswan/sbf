@@ -30,7 +30,10 @@ describe "2018 May Brochure" do
   def check_search_window(estate_name)
     return true if windows.length < 2
 
-    within_window(->{ page.title.include? 'FlatSummary' }) do
+    # switch_to_window(windows.last)
+
+    within_window(->{ page.title.starts_with? 'Flats Available' }) do
+      # p page.body
       p "multiple windows: flat summary"
       selected_town = first(:xpath, "//select[@name='Town']")
       p "selected_town: #{selected_town.value}"
@@ -39,7 +42,7 @@ describe "2018 May Brochure" do
   end
 
   before do
-    current_window.resize_to(1200, 800)
+    # current_window.resize_to(1200, 800)
 
     visit sbf_link
     sleep 1
@@ -134,7 +137,8 @@ describe "2018 May Brochure" do
         within_window(main_window) do
           # dropdown_link = find_link('Flat Details')
           dropdown_link = find(:xpath, "//li[contains(@class,'has-dropdown')][a[text()='Flat Details']]")
-          dropdown_link.trigger(:mouseover)
+          # dropdown_link.trigger(:mouseover)
+          dropdown_link.hover
 
           dropdown = find(:xpath, "//ul[preceding-sibling::a[text()='Flat Details']]")
           within(dropdown) do
@@ -144,13 +148,20 @@ describe "2018 May Brochure" do
             # link['onclick'].should == "goFlats('../../13MAYSBF_page_5789/$file/map.htm?open&ft=sbf&twn=GL')"
             # link.click
             page.execute_script(link['onclick'])
+            sleep 5
           end
         end
 
         # p windows
+
+        windows.each do |w|
+          within_window(w) do
+            puts page.title
+          end
+        end
       end
 
-      within_window(->{ page.title.include? 'FlatSummary' }) do
+      within_window(->{ page.title.starts_with? 'Flats Available' }) do
         flat_types = page.all(:xpath, "//select[@name='Flat']/option")
         # flat_types.count.should == 5
 
