@@ -92,6 +92,9 @@ describe "2018 May Brochure" do
       #              .map{ |t| t.text.gsub(',','').gsub('*','').to_i }.inject(:+)
       # supply = page.all(:xpath, "//td[contains(string(.//strong),'#{estate_name}')]/following-sibling::td[2]").map(&:text).map(&:to_i).inject(:+)
 
+      # puts "looking for: #{estate_name} #{position}"
+      position += 1 # to avoid matching the header row
+
       # check the position by counting sibling elements
       rows = page.all(:xpath, "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[position() != 1]/td[2][count(following-sibling::td)=5]")
                  .map(&:text).map(&:to_i)
