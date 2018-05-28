@@ -13,6 +13,9 @@ module SBF::Unit
 
     default_scope { includes(:estate) }
 
+    # attr_accessor :estate_id
+    # enum estate_id: Estate.all.map(&:name).uniq.to_a
+
     rails_admin do
       # Found associations:
 
@@ -57,10 +60,14 @@ module SBF::Unit
             bindings[:view].link_to bindings[:object].estate.name, bindings[:view].rails_admin.show_path(:estate, bindings[:object].estate)
           end
           enum do
-            Estate.all.map(&:name).uniq.to_a
+            # Estate.all.map(&:name).uniq.to_a
+            Estate.all.map {|e| [e.name, e.id]}
           end
           sortable 'estates.name'
-          searchable 'estates.name'
+          searchable [{::Block => :estate_id }]
+          search_operator 'in'
+          # searchable :estate
+          # searchable 'estates.name'
           queryable :true
 
           column_width 50

@@ -168,5 +168,10 @@ module SBF::Block
         '(blocks.street || blocks.no)'
       end
     end
+
+    def search_by_estate_name
+      debugger
+      Unit.includes(:estate).where('estates.name': ['Geylang', 'Bedok'])
+    end
   end
 end
