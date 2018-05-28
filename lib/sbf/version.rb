@@ -1,3 +1,3 @@
-module Sbf
-  VERSION = "0.0.2"
+module SBF
+  VERSION = "1.0.0"
 end
