@@ -57,10 +57,17 @@ module SBF::Unit
             bindings[:view].link_to bindings[:object].estate.name, bindings[:view].rails_admin.show_path(:estate, bindings[:object].estate)
           end
           enum do
-            Estate.all.map(&:name).uniq.to_a
+            # ::Estate.all.map(&:name) #.uniq.to_a
+            # estate_id = bindings[:object].estate.id
+            ::Estate.all.map {|e| [e.name, e.id]}
           end
           sortable 'estates.name'
-          searchable 'estates.name'
+          # searchable 'estates.name'
+          # searchable :estate
+          # searchable [{:estate => :name }]
+          searchable [{Block => :estate_id}]
+          search_operator 'in'
+
           queryable :true
 
           column_width 50
