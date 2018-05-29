@@ -122,4 +122,23 @@ module SBF::Unit
       # using `field` instead of `configure` will exclude all other fields and force the ordering
     end
   end
+
+  module ClassMethods
+    def check_quotas
+      bad_u = Unit.all.select {|u| u.flat_type != u.quota.flat_type }
+    end
+
+    def fix_quotas
+      # Fix 1: update Unit.quota_id
+      # bad_u.each {|u| u.quota_id = Quota.where(block_id: u.block_id, flat_type: u.flat_type).first.id; u.save }
+
+      # Fix 2: redump Quota table
+      SeedDump.dump(Estate, file: 'db/seeds.rb')
+      SeedDump.dump(Block, file: 'db/seeds.rb', append: true)
+      SeedDump.dump(Unit, file: 'db/seeds.rb', append: true)
+
+      qs = Unit.all.map {|u| Quota.where(flat_type: u.flat_type, block_id: u.block_id).first }
+      SeedDump.dump(qs.uniq, file: 'db/seeds.rb', append: true)
+    end
+  end
 end
