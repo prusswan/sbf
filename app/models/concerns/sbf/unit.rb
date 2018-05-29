@@ -72,8 +72,15 @@ module SBF::Unit
 
           column_width 50
         end
-        field :flat_type do
+        field :flat_type, :enum do
           column_width 50
+          enum do
+            # ::Unit.distinct.pluck(:flat_type).sort
+            ["2-Room Flexi (Short Lease)", "2-Room Flexi (Short Lease/99-Year Lease)",
+              "3-Room", "3-Room (income ceiling $12,000)", "3-Room (income ceiling $6,000)",
+              "4-Room", "5-Room", "5-Room/3Gen", "Executive"]
+          end
+          search_operator 'in'
         end
         field :block do
           pretty_value do
