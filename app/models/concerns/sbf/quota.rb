@@ -8,7 +8,7 @@ module SBF::Quota
     has_one :estate, through: :block
 
     # Warning: default_scope + join breaks update of records: https://github.com/rails/rails/issues/11199
-    default_scope { joins(:estate).readonly(false) }
+    default_scope { joins(:estate).order(:id).readonly(false) }
 
     # attr_accessible :malay, :chinese, :others
 
