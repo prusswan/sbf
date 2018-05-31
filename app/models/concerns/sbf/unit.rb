@@ -11,7 +11,7 @@ module SBF::Unit
 
     delegate :probable_date, :delivery_date, :lease_start, to: :flat_block
 
-    default_scope { includes(:estate) }
+    default_scope { eager_load(:block).includes(:estate) }
 
     rails_admin do
       # Found associations:
@@ -135,6 +135,22 @@ module SBF::Unit
       # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
       # using `field` instead of `configure` will exclude all other fields and force the ordering
     end
+  end
+
+  def address
+    self.block.address
+  end
+
+  def long
+    self.block.long
+  end
+
+  def lat
+    self.block.lat
+  end
+
+  def price_per_area
+    price * 1.0 / area
   end
 
   module ClassMethods

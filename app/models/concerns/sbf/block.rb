@@ -10,7 +10,7 @@ module SBF::Block
 
     belongs_to :estate
 
-    default_scope { includes(:quotas).joins(:estate) }
+    default_scope { eager_load(:quotas).joins(:estate) }
 
     rails_admin do
       # Found associations:

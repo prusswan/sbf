@@ -8,7 +8,7 @@ module SBF::Quota
     has_one :estate, through: :block
 
     # Warning: default_scope + join breaks update of records: https://github.com/rails/rails/issues/11199
-    default_scope { joins(:estate).order(:id).readonly(false) }
+    default_scope { eager_load(:estate).eager_load(:units).order(:id).readonly(false) }
 
     # attr_accessible :malay, :chinese, :others
 
@@ -26,7 +26,7 @@ module SBF::Quota
             bindings[:view].link_to bindings[:object].estate.name, bindings[:view].rails_admin.show_path(:estate, bindings[:object].estate)
           end
           enum do
-            Estate.all.map(&:name).uniq.to_a
+            ::Estate.all.map {|e| [e.name, e.id]}
           end
           sortable "estates.name, flat_type, #{Block.sql_by_address}"
           searchable 'estates.name'
@@ -37,7 +37,7 @@ module SBF::Quota
         field :flat_type do
           pretty_value do
             block_id = bindings[:object].block_id
-            unit_count = Unit.where(block_id: block_id, flat_type: bindings[:object].flat_type).count
+            unit_count = bindings[:object].units.length
             "#{bindings[:object].flat_type} (#{unit_count})"
           end
           column_width 50
