@@ -1,4 +1,4 @@
-$(document).off('click').on 'click', '.pjax', (event) ->
+$(document).off('click', '.pjax').on 'click', '.pjax', (event) ->
   if event.which > 1 || event.metaKey || event.ctrlKey
     return
   else if $.support.pjax
@@ -10,7 +10,7 @@ $(document).off('click').on 'click', '.pjax', (event) ->
   else if $(this).data('href') # not a native #href, need some help
     window.location = $(this).data('href')
 
-$(document).off('submit').on 'submit', '.pjax-form', (event) ->
+$(document).off('submit', '.pjax-form').on 'submit', '.pjax-form', (event) ->
   if $.support.pjax
     event.preventDefault()
     $.pjax
