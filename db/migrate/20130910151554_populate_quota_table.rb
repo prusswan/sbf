@@ -1,4 +1,4 @@
-class PopulateQuotaTable < ActiveRecord::Migration
+class PopulateQuotaTable < ActiveRecord::Migration[4.2]
   def up
     quota_fields = ['malay','chinese','others','flat_type','block_id']
 

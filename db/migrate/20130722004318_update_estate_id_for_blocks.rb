@@ -1,4 +1,4 @@
-class UpdateEstateIdForBlocks < ActiveRecord::Migration
+class UpdateEstateIdForBlocks < ActiveRecord::Migration[4.2]
   def up
     Estate.all.each do |e|
       Block.where(estate: e.name).each { |r| r.update_attribute(:estate_id, e.id) }

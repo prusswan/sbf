@@ -1,4 +1,4 @@
-class CreateQuota < ActiveRecord::Migration
+class CreateQuota < ActiveRecord::Migration[4.2]
   def change
     create_table :quota do |t|
       t.string :flat_type,              null: false

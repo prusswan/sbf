@@ -1,4 +1,4 @@
-class CreateEstates < ActiveRecord::Migration
+class CreateEstates < ActiveRecord::Migration[4.2]
   def change
     create_table :estates do |t|
       t.string :name,   null: false
