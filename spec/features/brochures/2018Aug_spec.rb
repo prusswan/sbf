@@ -60,7 +60,7 @@ describe "2018 Aug Brochure" do
     dropdown = find(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]")
 
     # estates = page.all(:xpath, "//ul[preceding-sibling::a[contains(@class, 'secondLine') and text()='Price Range']]//a[contains(@href,'html')]").map(&:text)
-    estates = page.all(:xpath, "//tbody/tr[1]/td[1][count(following-sibling::td)=7]").map(&:text).each_with_index.to_a.sort_by {|p| p.first }
+    estates = page.all(:xpath, "//tbody/tr[1]/td[1][count(following-sibling::td)=9]").map(&:text).each_with_index.to_a.sort_by {|p| p.first }
 
     puts estates.count
     # puts estates
@@ -100,15 +100,26 @@ describe "2018 Aug Brochure" do
       # supply = page.all(:xpath, "//td[contains(string(.//strong),'#{estate_name}')]/following-sibling::td[2]").map(&:text).map(&:to_i).inject(:+)
 
       # puts "looking for: #{estate_name} #{position}"
-      position += 1 # to avoid matching the header row
+      #position += 1 # to avoid matching the header row
+
+      #row_xpath = "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[position() != 1]/td[2][count(following-sibling::td)=5]"
+      row_xpath = "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr/td[count(following-sibling::td)=5]"
+      first_row_xpath = "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[1]/td[3][count(following-sibling::td)=5]"
+      other_row_xpath = "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[position() != 1][td[1][contains(@class, 'text-left')]]/td[2][count(following-sibling::td)=2]"
+
+      # puts "debug row: $x(\"#{row_xpath}\")"
+      # puts "debug other row: $x(\"#{other_row_xpath}\")"
 
       # check the position by counting sibling elements
-      rows = page.all(:xpath, "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[position() != 1]/td[2][count(following-sibling::td)=5]")
-                 .map(&:text).map(&:to_i)
-      first_row = find(:xpath, "//tbody[count(preceding-sibling::tbody[tr[1]/td[1]])=#{position}][tr[1]/td]/tr[1]/td[3][count(following-sibling::td)=5]").text.to_i
+      rows = page.all(:xpath, row_xpath).map(&:text).map(&:to_i)
+      other_rows = page.all(:xpath, other_row_xpath).map(&:text).map(&:to_i)
 
-      rows << first_row
+      #first_row = find(:xpath, first_row_xpath).text.to_i
+      first_row = rows.first
+
+      #rows << first_row
       supply = rows.inject(:+)
+      supply += other_rows.inject(:+) if other_rows.present?
 
       total += supply
 
