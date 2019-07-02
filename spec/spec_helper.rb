@@ -13,39 +13,53 @@ require 'capybara/poltergeist'
 
 # require 'billy/rspec'
 
-require "selenium/webdriver"
+require 'webdrivers'
+#require "selenium-webdriver"
+
+options = Selenium::WebDriver::Chrome::Options.new
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w(headless disable-gpu) }
-  )
+  # capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+  #   chromeOptions: { 
+  #     args: %w[headless disable-gpu no-sandbox --enable-features=NetworkService,NetworkServiceInProcess]
+  #   }
+  # )
+
+  options.add_argument('--headless')
+  options.add_argument('--disable-gpu')
+  options.add_argument('--window-size=1280,800')
 
   Capybara::Selenium::Driver.new app,
     browser: :chrome,
-    desired_capabilities: capabilities
+    options: options
+    #desired_capabilities: capabilities,
+    #driver_opts: {
+    #  verbose: true,
+    #  log_path: 'chromedriver.log'
+    #}
 end
 
+Capybara.default_driver = :headless_chrome # :poltergeist # :webkit
 Capybara.javascript_driver = :headless_chrome
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {js_errors:true, port:44678+ENV['TEST_ENV_NUMBER'].to_i, phantomjs_options:['--proxy-type=none'], timeout:300})
 end
 
-Capybara.default_driver = :headless_chrome # :poltergeist # :webkit
 Capybara.default_max_wait_time = 10
 
 Capybara.configure do |config|
   config.ignore_hidden_elements = false
 end
 
-Capybara::Webkit.configure do |config|
-  config.allow_unknown_urls
-  config.allow_url("m.addthis.com")
-end
+#Capybara::Webkit.configure do |config|
+#  config.allow_unknown_urls
+#  config.allow_url("m.addthis.com")
+#end
 
 # Billy.configure do |c|
 #   c.cache = true
